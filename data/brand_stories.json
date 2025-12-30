@@ -1,0 +1,403 @@
+{
+    "설화수": {
+        "name_kr": "설화수",
+        "name_en": "Sulwhasoo",
+        "story": "전통의 지혜에서 영감을 받고 최신의 현대기술을 접목하여 솔루션을 만듭니다. 한국의 미학에 동시대적 시선을 더해 우리만의 아름다움을 완성해갑니다. 겉으로 드러나는 문제 해결 뿐 아니라, 눈에 보이지 않는 본질까지 더 넓고 깊게 연구하는 홀리스틱 뷰티를 추구합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/sulwhasoo.html",
+        "visual_colors": [
+            "Amber",
+            "Orange",
+            "Gold"
+        ],
+        "tone_keywords": [
+            "고급스러운",
+            "철학적인",
+            "전통적인",
+            "깊이있는"
+        ]
+    },
+    "라네즈": {
+        "name_kr": "라네즈",
+        "name_en": "Laneige",
+        "story": "아름다움을 향한 끝없는 호기심(Open to Wonder). 복잡한 것을 쉽고 편하게 만드는 힘과 세상의 규칙으로부터 자유롭게 만드는 호기심의 힘으로 이전에 없던 혁신적인 스킨케어 솔루션을 제공합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/laneige.html",
+        "visual_colors": [
+            "Blue",
+            "Cyan",
+            "Water-themed"
+        ],
+        "tone_keywords": [
+            "혁신적인",
+            "호기심 넘치는",
+            "생기있는",
+            "맑은"
+        ]
+    },
+    "이니스프리": {
+        "name_kr": "이니스프리",
+        "name_en": "Innisfree",
+        "story": "무한한 자연의 에너지를 탐구해 건강한 아름다움을 전하는 고효능 자연주의 브랜드입니다. 제주의 자연 원료와 고효능 성분을 결합하여 지속 가능한 뷰티를 지향합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/innisfree.html",
+        "visual_colors": [
+            "Green",
+            "Earth-tone",
+            "Nature-themed"
+        ],
+        "tone_keywords": [
+            "자연주의",
+            "청정한",
+            "에너지 넘치는",
+            "건강한"
+        ]
+    },
+    "헤라": {
+        "name_kr": "헤라",
+        "name_en": "Hera",
+        "story": "서울의 역동적인 아름다움에 주목하고 이를 다채로운 나다움으로 재해석하는 컨템포러리 서울 뷰티 브랜드입니다. 자기주도적이고 능동적인 삶의 태도를 가진 '서울리스타'의 아름다움을 제안합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/hera.html",
+        "visual_colors": [
+            "Black",
+            "Gold",
+            "Urban-Chic"
+        ],
+        "tone_keywords": [
+            "도시적인",
+            "주체적인",
+            "세련된",
+            "당당한"
+        ]
+    },
+    "아이오페": {
+        "name_kr": "아이오페",
+        "name_en": "IOPE",
+        "story": "바이오 사이언스를 근간으로 확실하게 검증된 고효능 솔루션을 제공합니다. 클리니컬 레벨 테크를 통해 눈에 보이는 피부 변화를 체감할 수 있게 하며 본연의 아름다움과 자신감을 찾아줍니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/iope.html",
+        "visual_colors": [
+            "Blue",
+            "Silver",
+            "Science-Laboratory"
+        ],
+        "tone_keywords": [
+            "과학적인",
+            "신뢰가는",
+            "논리적인",
+            "전문적인"
+        ]
+    },
+    "한율": {
+        "name_kr": "한율",
+        "name_en": "Hanyul",
+        "story": "한국 자연 원료의 응축된 힘을 마이크로바이옴 기술로 풀어낸 브랜드입니다. 피부와 마음의 균형을 찾아주는 '비움채움' 루틴을 통해 나만의 건강한 빛(K-glass Skin)을 찾아줍니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/hanyul.html",
+        "visual_colors": [
+            "Beige",
+            "Green",
+            "Soft-Natural"
+        ],
+        "tone_keywords": [
+            "편안한",
+            "한국적인",
+            "서정적인",
+            "순한"
+        ]
+    },
+    "마몽드": {
+        "name_kr": "마몽드",
+        "name_en": "Mamonde",
+        "story": "꽃의 효능 성분과 부스팅 성분을 결합한 'Hyper Flora™' 솔루션을 제공합니다. 고객이 자신만의 방식으로 삶을 꽃피울 수 있도록 경계 없는 혁신을 이어갑니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/mamonde.html",
+        "visual_colors": [
+            "Pink",
+            "Floral-Colors"
+        ],
+        "tone_keywords": [
+            "화사한",
+            "자신감 있는",
+            "꽃",
+            "에너지"
+        ]
+    },
+    "에스트라": {
+        "name_kr": "에스트라",
+        "name_en": "Aestura",
+        "story": "태평양제약의 헤리티지와 아모레퍼시픽의 피부과학이 만난 더마 코스메틱 브랜드입니다. 피부과 전문의들과의 협업을 통해 민감 피부의 근본 원인을 케어하는 메디컬 뷰티 솔루션을 제공합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/aestura.html",
+        "visual_colors": [
+            "Light Blue",
+            "White",
+            "Medical-Clean"
+        ],
+        "tone_keywords": [
+            "전문적인",
+            "안심되는",
+            "의학적인",
+            "진정성 있는"
+        ]
+    },
+    "에뛰드": {
+        "name_kr": "에뛰드",
+        "name_en": "Etude",
+        "story": "즐거운 화장놀이 문화를 전파하는 메이크업 전문 브랜드입니다. 다채로운 컬러와 사랑스러운 디자인을 통해 첫 메이크업의 설렘과 개성 있는 아름다움을 발견하도록 돕습니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/etude-house.html",
+        "visual_colors": [
+            "Pink",
+            "Sweet-Pastel"
+        ],
+        "tone_keywords": [
+            "즐거운",
+            "사랑스러운",
+            "발랄한",
+            "다채로운"
+        ]
+    },
+    "코스알엑스": {
+        "name_kr": "코스알엑스",
+        "name_en": "COSRX",
+        "story": "Cosmetics + Rx(처방)의 결합으로 화장품의 본질을 연구합니다. 전 세계 소비자의 피부 고민을 덜어내기 위해 진심과 안심을 담은 최적의 성분 배합 솔루션을 제안합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/cosrx.html",
+        "visual_colors": [
+            "Red",
+            "White",
+            "Minimalist"
+        ],
+        "tone_keywords": [
+            "진정성 있는",
+            "심플한",
+            "효과 중심의",
+            "실용적인"
+        ]
+    },
+    "오설록": {
+        "name_kr": "오설록",
+        "name_en": "Osulloc",
+        "story": "제주의 차밭에서 직접 재배한 최고의 품질의 차를 통해 한국의 차 문화를 꽃피우는 럭셔리 티 브랜드입니다. 일상 속 여유와 각자의 취향 있는 티라이프를 제안합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/osulloc.html",
+        "visual_colors": [
+            "Deep Green",
+            "Wood-tone"
+        ],
+        "tone_keywords": [
+            "여유로운",
+            "고즈넉한",
+            "품격있는",
+            "자연스러운"
+        ]
+    },
+    "려": {
+        "name_kr": "려",
+        "name_en": "Ryo",
+        "story": "아시안 헤리티지 원료와 고기능 두피 연구 기술을 결합한 탈모 케어 브랜드입니다. 뿌리 깊은 본연의 아름다움을 위해 두피 본연의 건강을 되찾아주는 맞춤 솔루션을 제공합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/ryo.html",
+        "visual_colors": [
+            "Dark Brown",
+            "Gold",
+            "Oriental-Red"
+        ],
+        "tone_keywords": [
+            "전통적인",
+            "건강한",
+            "깊이있는",
+            "효능 중심의"
+        ]
+    },
+    "에스쁘아": {
+        "name_kr": "에스쁘아",
+        "name_en": "Espoir",
+        "story": "독보적이고 생동감 있는 프리미엄 메이크업 전문 브랜드입니다. 메이크업 크리에이터로서 자신만의 룩을 완성할 수 있도록 영감을 제공합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/espoir.html",
+        "visual_colors": [
+            "Red",
+            "Black",
+            "Bold-Chic"
+        ],
+        "tone_keywords": [
+            "프로페셔널한",
+            "대담한",
+            "트렌디한",
+            "자신감 넘치는"
+        ]
+    },
+    "일리윤": {
+        "name_kr": "일리윤",
+        "name_en": "Illiyoon",
+        "story": "40여 년의 민감 피부 연구를 담은 저자극 더마 보습 브랜드입니다. 피부 본연의 건강한 힘을 되찾을 수 있도록 순하고 강력한 보습 솔루션을 제시합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/illiyoon.html",
+        "visual_colors": [
+            "White",
+            "Sky Blue",
+            "Clean-Dermo"
+        ],
+        "tone_keywords": [
+            "순한",
+            "깨끗한",
+            "안심되는",
+            "기본에 충실한"
+        ]
+    },
+    "라보에이치": {
+        "name_kr": "라보에이치",
+        "name_en": "Labo-H",
+        "story": "두피는 특별한 피부라는 관점에서 시작한 두피 스킨케어 브랜드입니다. 두피 장벽 강화를 통해 탈모 및 두피 고민을 근본적으로 해결합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/laboh.html",
+        "visual_colors": [
+            "Green",
+            "Clean-Scalp"
+        ],
+        "tone_keywords": [
+            "전문적인",
+            "해결 중심의",
+            "스마트한",
+            "청량한"
+        ]
+    },
+    "롱테이크": {
+        "name_kr": "롱테이크",
+        "name_en": "Longtake",
+        "story": "오래 지속되는 감각적인 향과 고효능을 갖춘 지속가능 라이프 스타일 브랜드입니다. 깊은 숲에서 영감을 받은 우디향으로 일상에 자연스럽게 스며드는 라이프를 제안합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/longtake.html",
+        "visual_colors": [
+            "Dark Green",
+            "Wood-Brown"
+        ],
+        "tone_keywords": [
+            "감각적인",
+            "자연스러운",
+            "편안한",
+            "지속가능한"
+        ]
+    },
+    "비레디": {
+        "name_kr": "비레디",
+        "name_en": "Beready",
+        "story": "자신의 개성을 자유롭게 표현하고 싶은 남자들을 위한 토탈 스타일링 브랜드입니다. 친근하지만 남다른 취향을 센스 있게 담아냅니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/beready.html",
+        "visual_colors": [
+            "Blue",
+            "Yellow",
+            "Active-Urban"
+        ],
+        "tone_keywords": [
+            "재치있는",
+            "젊은",
+            "개성있는",
+            "실용적인"
+        ]
+    },
+    "바이탈뷰티": {
+        "name_kr": "바이탈뷰티",
+        "name_en": "Vitalbeautie",
+        "story": "피부과학 연구에서 시작된 고효능 웰니스 브랜드입니다. 신체 기능 강화를 기반으로 일상의 퍼포먼스를 극대화하는 이너뷰티 솔루션을 완성합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/vitalbeautie.html",
+        "visual_colors": [
+            "Pink",
+            "Purple",
+            "Inner-Glow"
+        ],
+        "tone_keywords": [
+            "건강한",
+            "활력있는",
+            "과학적인",
+            "신뢰가는"
+        ]
+    },
+    "프리메라": {
+        "name_kr": "프리메라",
+        "name_en": "Primera",
+        "story": "씨앗의 발아 에너지에서 시작해 피부 장벽과 근본적인 건강함을 연구하는 씨드 테크 기반 뷰티 브랜드입니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/primera.html",
+        "visual_colors": [
+            "Earth",
+            "Seed-Brown"
+        ],
+        "tone_keywords": [
+            "생명력 있는",
+            "지속가능한",
+            "건강한",
+            "순수한"
+        ]
+    },
+    "해피바스": {
+        "name_kr": "해피바스",
+        "name_en": "Happy Bath",
+        "story": "일상 속 행복한 목욕 시간을 선사하는 바디케어 전문 브랜드입니다. 자연 유래 성분과 기분 좋은 향으로 온 가족의 피부 건강을 지킵니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/happybath.html",
+        "visual_colors": [
+            "Yellow",
+            "Green",
+            "Family-Safe"
+        ],
+        "tone_keywords": [
+            "즐거운",
+            "친근한",
+            "포근한",
+            "행복한"
+        ]
+    },
+    "미쟝센": {
+        "name_kr": "미쟝센",
+        "name_en": "Mise-en-scene",
+        "story": "헤어 스타일링을 통해 나만의 무대에서 주인공이 되도록 돕는 토탈 헤어 코스메틱 브랜드입니다. 트렌디한 컬러와 스타일링 솔루션을 제안합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/mise-en-scene.html",
+        "visual_colors": [
+            "Orange",
+            "Black",
+            "Stylish"
+        ],
+        "tone_keywords": [
+            "트렌디한",
+            "자신감 넘치는",
+            "스타일리시한",
+            "변화무쌍한"
+        ]
+    },
+    "아모스프로페셔널": {
+        "name_kr": "아모스",
+        "name_en": "Amos Professional",
+        "story": "헤어 디자이너와 고객을 위한 프로페셔널 헤어 솔루션을 제공합니다. 살롱 워크에 영감을 주고 최고의 퍼포먼스를 낼 수 있도록 지원합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/amos-professional.html",
+        "visual_colors": [
+            "Grey",
+            "White",
+            "Salon-Professional"
+        ],
+        "tone_keywords": [
+            "전문적인",
+            "디자이너 감성",
+            "신뢰가는",
+            "하이퍼포먼스"
+        ]
+    },
+    "오딧세이": {
+        "name_kr": "오딧세이",
+        "name_en": "Odyssey",
+        "story": "남자의 여정을 함께하는 정통 프리미엄 맨즈 스킨케어 브랜드입니다. 깊은 바다와 항해에서 영감을 받아 남성 피부의 에너지와 활력을 깨웁니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/odyssey.html",
+        "visual_colors": [
+            "Blue",
+            "Sailor-Navy"
+        ],
+        "tone_keywords": [
+            "강인한",
+            "클래식한",
+            "모험적인",
+            "남성적인"
+        ]
+    },
+    "메디안": {
+        "name_kr": "메디안",
+        "name_en": "Median",
+        "story": "치석 케어 전문 브랜드로 대한민국 국민의 구강 건강을 책임져왔습니다. 과학적인 솔루션으로 건강하고 하얀 미소를 지켜줍니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/median.html",
+        "visual_colors": [
+            "Blue",
+            "White",
+            "Dental-Clean"
+        ],
+        "tone_keywords": [
+            "상쾌한",
+            "시원한",
+            "깨끗한",
+            "과학적인"
+        ]
+    }
+}
