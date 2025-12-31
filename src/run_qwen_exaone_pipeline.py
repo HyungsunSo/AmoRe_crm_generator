@@ -19,6 +19,7 @@ import json
 import os
 import sys
 import time
+import random
 from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -73,6 +74,9 @@ def main():
     parser.add_argument('--top_k', type=int, default=5, help='CRM RAG Top-K 및 리뷰 Top-K')
     parser.add_argument('--qwen_model', default='Qwen/Qwen2.5-1.5B-Instruct', help='Qwen 로컬 모델 이름')
     parser.add_argument('--exa_model', default='LGAI-EXAONE/EXAONE-4.0-1.2B', help='Exaone 로컬 모델 이름')
+    parser.add_argument('--is_event', type=int, default=0, help='캠페인 이벤트 포함 여부 (0 or 1)')
+    parser.add_argument('--aarrr_stage', default='Acquisition', help='AARRR 단계 (Acquisition 등)')
+    parser.add_argument('--style_type', default='Time_Urgency_Style', help='CRM 템플릿 스타일')
     parser.add_argument('--out_path', default=None, help='결과 저장 경로')
     args = parser.parse_args()
 
@@ -85,7 +89,10 @@ def main():
     brand_stories = load_json(os.path.join(data_dir, 'brand_stories.json'))
     crm_goals = load_json(os.path.join(data_dir, 'crm_goals.json'))
     crm_categorized = load_json(os.path.join(data_dir, 'crm_analysis_results_categorized.json'))
-    fomo_data = load_json(os.path.join(data_dir, 'FOMO.json'))
+    campaign_events = load_json(os.path.join(data_dir, 'campaign_events.json'))
+    integrated_templates = load_json(os.path.join(data_dir, 'integrated_crm_templates.json'))
+    # FOMO.json is merged into integrated_crm_templates
+    fomo_data = integrated_templates.get('FOMO_Psychology_Style', {}).get('content', {})
 
     persona = find_persona(personas, args.persona)
     product = find_product(products, args.brand, args.product)
@@ -96,6 +103,14 @@ def main():
 
     timeline = []
 
+    # 캠페인 이벤트 선택 로직
+    selected_event = None
+    if args.is_event == 1:
+        stage_events = campaign_events.get(args.aarrr_stage, {})
+        promo_y_list = stage_events.get("promotion_y", [])
+        if promo_y_list:
+            selected_event = random.choice(promo_y_list)
+
     # Qwen 생성
     qwen_start = time.time()
     q_generator = LocalQwenGenerator(model_name=args.qwen_model)
@@ -104,7 +119,8 @@ def main():
         product.get('name', ''),
         persona,
         product.get('reviews', []),
-        highlight_texts
+        highlight_texts,
+        campaign_event_info=selected_event
     )
     qwen_end = time.time()
     timeline.append({
@@ -123,6 +139,48 @@ def main():
     crm_snippets = rag_crm_snippets(bucket, q_draft[:500], top_k=args.top_k)
     fomo_examples = format_fomo_examples(fomo_data, args.stage_index, limit=3)
 
+    # CRM 템플릿 검색 로직 (Exaone 컨텍스트)
+    selected_templates = []
+    style_data = integrated_templates.get(args.style_type, {}).get("content", {})
+    
+    # 템플릿 구조 처리 (List vs Dict)
+    start_time = time.time()
+    
+    # 딕셔너리 내부 키/리스트 탐색
+    # 구조가 복잡하므로 재귀보단 단순 분기 처리
+    candidates_pool = []
+    
+    # CASE A: Dict-based (e.g. Information_Universal_Style -> CRM_Universal_Templates_50 -> "1_Acquisition...")
+    # 템플릿 JSON의 "content" 바로 아래에 카테고리(예: CRM_Universal_Templates_50)가 있고 그 안에 stage key가 있는 구조라고 가정
+    # 또는 바로 stage list가 있을 수도 있음.
+    
+    # 일관성을 위해 content의 values를 순회
+    for group_key, group_val in style_data.items():
+        if isinstance(group_val, dict):
+             # Dict-based stages (e.g. "1_Acquisition_획득": [...])
+             for st_key, st_list in group_val.items():
+                 if args.aarrr_stage in st_key:
+                     if isinstance(st_list, list):
+                         candidates_pool.extend(st_list)
+        elif isinstance(group_val, list):
+            # List-based stages (e.g. CRM_Urgency_TimeLimit_Templates -> [ {stage: "...", data: [...]}, ...])
+            for item in group_val:
+                if isinstance(item, dict) and 'stage' in item and 'data' in item:
+                    if args.aarrr_stage in item['stage']:
+                         candidates_pool.extend(item['data'])
+
+    if candidates_pool:
+        # 랜덤 2~3개 선택
+        k = min(len(candidates_pool), random.randint(2, 3))
+        selected_templates = random.sample(candidates_pool, k)
+
+    # 템플릿을 문자열로 변환하여 프롬프트에 추가
+    template_text_list = []
+    for t in selected_templates:
+        # style, title, content, cta 필드 조합
+        t_str = f"스타일: {t.get('style','')}\n제목: {t.get('title','')}\n본문: {t.get('content','')}\nCTA: {t.get('cta','')}"
+        template_text_list.append(t_str)
+
     exa_messages = build_exaone_prompt(
         qwen_draft=q_draft,
         persona=persona,
@@ -131,6 +189,7 @@ def main():
         stage_index=args.stage_index,
         crm_snippets=crm_snippets,
         fomo_examples=fomo_examples,
+        campaign_templates=template_text_list  # 추가된 인자
     )
     # 로그용 전체 프롬프트 텍스트
     exa_prompt_text = "\n\n".join([f"[{m.get('role','')}] {m.get('content','')}" for m in exa_messages])
