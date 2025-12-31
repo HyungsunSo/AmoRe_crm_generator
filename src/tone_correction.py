@@ -128,8 +128,7 @@ def build_exaone_prompt(
     crm_goal: Dict[str, Any],
     stage_index: int,
     crm_snippets: List[Dict[str, Any]],
-    fomo_examples: List[str],
-    campaign_templates: List[str] = [],
+    style_examples: List[str] = [],
 ) -> List[Dict[str, str]]:
     stage_name = STAGE_ORDER[stage_index]
     persona_summary = summarize_persona(persona)
@@ -139,11 +138,16 @@ def build_exaone_prompt(
     tone_keywords = ', '.join(brand_story.get('tone_keywords', []))
     brand_story_text = brand_story.get('story', '')
 
-    crm_refs = '\n'.join(
-        [f"- ({round(s['score'],3)}) {s['text']}" for s in crm_snippets]
-    ) if crm_snippets else '- (none)'
-    fomo_refs = '\n'.join([f"- {ex}" for ex in fomo_examples]) if fomo_examples else '- (none)'
-    template_refs = '\n'.join([f"--- [Template] ---\n{t}" for t in campaign_templates]) if campaign_templates else '- (none)'
+    prompt_sections = []
+    if crm_snippets:
+        crm_refs = '\n'.join([f"- ({round(s['score'],3)}) {s['text']}" for s in crm_snippets])
+        prompt_sections.append(f"[CRM 유사 사례 (RAG)]\n{crm_refs}")
+    
+    if style_examples:
+        template_refs = '\n'.join([f"--- [참고 템플릿] ---\n{t}" for t in style_examples])
+        prompt_sections.append(f"[CRM 캠페인 스타일 참고]\n{template_refs}")
+
+    extra_context = "\n\n".join(prompt_sections)
 
     user_prompt = f"""다음 초안을 CRM 톤에 맞게 보정하세요. 출력은 JSON 형태로 title/body를 제공합니다.
 
@@ -165,14 +169,7 @@ def build_exaone_prompt(
 금지 맥락: {forbidden}
 CTA 스타일: {crm_goal.get('cta_style','')}
 
-[CRM 레퍼런스 RAG Top-K]
-{crm_refs}
-
-[FOMO 예시]
-{fomo_refs}
-
-[CRM 캠페인 템플릿 예시 (스타일/톤 참고용)]
-{template_refs}
+{extra_context}
 
 규칙:
 1) 금지 맥락과 과한 할인/과장 표현을 피하고, 허용 맥락 안에서 자연스럽게 씁니다.
@@ -181,7 +178,7 @@ CTA 스타일: {crm_goal.get('cta_style','')}
 4) 발신 목적에 맞는 CTA 문장을 1개 포함합니다.
 5) 숫자/변수 자리의 대괄호 템플릿은 유지하되 새로 만들지 않습니다.
 6) 출력 형식은 아래 두 줄입니다. 레이블을 그대로 포함하세요.
-7) 한국어로 작성하세요.
+7) 영어는 줄이고 최대한 한국어로 작성하세요.
 [제목] 한 줄 요약 제목
 [본문] 페르소나 공감+브랜드 톤 반영 본문 (CTA 포함)
 """
@@ -313,7 +310,6 @@ def main():
 
     # 결과 패키징
     out = {
-        'timestamp': datetime.now(timezone.utc).isoformat(),
         'persona': persona,
         'brand': args.brand,
         'stage_index': args.stage_index,
