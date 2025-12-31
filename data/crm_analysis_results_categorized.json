@@ -1,0 +1,1381 @@
+[
+  {
+    "stage_index": 0,
+    "stage": "Acquisition",
+    "items": [
+      {
+        "source_index": 0,
+        "filename": "IMG_0648.PNG",
+        "description": "A mobile chatbot interface ([브랜드]). Features a '[이벤트]' banner with three benefit sections (O, O, O). Benefits include 'Extra Discount', 'Limited Gift', and 'Special Price Lineup'. Main colors are beige, red, and green with fireworks imagery.",
+        "extracted_text": "[시간], [숫자], [브랜드], [전화번호], [[시간/날짜]], (AD) [브랜드], [이벤트], 오늘 종료, O cell-bration Benefit 추가할인 O종 쿠폰팩, O cell-bration Benefit 한정 기프트, O cell-bration Benefit 초특가 라인업, [🚨 마감임박 🚨] O종 쿠폰팩+베스트 O종 선물 증정! 올해 마지막 브랜드세일이 곧 종료돼요. 놓치면 내년까지 기다려야 해요..!, 혜택 전부 받기, To unsubscribe | Home > Block, [시간], 공식홈페이지, 이벤트, 고객센터, 채팅상담"
+      },
+      {
+        "source_index": 1,
+        "filename": "IMG_0649.PNG",
+        "description": "A darker, more dramatic banner for [브랜드]. Features product bottles (green and white) against a dark red curtain background with stars. '[이벤트]' is the main title.",
+        "extracted_text": "올해 마지막 할인! 전 상품 ~O%, [이벤트], 🎁 O년 중 가장 큰 브랜드세일 🎁, 올 한 해도 [브랜드]를 사랑해주신 마음에 보답하고자 역대 베스트 혜택을 모두 모았습니다!, 전원 증정 O종 쿠폰팩부터 베스트셀러 O종 선물세트까지! O년 중 가장 큰 혜택을 만나보세요., 올해 마지막 할인"
+      },
+      {
+        "source_index": 4,
+        "filename": "IMG_0652.PNG",
+        "description": " 'Limited Gift' promotion. Shows a red box, a Starbucks cup, and several product sachets. Theme: Best-selling gifts.",
+        "extracted_text": "O원 이상 구매 선물, 한정 기프트, 역대 베스트 사은품, [한정수량] 역대 베스트 사은품 증정, 고민은 배송만 늦출 뿐!, [브랜드] [시간/날짜] 베스트셀러 O종을 모두 모아 선물로 드려요. 따뜻한 스타벅스 커피도 준비했으니, 받고 싶은 선물로 골라보세요. 🎁, 베스트선물 받기"
+      },
+      {
+        "source_index": 5,
+        "filename": "IMG_0653.PNG",
+        "description": "'Special Price Lineup' summary. Shows various [브랜드] products (Noni Ampoule, Eraser Pad, etc.) floating against a light green/yellow gradient background.",
+        "extracted_text": "O년 중 가장 큰 혜택, [브랜드] 인기 상품 초특가 라인업, 인기 상품 최대 O% 할인, 올 한 해 가장 사랑받은 O위 아이템 총집합!, ❤️ 노니 앰플, 시카 지우개패드, 모공잡티 크림, 레티날 부스터 등 ❤️ 베스트 상품들을 O년 중 가장 큰 할인 & 증정 혜택으로 만나보세요, 할인받고 구매"
+      },
+      {
+        "source_index": 7,
+        "filename": "IMG_0655.PNG",
+        "description": "Gift card event banner. Dark blue background with star/confetti icons. Shows a green 'O원' gift card graphic inside a white envelope.",
+        "extracted_text": "구매 인증만 해도 기프트 카드 O% 증정!, O원, 번거로운 리뷰 작성은 필요하지 않아요., 📋 [브랜드] 구매 인증 이벤트, 🎫 [플랫폼] 기프트 카드 O원 권 증정., ✍️ 리뷰 작성 없이 아래 네이버 폼에 영수증만 첨부하면 OK!, 이벤트 참여하기"
+      },
+      {
+        "source_index": 18,
+        "filename": "IMG_0666.PNG",
+        "description": "Grand Open Sale last day banner. Shows a white gift box with '[브랜드]' logo and black ribbon.",
+        "extracted_text": "[브랜드] [이벤트] 마지막 날, [종료임박⏰] 최대 O원 할인! O원 이상 O천원 즉시 할인 & 하나만 사도 무조건 사은품 증정. 지금 공식몰에서 확인하세요., 내일은 비싸져요"
+      },
+      {
+        "source_index": 19,
+        "filename": "IMG_0667.PNG",
+        "description": "Official website renewal Grand Open sale banner with O and O won coupons shown.",
+        "extracted_text": "공식 홈페이지 리뉴얼 기념 [이벤트], [시간/날짜], [브랜드] coupon O | O, 새단장OPEN🎉 [이벤트], 공식 홈페이지가 새로워졌어요! 한층 더 편리하고 업그레이드된 공식몰에서만 만나볼 수 있는 역대급 특별 혜택을 지금 바로 확인해 보세요., O천원 즉시할인"
+      },
+      {
+        "source_index": 24,
+        "filename": "IMG_0672.PNG",
+        "description": "[시간/날짜] [플랫폼] [이벤트] 선물 banner with [브랜드] products in a gift box.",
+        "extracted_text": "[브랜드] x [이벤트] [시간/날짜], 선물이 도착했어요, [브랜드]로부터 선물이 도착했습니다🎁, 🥑 [시간/날짜] [이벤트] 단 O일간, [플랫폼]에서 [브랜드] 제품 구매 시 O% 당첨 🎉, 🥑 구매만 해도 참여 가능! 리뷰 작성은 필요하지 않아요😉, [시간/날짜] [이벤트]"
+      },
+      {
+        "source_index": 25,
+        "filename": "IMG_0673.PNG",
+        "description": "[시간/날짜] [플랫폼] Purchase Verification Event. Shows O won gift card, LG StandbyMe, and Dyson Airwrap prizes.",
+        "extracted_text": "구매만 해도 O% 증정, [플랫폼] 기프트카드 O원권 전원증정, O등 LG 스탠바이미 (O명), O등 다이슨 에어랩 (O명), [브랜드]x[플랫폼] 구매인증 이벤트, 🎁 [플랫폼] 기프트카드 O원권 전원 증정!, 🎁 O등: LG 스탠바이미 O (O명), 🎁 O등: 다이슨 에어랩 i.d.™ 멀티 스타일러 앤 드라이어 (O명), ✍️ 참여 방법: 이벤트 참여하기 버튼 클릭 후 구매 상세 정보 인증 & 핸드폰 번호 제출., 이벤트 참여하기"
+      },
+      {
+        "source_index": 26,
+        "filename": "IMG_0674.PNG",
+        "description": "O% Extra Discount coupon banner showing white coupons on dark blue background.",
+        "extracted_text": "[이벤트] O%, O원 이상 구매시 최대 O원, 누구나 할인 받고 즉시 O% 더!, 고객님에게만 드리는 혜택, 🖐️ 잠깐, 구매하기 전 장바구니 쿠폰 다운 받으셨나요? 🍀 [브랜드] 전용 O% 추가할인 쿠폰을 드려요! (O원 이상 구매 시, 최대 O원), O% 추가할인"
+      },
+      {
+        "source_index": 27,
+        "filename": "IMG_0675.PNG",
+        "description": "[브랜드] Noni Ampoule [플랫폼] sale. Oml edition. Price O won.",
+        "extracted_text": "🔥 노니 앰플 역대급 득템 찬스 🔥, [이벤트] 맞이 역대급 최저가! 지금이 아니면 못 사요, 더 리얼 노니 에너지 앰플 Oml 에디션 (Oml+Oml) : O -> O원, 단독 혜택 받기"
+      },
+      {
+        "source_index": 30,
+        "filename": "IMG_0678.PNG",
+        "description": "'[이벤트]' last day. Ice cube imagery. Cooling massager gift.",
+        "extracted_text": "[브랜드], [브랜드] [이벤트], 오늘 종료, [마지막날 🚨] 하반기 첫 세일 종료임박! O천원 즉시 할인부터 쿨링마사저 증정, 초특가 세트까지. 품절되기 전에 서두르세요 :), 내일은 비싸져요"
+      },
+      {
+        "source_index": 36,
+        "filename": "IMG_0684.PNG",
+        "description": "Upgrade Set O원. A/B types. Final O원 with O원 discount.",
+        "extracted_text": "업글세트 O원, O천원 즉시 할인가 O원, 품절 대란 초특가 세트 O원, 세트 하나로 기초 케어 완성! [브랜드] 대표 상품 지우개패드 O매는 기본, 여름철에 꼭 맞는 상품만 담아 준비한 구성을 지금 바로 만나보세요., 선착순 혜택받기"
+      },
+      {
+        "source_index": 37,
+        "filename": "IMG_0685.PNG",
+        "description": "[브랜드] Oth Birthday celebration. O benefits. Theme: Cake with 'O' candle.",
+        "extracted_text": "[브랜드] Oth Birthday, O주년 기념 🥳 역대급 O가지 혜택, O년 동안 받은 사랑에 감사함을 가득 담아, 역대급 O가지 혜택을 준비했어요. 최대 O% 할인 쿠폰부터 [브랜드] 인기 상품만 골라 담은 O주년 한정 기프트, 알짜배기 상품을 초특가에 만나볼 수 있는 O주년 특별 세트까지!, O가지 혜택받기"
+      },
+      {
+        "source_index": 39,
+        "filename": "IMG_0687.PNG",
+        "description": "Benefit O: Oth Anniversary Limited Gift for O원 purchase. Includes samples and Starbucks coffee.",
+        "extracted_text": "혜택 O 선착순 증정 O주년 한정 기프트, O원 이상 무료배송 & 선물 증정, 수분/진정, 미백/브라이트닝 케어에 최적화된 [브랜드] 대표 상품들만 골라 담은 샘플 기프트와 스타벅스 아메리카노 기프티콘까지!, 한정기프트 받기"
+      },
+      {
+        "source_index": 40,
+        "filename": "IMG_0688.PNG",
+        "description": "Benefit O: Popular products discount & gift. Cica Eraser Pad set, Noni Ampoule, Blemish Serum.",
+        "extracted_text": "혜택 O 인기 상품 할인 & 추가 증정, 인기 상품 최대 할인 & 최다 증정, 변함 없이 많은 사랑을 받은 [브랜드] 대표 상품을 최대 할인 & 최다 증정 구성으로 만나보세요., 최대 혜택 받기"
+      },
+      {
+        "source_index": 43,
+        "filename": "IMG_0691.PNG",
+        "description": "[브랜드] x [플랫폼]. [시간/날짜] '[이벤트]' ([이벤트]). Blemish Serum Oml + Oml for O won. O% gift for purchasers.",
+        "extracted_text": "[플랫폼], 모공잡티 세럼 Oml + Oml 기획, [시간/날짜] [이벤트], O -> O원, 모공잡티세럼 [이벤트] 구매자 전원 'O%' 증정드리는 모공잡티선크림과 [플랫폼] O천원권도 놓치지 마세요. 🧡, [이벤트] 바로가기"
+      },
+      {
+        "source_index": 44,
+        "filename": "IMG_0692.PNG",
+        "description": "[브랜드] [시간/날짜] New Product: PDRN O% Toner Pad.",
+        "extracted_text": "[시간/날짜] 신제품 PDRN O% 토너 패드, #비건인증원단, #미백-주름개선 O중기능성, 고함량 PDRN을 그대로 담아낸 「PDRN 토너 패드」 출시! 패드 한 장으로 간편하게 케어하세요🧡, 지금 보러가기"
+      },
+      {
+        "source_index": 46,
+        "filename": "IMG_0694.PNG",
+        "description": "[브랜드] x [플랫폼]. [NEW] BEST O-item set.",
+        "extracted_text": "[플랫폼] 한정기획, BEST O종 기획 세트, 매일 달라지는 피부 고민 피부 컨디션에 따라 PICK O!, [NEW] BEST O종 기획세트 💝, [플랫폼] 단독 출시! BEST 라인업 그대로, 고함량으로 채우는 진짜 피부력 💪, 보러가기 👉"
+      },
+      {
+        "source_index": 47,
+        "filename": "IMG_0695.PNG",
+        "description": "[브랜드] x [플랫폼] LIVE. Benefit O: Full-size product gift (NMN O% Serum or EGF Ampoule). Benefit O: Extra O% coupon.",
+        "extracted_text": "LIVE 단독 혜택, O 구매 인증 이벤트 본품 증정 (랜덤) : NMN O% 리뉴잉 세럼, EGF 앰플, O 추가 할인 쿠폰 [플랫폼] O% 쿠폰, [ONLY 라이브] 단독 혜택 💫, 라이브 구매 인증 시, \"본품\" 증정! 추가 [플랫폼] 쿠폰까지 받아가세요 💎, 혜택받기 🎁"
+      },
+      {
+        "source_index": 53,
+        "filename": "IMG_0701.PNG",
+        "description": "[브랜드] [이벤트] ([시간/날짜]). Niacinamide O% (O won), Retinal (O won), PDRN O% (O won).",
+        "extracted_text": "📢 오늘만 열린 [브랜드] [이벤트]!, 오늘 단 하루 특가로 [브랜드] 베스트 Pick 구매 찬스!, 나이아신 O% 세럼 -> O원, 레티날 Oppm 크림 -> O원, PDRN O% 앰플 -> O원, 특가 입장하기"
+      },
+      {
+        "source_index": 57,
+        "filename": "IMG_0705.PNG",
+        "description": "[브랜드] x [플랫폼] [이벤트] ([시간/날짜]). Niacinamide O% Serum for O won.",
+        "extracted_text": "오늘의 특가, 나이아신아마이드 O% 세럼 -> O원, [시간/날짜] 단 하루! O위 👑 모공세렴을 [플랫폼] 단독 할인가에 만나보세요! ✨, [이벤트] 입장"
+      },
+      {
+        "source_index": 58,
+        "filename": "IMG_0706.PNG",
+        "description": "[브랜드] New Product Max O% Discount ([시간/날짜]). [플랫폼] Exclusive. Vitamin Ampoule, Hand Cream, Tint, Spot Care Powder.",
+        "extracted_text": "신제품 최대 O% 할인, [시간/날짜], ONLY [플랫폼], 단 O일! [브랜드] 신제품 할인, 고함량 비타민 앰플부터 무향 핸드크림, 가을을 담은 틴트, 스팟케어 파우더까지, 자세히 보기"
+      },
+      {
+        "source_index": 64,
+        "filename": "IMG_5470.jpg",
+        "description": "Health routine special promotion with various supplement products.",
+        "extracted_text": "(광고) [브랜드명], NOW PLAYING, [날짜] ~ [날짜], 기분 한 하루, 생기 충전을 위한 나의 건강한 습관, 언제나 당당한 우먼파워 W케어의 모든 것, 하루 한 병으로 간편하게 챙기는 에너지, 나만의 파우치 아이템, 나를 위한 건강루틴, [브랜드명], [브랜드명], [브랜드명], [브랜드명], [브랜드명], [브랜드명], [브랜드명], 나를 위한 건강 루틴 상영 중, NOW PLAYING🎬 나를 위한 건강 루틴 절찬 상영 중! 없어서는 안 될 건강 루틴템들 지금 [브랜드명]에서 최대 [할인율]% 할인 중💜 지금 헬시어터에서 확인하기, 헬시어터로 입장"
+      },
+      {
+        "source_index": 65,
+        "filename": "IMG_5471.jpg",
+        "description": "Morning to night health routine products including oral care and sleep care.",
+        "extracted_text": "(광고) [브랜드명], NOW PLAYING, [날짜] ~ [날짜], 식후 한포 저녁에 두알, 화제의 [제품명], 환하고 자신있는 스마일 구강케어, 쉽고 맛있는 일상관리 제안, 매일밤 잠이 솔솔 꿀잠을 위한 수면케어, 아침부터 저녁까지 건강루틴, 아침부터 저녁까지 완벽한 건강 루틴, NOW PLAYING🎬 아침부터 저녁까지 건강 루틴 절찬 상영 중! 나의 하루를 책임질 건강 루틴템 지금 [브랜드명]에서 최대 [할인율]% 할인 받고 구매하자💜 헬시어터 입장, 건강 루틴 확인"
+      },
+      {
+        "source_index": 90,
+        "filename": "IMG_5498.jpg",
+        "description": "Jung Saem Mool skin nuder cushion sets with special pricing.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] 완벽한 피부 표현, [제품명] 기획 [수량]종 [원가] ▶ [할인가], [제품명] 기획 [수량]종 [원가] ▶ [할인가], ✨ 완벽한 피부 표현을 위한 쿠션템, 타고난 피부 맑은 윤광을 더해주는 내추럴 커버 쿠션 💛 타고난 결을 빛내는 누더 쿠션으로 본연의 아름다움을 찾아보세요 💫, #촉촉 윤광 #맑은 윤광 #얇은 커버"
+      },
+      {
+        "source_index": 94,
+        "filename": "IMG_5503.jpg",
+        "description": "Olive Live X Sulwhasoo promotion. Mentions live benefits like special prices and coupons.",
+        "extracted_text": "(광고) [브랜드명], [날짜](수) 저녁 [시간], 올영 LIVE. X [브랜드명], [브랜드명]X[브랜드명] 🧡 잠시 후 [시간] 📢, 라이브 중에만 최대 혜택!, 1️⃣ 타임특가 2️⃣ 추가쿠폰 할인 3️⃣ 선착순 증정 4️⃣ 본품 이벤트, 지금 바로 만나보세요!, 라이브 보기 ▶️"
+      },
+      {
+        "source_index": 103,
+        "filename": "IMG_5512.jpg",
+        "description": "June Olive Day D-1 notification for Pink Olive members with a 3,000 KRW coupon.",
+        "extracted_text": "(광고) [브랜드명], 올리브 멤버스를 위한 OLIVE DAY, [날짜] ~ [날짜], 단 3일간, [등급명] [할인금액] 할인, #6월 올리브 데이 #D-1 내일, [날짜]부터 단 3일간 ★, Pink Olive 소형선님 전용 혜택, ① [할인금액] 즉시 할인, ② 선착순 샘플 [수량]종 랜덤증정, ◇ 올리브 데이 BEST ITEM ◇, ① [브랜드명]) [제품명] 기획 [원가] ▶ [할인가], ② [브랜드명]) [제품명] [원가] ▶ [할인가], ❤️ 6월의 Luxe Edit [브랜드명] ❤️ [제품명] 기획 [원가] ▶ [할인가]"
+      },
+      {
+        "source_index": 126,
+        "filename": "IMG_5535.jpg",
+        "description": "Olive Young Health personalized service quiz event.",
+        "extracted_text": "(광고) [브랜드명], Q [브랜드명] 헬스 맞춤형 서비스의 이름은?, 퀴즈 종료, [브랜드명] 헬스+, 기간 [날짜](목) [시간]까지, 자세히 보기"
+      },
+      {
+        "source_index": 128,
+        "filename": "IMG_5537.jpg",
+        "description": "Olive Young N Seongsu Grand Open D-2 notification.",
+        "extracted_text": "(광고) [브랜드명], [파트너명], November 22nd GRAND OPEN, K뷰티의 새로운 랜드마크 ▶ [파트너명] ◀ GRAND OPEN D-2 📢, 뷰티&헬스 트렌드를 색다르게 경험할 수 있는 새로운 놀이터 <[파트너명]> [날짜](금)에 만나요 ✨, *서울시 성동구 연무장7길13 팩토리얼 성수 (성수역 4번 출구 도보 100M)"
+      },
+      {
+        "source_index": 129,
+        "filename": "IMG_5538.jpg",
+        "description": "Olive Young N Seongsu Grand Open start banner with a green cake and '25' decoration.",
+        "extracted_text": "(광고) [브랜드명], GRAND OPEN [브랜드명] 25주년 우리들의 새 놀이터, [파트너명] GRAND OPEN!, 뷰티 & 헬스 트렌드를 색다르게 경험할 수 있는 새로운 놀이터 ✨ [파트너명]에서 만나요 💚, 💌 총 [가격대] 원의 쇼핑 지원금도 제공하고 있으니 쿠폰 받기 눌러 당첨을 확인해 보세요 🛒"
+      },
+      {
+        "source_index": 137,
+        "filename": "IMG_5546.jpg",
+        "description": "Olive Young Awards 10th anniversary quiz event.",
+        "extracted_text": "(광고) [브랜드명], Q 올해 10년을 맞이한 [브랜드명] 최고의 시상식 이름은?, 퀴즈 종료, [브랜드명] 어워즈 10주년 명예의 전당, ① [브랜드명] 어워즈, ② 올리브 데이, ③ 올영세일, ④ 블랙 프라이데이, 기간 [날짜](월) [시간]까지, 자세히 보기"
+      },
+      {
+        "source_index": 139,
+        "filename": "IMG_5548.jpg",
+        "description": "Olive Color-Up Challenge banner for checking 2025 expected membership grade.",
+        "extracted_text": "(광고) [브랜드명], 올리브 컬러업 챌린지, 예상등급 확인하면 선착순 혜택 부터 특급 경품 까지!, 🧐 선착순 혜택부터 특급 경품이 소형선님을 기다리고 있어요! ★ 올리브 컬러업 챌린지 ★ 25년 예상 등급 확인하고 원하는 선물 골라보세요~ ❤️ ✔️ 기간: ~[날짜](화)까지 ✔️ 구매시 참여 티켓 한장 더+ 내일이면 이벤트 끝! 😭 선물받고 레벨업도 꼭 성공하세요 👍, 지금 바로 click ▶️"
+      },
+      {
+        "source_index": 144,
+        "filename": "IMG_5554.jpg",
+        "description": "Secret discount coupon worth 2,000 KRW for one day (Feb 21).",
+        "extracted_text": "(광고) [브랜드명], 고객님께만 드리는 깜짝 선물 오늘 단 하루! 시크릿 할인 쿠폰, SECRET COUPON [할인금액] 할인, [브랜드명] 할인 쿠폰 도착 💌 오늘 단 하루만! 소형선님께만 드리는 스페셜 혜택 지금 바로 할인 받고 구매해 보세요 💞, 쿠폰 받으러가기 ▶️"
+      },
+      {
+        "source_index": 147,
+        "filename": "IMG_5557.jpg",
+        "description": "March Olive Young Sale special 'Rom&nd & Hince Day' promotion.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명] 매일 다른 브랜드 특급 혜택!, [브랜드명] & [브랜드명] 데이 [날짜], [브랜드명] [제품명] 단품/기획 각 [할인가], [브랜드명] [제품명] 단품/기획 각 [할인가], 🍀 우리가 원하던 [이벤트명] 🍀 오늘 단, 하루 [브랜드명]&[브랜드명] 깜짝특가 ✨ 매일 다른 브랜드 특급 혜택, 선착순 쿠폰 등 새로워진 [이벤트명]을 즐겨보세요 ❤️, [이벤트명] 입장 ▶️"
+      },
+      {
+        "source_index": 151,
+        "filename": "IMG_5561.jpg",
+        "description": "March Olive Day last day notification with membership discount details.",
+        "extracted_text": "(광고) [브랜드명], 오늘 마지막! OLIVE DAY, [날짜] - [날짜], [구매조건] 이상 구매 시 [등급명] [할인율]%, [등급명] [할인율]%, [구매조건] 이상 구매 시 [등급명] [할인율]%, [등급명] [할인금액], [등급명] [할인금액], #3월올리브데이 #오늘이_마지막 ⏰ #3 Combo 혜택_다 누리세요, ① 최대 [할인율]% 멤버십 할인 쿠폰 + 최대 [할인율]% 추가 쿠폰 더 받기 ❤️ ② 지금 딱! 필요한 상품 가득 파격 할인 <올리브 특가>템! ③ [브랜드명] [채널명] [할인율]% 청구할인, 올리브 데이 진짜 몇시간 후면 끝!!!! 지금 바로 클릭하고 쇼핑하세요 🛒, 올리브 데이 쇼핑 즐기기 ▶️"
+      },
+      {
+        "source_index": 153,
+        "filename": "IMG_5563.jpg",
+        "description": "App-ppun Festival prize entry notification with pictures of a bed, bags, and beauty devices. D-3.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명]에서 경품 응모권 받기! APP과 매장에서 모두 구매하면 당첨 확률 UP! 앱뿐 럭키드로우, [오늘 종료 ⏰] [[혜택종료 D-3]] 쇼핑대축제 [이벤트명]! 최대 [할인금액] 선착순 앱뿐 쿠폰, 최대 [할인율]% 라스트픽, 프라다 가방의 주인공이 될 수 있는 기회까지 🎁 혜택 종료 전, 지금 바로 확인하세요, [이벤트명] 입장하기"
+      },
+      {
+        "source_index": 154,
+        "filename": "IMG_5564.jpg",
+        "description": "App-ppun Festival pickup service gift card 100% win banner (Last day).",
+        "extracted_text": "(광고) [브랜드명], 픽업 서비스로 주문하면 기프트 카드 100% 당첨! 최대 [할인금액] 기프트카드, [할인금액] 매장쿠폰, [이벤트명]에서 팡팡 터지는 픽업 리워드 만나기, 고객님께 맞춤 혜택 알림 👍 ▶[이벤트명] 100% 리워드 🎁 ① 픽업으로 [구매조건] 이상 주문 시 <기프트카드> 100% 증정! ② 픽업 수령 완료 하면 <매장 [할인금액] 쿠폰> 추가 획득! 이 모든 혜택, 오늘이 마지막 ⏰ 기회 놓치지 말고 바로 Click 하세요 ✔️ [이벤트명] 오늘이 마지막!, 기프트카드 받으러 가기 ▶️"
+      },
+      {
+        "source_index": 156,
+        "filename": "IMG_5566.jpg",
+        "description": "Super Brand Day Vital Beauty special promotion featuring health supplements.",
+        "extracted_text": "(광고) [브랜드명], 슈퍼브랜드데이 [브랜드명] 최대 [할인율]% 특가, COUPON 최대 [할인금액], 잠시 후 [시간]에 만나요 올영 LIVE 추가할인 찬스!, 📢 지금 쟁여야 해요! 📢 [브랜드명] 최대 [할인율]% 찬스! 🌟 최대 [할인금액] 추가할인 쿠폰 🏃‍♀️ 최대 [할인율]% 단독특가 상품 ⏰ 고민하면 품절! 한정수량 선착순특가 🎥 잠시 후 [시간] 라이브 한정 혜택까지?! 💚 [브랜드명] 특가 만나보기"
+      },
+      {
+        "source_index": 157,
+        "filename": "IMG_5568.jpg",
+        "description": "Family Month 'Gift For All' promotion with a flower and gift coupon/entry tickets.",
+        "extracted_text": "(광고) [브랜드명], 가정의 달 Gift for all, 선물 쿠폰 COUPON ~[할인금액] 최대 [할인금액] 할인, 무제한 응모 구매 이벤트 [가격대] 원, 할인 받아 선물하고 원하는 경품 응모까지! 소형선님 가정의 달 선물 보고 계신가요? 최대 [할인금액] 쿠폰 받아 선물하고, 원하는 경품 무제한 응모까지! 미리 준비하고 더 많-은 혜택 받아가세요 🎁 * 경품 : 대한항공 기프트카드 [가격대]권, 리모와 캐리어 등, 최대 [할인금액] 쿠폰 받기 ▶️"
+      },
+      {
+        "source_index": 161,
+        "filename": "IMG_5572.jpg",
+        "description": "May Olive Day 3-combo benefit promotion banner.",
+        "extracted_text": "(광고) [브랜드명], 최대 [할인금액] 쿠폰 할인, 올리브 특가, [브랜드명] [채널명] [할인금액] 청구 할인, 올리브 멤버스라면, 단 3일간의 혜택! OLIVE DAY, 매월 25일은 올리브 데이!, 올리브 멤버스 3combo 혜택 올리브 데이 단, 3일간의 혜택 놓치지 마세요! ① 최대 [할인금액] 쿠폰 할인 ② 올리브 특가 ③ [브랜드명] [채널명] [할인금액] 청구할인, 나의 혜택 확인"
+      },
+      {
+        "source_index": 163,
+        "filename": "IMG_5574.jpg",
+        "description": "June Olive Young Sale countdown banner with HOT SUMMER theme and Round Lab special.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명] [날짜]-[날짜], [브랜드명] 데이, [브랜드명] 소나무 진정 시카 앰플 [용량] 더블 기획, 깜짝 특가 [원가]👉[할인가] 👉 [할인가], 혜택이 빵! 터지는 [이벤트명] 🎊 최대 [할인율]% 할인! HOT SUMMER [이벤트명] 😎 매일 다른 브랜드 특급 혜택, 선착순 쿠폰 등 혜택 빵! 터지는 [이벤트명]을 즐겨보세요 ❤️, [이벤트명] 입장 ▶️"
+      },
+      {
+        "source_index": 166,
+        "filename": "IMG_5577.jpg",
+        "description": "June Olive Day membership benefit promotion with multiple point/discount tags.",
+        "extracted_text": "(광고) [브랜드명], [채널명] [할인금액] 즉시 할인, [채널명] 최대 [할인금액] 추가 적립, 최대 [할인금액] 할인 쿠폰, 올리브 멤버스라면, 단 [수량]일간의 혜택! OLIVE DAY, 매월 25일은 올리브 데이!, [월], 더 커진 올리브 멤버십 혜택 올리브 멤버스라면? 달라지는 멤버십 혜택 CHECK !!! 단 [수량]일간만, 최대 [할인금액] 할인 쿠폰부터 추가 포인트 적립과 결제 할인까지 💚, 새로운 혜택보기"
+      },
+      {
+        "source_index": 168,
+        "filename": "IMG_5579.jpg",
+        "description": "July Membership grade achievement (Pink Olive) notification.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] MEMBERS, [월] 멤버십 등급 [등급명], 고객님의 이번달 [브랜드명] 등급은?, 25년 [월] [등급명] 달성! 지금 새로워진 혜택들 확인하고 쿠폰팩 다운받아가세요 🖤, [월] 쿠폰팩 받기 ▶️"
+      },
+      {
+        "source_index": 169,
+        "filename": "IMG_5580.jpg",
+        "description": "July Olive Young x Sanrio Mesh Bag giveaway promotion with beach/summer theme.",
+        "extracted_text": "(광고) [브랜드명], 올리브 멤버스 [구매조건] 이상 구매 시 [브랜드명]x[파트너명] 메쉬백 증정, 해변/스포츠 피크닉/수박 컨셉 [수량]종 중 [수량]종 랜덤 증정, [브랜드명] X [파트너명] 메쉬백 증정 🎀 [[오전 [시간] OPEN]] 올리브 멤버스 [구매조건] 이상 구매 시 💚 썸머 메쉬백 증정 *상세 유의사항은 온라인 몰 확인(소진 시 행사 종료), 메쉬백 받기"
+      },
+      {
+        "source_index": 171,
+        "filename": "IMG_5582.jpg",
+        "description": "July Olive Day 3-combo benefit promotion with green/white arrows.",
+        "extracted_text": "(광고) [브랜드명], [채널명] [할인금액] 즉시 할인, [채널명] [할인금액] 추가 적립, 최대 [할인금액] 할인 쿠폰, 올리브 멤버스만의 단독 혜택! OLIVE DAY, 딱 [수량]일만 주어지는 멤버십 혜택 〉, [월] 올리브 멤버스 3Combo 혜택 📌 올리브 멤버스라면? 가장 큰 혜택으로! 단 [수량]일간, 최대 [할인금액] 할인 쿠폰, 추가 포인트 적립과 제휴 할인까지 모두 만나보세요 🙌, [월] 혜택 확인"
+      },
+      {
+        "source_index": 174,
+        "filename": "IMG_5585.jpg",
+        "description": "August Olive Day 3-combo benefit promotion with green/white triangle graphics.",
+        "extracted_text": "(광고) [브랜드명], [채널명] [할인금액] 즉시 할인, [채널명] [할인금액] 추가 적립, 최대 [할인금액] 할인 쿠폰, 단, [수량]일간! OLIVE DAY, [월], 지금 올리브 멤버스 한정 혜택 받기 〉, [월] 올리브 멤버스 3Combo 혜택 📢 단 [수량]일간 누리는 3Combo 혜택 할인쿠폰, 추가적립, 결제할인까지 모두 받기 🔍, [월] 혜택 확인"
+      },
+      {
+        "source_index": 176,
+        "filename": "IMG_5587.jpg",
+        "description": "September Olive Young Sale special 'Banila Co Day' and 'WAKEMAKE Day' promotion.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명] [날짜]-[날짜], [브랜드명] 데이, [제품명] 단품/기획 깜짝특가 각 [할인가] ([날짜]), [브랜드명] 데이, [제품명] 단품/기획 깜짝특가 각 [할인가] ([날짜]), 🎊 최대 [할인율]% 할인! [이벤트명] 🎊 매일 매일 새로운 혜택부터 최대 [할인금액] 상당의 쿠폰까지 역대급 할인 [이벤트명] 💞, [이벤트명] 입장 ▶️"
+      },
+      {
+        "source_index": 179,
+        "filename": "IMG_5590.jpg",
+        "description": "September Olive Young x Sanrio Cutie Run promotion featuring a tote bag and Hello Kitty keyring.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] X [파트너명] [이벤트명] 토트백 + 키링 파우치 세트 증정, [구매조건] 이상 구매 시, [수량]종 랜덤 증정, START!, [브랜드명] X [파트너명] 토트백 세트 증정 🎀 [[오전 [시간] OPEN]] 올리브 멤버스 [구매조건] 이상 구매 시 토트백 세트 증정 ✨ *[수량]종 중 [수량]종 랜덤 증정 *상세 유의사항은 온라인 몰 확인(소진 시 행사 종료), 토트백세트 받기"
+      },
+      {
+        "source_index": 182,
+        "filename": "IMG_5594.jpg",
+        "description": "Periodic subscription consent confirmation notice from Olive Young KakaoTalk channel.",
+        "extracted_text": "[브랜드명], [정기적 수신동의 확인 안내] 안녕하세요. [브랜드명] 카카오톡 채널입니다. 이 메시지는 정보통신망법에 따라 [수량]년마다 발송되는 광고성 정보 수신동의 확인메시지입니다. ▶ 이전 수신동의일자 : [날짜] 앞으로도 유익한 소식과 다양한 혜택으로 찾아 뵙겠습니다. 메시지수신을 원치 않으시면 \"홈 > 채널차단\" 버튼을 눌러주시거나 내 채널 목록에서 차단해주세요. 감사합니다."
+      },
+      {
+        "source_index": 183,
+        "filename": "IMG_5595.jpg",
+        "description": "October Olive Day 3-combo benefit promotion with green/white triangle graphics.",
+        "extracted_text": "(광고) [브랜드명], [채널명] [할인금액] 즉시 할인, [채널명] [할인금액] 추가 적립, 최대 [할인금액] 할인 쿠폰, [월] 한정!, 단, [수량]일간! OLIVE DAY, 올리브 멤버스 전용 혜택 오픈! 〉, [월] 올리브 멤버스 3Combo 혜택 📢 단 [수량]일만! 올리브 데이 한정 혜택 할인쿠폰, 추가적립, 결제 할인까지 💚, [월] 혜택확인"
+      },
+      {
+        "source_index": 188,
+        "filename": "IMG_5600.jpg",
+        "description": "November Olive Day 3-combo benefit promotion banner.",
+        "extracted_text": "(광고) [브랜드명], [채널명] [할인금액] 즉시 할인, [채널명] [할인금액] 추가 적립, 최대 [할인금액] 할인 쿠폰, 단, [수량]일간! OLIVE DAY, 오직 올리브 멤버스를 위한 혜택 〉, [월] 올리브 멤버스 3Combo 혜택 📢 단 [수량]일간! 올리브 멤버스 3Combo 혜택 할인쿠폰, 추가적립, 결제 혜택까지 지금 바로 확인하기 💫, [월] 혜택확인"
+      },
+      {
+        "source_index": 190,
+        "filename": "IMG_5602.jpg",
+        "description": "December Olive Young Sale middle promotion with various beauty products popping out of a top hat.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명] [날짜]-[날짜] 최대 [할인율]% 할인!, 마법 같은 혜택이 가득한 [이벤트명] 🪄 올해 마지막 찬스! 최대 [할인율]% 할인 👀 역대급 혜택이 쏟아지는 [이벤트명] 보러가기 🎊, [이벤트명] 입장 ▶️"
+      },
+      {
+        "source_index": 194,
+        "filename": "IMG_5606.jpg",
+        "description": "December Olive Day 3-combo benefit (Dec 25) final promotion of the year.",
+        "extracted_text": "(광고) [브랜드명], [채널명] [할인금액] 즉시 할인, [채널명] [할인금액] 추가 적립, 최대 [할인금액] 할인 쿠폰, 단, [수량]일간! OLIVE DAY, 강력한 올리브 멤버스 단독 혜택 〉, [월] 올리브 멤버스 3Combo 혜택 📢 단 [수량]일간! [연도] 마지막 올리브 데이 💚 할인 쿠폰, 추가 적립, 결제 혜택까지 지금 바로 올리브 데이 혜택 확인하기 🎅, 혜택 보러 가기"
+      },
+      {
+        "source_index": 195,
+        "filename": "IMG_5464_1.jpg",
+        "description": "English Pear & Freesia campaign. Video content.",
+        "extracted_text": "(광고) [브랜드명]\n\n[브랜드명] 잉글리쉬 페어 앤 프리지아\n\n은은하고 감미로운 가을의 정수, 잉글리쉬 페어 앤 프리지아의 세계로 여러분을 초대합니다.\n\n[제품명]의 매력적인 향을 영상을 통해 만나보세요.\n\n영상 보러가기"
+      },
+      {
+        "source_index": 197,
+        "filename": "IMG_5464_3.jpg",
+        "description": "English Pear & Freesia special edition promotion.",
+        "extracted_text": "(광고) [브랜드명]\n\n특별한 가을을 위한 선택,\n[제품명] 스페셜 에디션\n\n가을의 정수를 담은 [제품명]가\n특별한 플루티드 디자인의 보틀로 찾아옵니다.\n\n소중한 사람에게 전하는 가을의 향기,\n지금 [브랜드명] 부티크에서 만나보세요.\n\n자세히 보기"
+      },
+      {
+        "source_index": 198,
+        "filename": "IMG_5464_4.jpg",
+        "description": "Men's Cologne promotion featuring Huntsman collection.",
+        "extracted_text": "(광고) [브랜드명]\n\n남성을 위한 완벽한 향기,\n[제품명] 컬렉션\n\n모던하고 세련된 남성을 위한\n[브랜드명]의 4가지 시그니처 향을 제안합니다.\n\n강인하면서도 부드러운 매력을 완성하는\n[브랜드명] 맨즈 컬렉션을 경험해보세요.\n\n자세히 보기"
+      },
+      {
+        "source_index": 200,
+        "filename": "IMG_5465_1.jpg",
+        "description": "Gingerbread Land holiday campaign.",
+        "extracted_text": "(광고) [브랜드명]\n\n진저브레드 랜드로의 초대\n\n달콤하고 스파이시한 향기로 가득한\n진저브레드 랜드에 오신 것을 환영합니다.\n\n[기간] 리미티드 에디션으로 출시된\n[제품명] 코롱을 만나보세요.\n\n자세히 보기"
+      },
+      {
+        "source_index": 201,
+        "filename": "IMG_5465_2.jpg",
+        "description": "Winter scent recommendation. Snowy forest visuals.",
+        "extracted_text": "(광고) [브랜드명]\n\n겨울 숲의 향기, [제품명]\n\n하얗게 눈 덮인 겨울 숲을 거니는 듯한\n상쾌하고 우디한 향기를 선물하세요.\n\n차가운 겨울 공기 속에 따스함을 더해줄\n[제품명]로 특별한 감동을 전해보세요.\n\n구매하기"
+      },
+      {
+        "source_index": 202,
+        "filename": "IMG_5465_3.jpg",
+        "description": "Rose collection promotion.",
+        "extracted_text": "(광고) [브랜드명]\n\n사랑을 전하는 가장 완벽한 방법,\n[제품명] 컬렉션\n\n로맨틱한 발렌타인데이를 위한\n[브랜드명]의 4가지 로즈 향기를 만나보세요.\n\n사랑의 메시지를 담은 리미티드 보틀로\n소중한 마음을 전해보세요.\n\n자세히 보기"
+      },
+      {
+        "source_index": 205,
+        "filename": "IMG_5467_1.jpg",
+        "description": "New Christmas collection launch notification.",
+        "extracted_text": "(광고) [브랜드명]\n\nNEW 크리스마스 컬렉션 출시\n\n🎄 NEW & LIMITED\n진저브레드 앤 스파이스 페스티벌\n\n🎁 카카오 단독 출시\n크리스마스 오너먼트\n\n✨ 홀리데이 리미티드 포장 서비스\n\n[기간] [월] [일]까지\n\n자세히 보기"
+      },
+      {
+        "source_index": 207,
+        "filename": "IMG_5467_3.jpg",
+        "description": "Holiday gift set recommendation.",
+        "extracted_text": "(광고) [브랜드명]\n\n조 말론 런던 크리스마스 기프트\n\n향기로 완성되는 연말, 소중한 그와의 기분 좋은 선물부터 연말의 즐거움을 더하는 홈 컬렉션까지.\n조 말론 런던이 제안하는 감각적인 홀리데이 기프트 아이디어를 만나보세요.\n\n자세히 보기"
+      },
+      {
+        "source_index": 209,
+        "filename": "IMG_5467_5.jpg",
+        "description": "Holiday video promotion.",
+        "extracted_text": "(광고) [브랜드명]\n\n홀리데이를 위한 조 말론 런던 기프트\n\n베스트 향과 시즌 한정 아이템으로 구성된 홀리데이 기프트 얼리버드. 조 말론 런던 기프트로 소중한 이에게 홀리데이의 따뜻한 마음을 전하세요.\n\n자세히 보기"
+      },
+      {
+        "source_index": 214,
+        "filename": "IMG_5454.jpg",
+        "description": "Sensory shower video promotion.",
+        "extracted_text": "(광고) [브랜드명], 감각을 깨우는 힐링 샤워 영상, ✨NO.1 바디케어*, [브랜드명] '[제품명]', 고급스러운 아몬드 오일이 물과 만나 섬세한 거품으로 변하는, 부드러운 오일 투 폼 포뮬라가 감각적인 샤워 경험을 선사합니다. #[제품명] 의 힐링 샤워 영상을 지금 바로 확인해보세요☁, 영상 보러가기"
+      },
+      {
+        "source_index": 217,
+        "filename": "IMG_5455.jpg",
+        "description": "Live broadcast promotion with exclusive benefits.",
+        "extracted_text": "(광고) [브랜드명], [LIVE][브랜드명] 단독 할인&혜택📢, NO.1* [제품명], 오늘 오후 [시간], 🛒쇼핑 LIVE, [연도] 첫 라이브 최대 혜택, 🔥 [라이브 단독] 백화점 NO.1 바디케어* 세트, ⏰ [1시간 특가] 라이브 한정 적립 & 할인 혜택, 🎁 [오늘 단 하루] 전 구매 & 구매 시 증정 혜택, 라이브 바로가기"
+      },
+      {
+        "source_index": 222,
+        "filename": "IMG_5459.jpg",
+        "description": "Summer Vacance seasonal promotion.",
+        "extracted_text": "(광고) [브랜드명], Summer Vacance, [[브랜드명] Summer Vacance], 뜨거운 햇살에 자극받은 두피는 '[제품명]'으로 진정 케어를, 더위에 지친 바디엔 '[제품명]'로 시원한 활력을 더해보세요!, ■ 메시지 수신 고객 한정 혜택 ([기간]), : 헤어 제품 포함 [구매조건] 이상 구매 시, 샴푸 [용량] 증정 (라인 랜덤 증정), ■ 썸머 기간 한정 혜택 ([기간]), ① [제품명] [구매조건] 이상 구매 시, [제품명] [용량] 증정, ② 헤어 세럼 구매 시, 괄사 증정, ③ 샴푸&컨디셔너 [용량] 세트 구매 시, 헤어 브러쉬 증정, *전국 [브랜드명] 매장에서 사용 가능 (아울렛, 면세점, 공식몰 제외), *모든 혜택 한정 수량, 소진 시 종료, 쿠폰함 바로 가기"
+      },
+      {
+        "source_index": 223,
+        "filename": "IMG_5460.jpg",
+        "description": "Weekend only promotion with amount-based gifts.",
+        "extracted_text": "(광고) [브랜드명], [[브랜드명] 주말 한정 프로모션], 단 3일간, 소중한 고객님만을 위한 특별 혜택을 놓치지 마세요!, ● 금 토 일 기간 한정 혜택([기간]), ① [구매조건] 이상 구매 시, 여행용 샴푸&컨디셔너 [용량] + 리퀴드 솝 [용량] 추가 증정, ② [구매조건] 이상 구매 시, 파우치&디럭스 샘플 5종 + 리퀴드 솝 [용량] 추가 증정, * 매장 상황에 따라 증정품 변동 가능, * 모든 혜택 한정 수량, 소진 시 종료, * [브랜드명] 오프라인 매장 전용 혜택 (아울렛, 면세점, 공식몰 제외), 가까운 매장 찾기"
+      }
+    ]
+  },
+  {
+    "stage_index": 1,
+    "stage": "Activation",
+    "items": [
+      {
+        "source_index": 3,
+        "filename": "IMG_0651.PNG",
+        "description": "Promotion for a new product, 'NEW 시카 젤 마스크'. Shows the product packaging and the mask sheet. Colors are light green and white.",
+        "extracted_text": "NEW 시카 젤 마스크 출시 기념, 신제품 런칭 특가 & 선착순 O매 추가 증정, [선착순] 신제품 젤마스크 O매 더!, [브랜드] 최초 젤 마스크 출시! OSTEP으로 완성되는 진정, 결광 리셋 루틴., 신제품 구매하신 분들께만 O매를 더! 드리는 O명 한정 선착순 혜택도 놓치지 마세요. 🏃‍♀️, O매 더 받기"
+      },
+      {
+        "source_index": 6,
+        "filename": "IMG_0654.PNG",
+        "description": "[플랫폼] promotion banner. Features a dark blue background with green accents. Shows multiple [브랜드] products bundled together. O% coupon highlight.",
+        "extracted_text": "[브랜드] x [이벤트], 단 O일, 역대 최저가 구매 찬스, *[플랫폼] 기준, 🛍️ [시간/날짜] 마지막 [이벤트] 시작, 🎁 [브랜드]가 드리는 혜택, 단 O일 동안만, 누구나 추가 할인 💸, O원 이상 구매 시 기프트카드 증정, O% 쿠폰"
+      },
+      {
+        "source_index": 10,
+        "filename": "IMG_0658.PNG",
+        "description": "Product comparison/bundle banner. Shows two sets of products: Blemish Pad bundle and Blemish Cream/Mask bundle.",
+        "extracted_text": "모공과 잡티를 한 번에, 💛 대용량으로 넉넉하게 매일매일 미백 케어, ✔️ 브라이트닝 모공잡티패드 기획 O매 기획 (+O매) : O원, ✔️ 모공잡티 브라이트닝 크림 랩핑 마스크 O매 기획 (+O매) : O원, 톤업 케어 시작"
+      },
+      {
+        "source_index": 13,
+        "filename": "IMG_0661.PNG",
+        "description": "[플랫폼] Home Shopping promotion. 'Last Broadcast of the Year'. Dark aesthetic with a trophy graphic.",
+        "extracted_text": "[브랜드] x [플랫폼], 런칭방송 전체매진 기념 앵콜 올해 마지막 방송, [플랫폼] 화장품 통틀어 [시간/날짜] 런칭방송 달성률 O위, ON AIR [시간/날짜] [시간], [O시간 뒤 종료] 올해 마지막 혜택, 많은 사랑을 보내주셨던 런칭방송 전체매진 기념 앵콜 방송이 지금 시작되었어요. 🏆 [플랫폼] 내 올해 런칭방송 달성률 O위, 빠르게 입장⚡"
+      },
+      {
+        "source_index": 15,
+        "filename": "IMG_0663.PNG",
+        "description": "Special Package promotion for blemish care products (O Creams + O Pads). Highlighted price O won (monthly O won).",
+        "extracted_text": "[브랜드] x [프로모션], 단 O시간 판매! O차방송 조기매진 그 구성!, 모공잡티크림 O개 + 모공잡티패드 O매 O개, O원 -> O원, (O개월 무이자 할부시 월 O원), [한정 수량] 품절 시 판매 종료, 런칭 방송 O분만에 조기품절 된 그 구성 🔥 ✔️ 스페셜 패키지: 기미잡티크림 O개 & 모공잡티패드 O매 O개를 O% 할인 된 가격, '월 O원'에 만나볼 수 있어요. 이번에도 조기품절이 예상되니 빠르게 겟! 해보세요., 오직 단 O시간"
+      },
+      {
+        "source_index": 20,
+        "filename": "IMG_0668.PNG",
+        "description": "Benefit O for Noni Pad & Line Sale launch. Light green background, shows Noni Glow Pad O+O.",
+        "extracted_text": "혜택 O 신제품 런칭 이벤트 노니 패드 & 라인 할인, 노니 글로우 패드 O매 O+O : O원, 노니 앰플 에어리스 Oml : O원, 노니앰플 한 병 쏙💚 진정겔패드 출시, 진정/보습 O등 노니 앰플, 마침내 패드로 나왔어요!, 노니 앰플 한 병 그대로 담은 촉촉한 젤 타입 패드로, 매일매일 간편하게 진정부터 수분까지 챙겨 보세요., 런칭특가 O%"
+      },
+      {
+        "source_index": 35,
+        "filename": "IMG_0683.PNG",
+        "description": "Cica Line & Mask sale. O+O on Cica Serum. O+O on Cica/Noni masks.",
+        "extracted_text": "피부열 내리는 쿨세일 & 쿨링마사저 증정, 시카 라인 & 마스크 할인, 지금 딱 필요해요! 확실하게 수분진정, 자외선, 높은 기온에 피부가 자극 받았다면 시카 성분으로 진정이 필요해요 🌿 [브랜드] 시카 라인 할인 & 마스크 O종 O+O 초특가 구성으로 순하게 피부결, 수분 진정, 흔적 케어를 시작해 보세요., 수분진정템 할인"
+      },
+      {
+        "source_index": 41,
+        "filename": "IMG_0689.PNG",
+        "description": "Benefit O: New product launch special. Blemish Cream Wrapping Mask O sheets (O원) & Blemish Serum Mask O+O (O원).",
+        "extracted_text": "혜택 O 신제품 런칭 특가 모공잡티 마스크 O종, 자외선이 강한 여름, 피부를 환하게 밝혀줄 신제품 브라이트닝 모공잡티 마스크 O종을 만나보세요. ✔️ 모공잡티 크림 랩핑 마스크 O매 : O원 ✔️ 모공잡티 세럼 마스크 O+O : O -> O원, 잡티고민 OUT"
+      },
+      {
+        "source_index": 45,
+        "filename": "IMG_0693.PNG",
+        "description": "[브랜드] PDRN O% Toner Pad limited O-day special: O -> O won.",
+        "extracted_text": "[시간/날짜], 단 O일 특가, 저분자 히알루론산 Oppm 함유, O분할 패드로 빈틈없이 밀착!, 촉촉·탄탄 토너 패드, 런칭 특가 O -> O원, [단 O일] 런칭특가 O원 🎉, #팩토 #닦토 #수분충전 #주름케어 마지막 한 장까지 촉촉하게 💦 특가로 가장 먼저 만나보세요🙌, 지금 보러가기"
+      },
+      {
+        "source_index": 48,
+        "filename": "IMG_0696.PNG",
+        "description": "[브랜드] x [플랫폼] [이벤트] ([시간/날짜]). High-concentration cost-effective products.",
+        "extracted_text": "[이벤트] [시간/날짜], 단 O일, [브랜드] [이벤트] 시작!, 🔔 [브랜드] x [플랫폼] [이벤트] 🔔, 단 O일! [플랫폼]에서 만나는 고함량 갓성비 [브랜드]! 가격 이상의 효능을 누려보세요 💚, 자세히보기"
+      },
+      {
+        "source_index": 54,
+        "filename": "IMG_0702.PNG",
+        "description": "[브랜드] Pro EGF O-item set launch. Only [플랫폼]. Max O% discount.",
+        "extracted_text": "PRO EGF O종 단독 런칭 프로모션, ONLY [플랫폼], [브랜드] 프로EGF라인 런칭 🎉, 지금 EGF보다 한층 진화한 프로EGF 안티에이징 트리오를 오픈 특가(~O%)에 만나보세요!, 자세히 보기"
+      },
+      {
+        "source_index": 81,
+        "filename": "IMG_5489.jpg",
+        "description": "Olive Young Sale coming soon banner with up to 70% discount starting March 1st.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜] ~ [날짜], ~[할인율]% 할인 COMING SOON, #[브랜드명] #[이벤트명] #D-1 #최대 [할인율]%할인 #[날짜] 시작, ▶[이벤트명]이 특별한 이유, ① 지금 앱 푸시 수신 동의하면 <[할인금액] 할인 쿠폰> 쏜다!, ② 매일 [시간]/[시간] 하루 두번 최대 [할인금액] 선착순 쿠폰 증정, ③ 단 3일 선착순 특가 단돈 100원?!, ▶소형선님을 위한 세일 BEST템, ① [브랜드명]) [제품명] 기획 [날짜] 단 하루 특가 [원가] ▶ [할인가], ② [브랜드명]) [제품명] [용량] 기획 [원가] ▶ [할인가]"
+      },
+      {
+        "source_index": 93,
+        "filename": "IMG_5501.jpg",
+        "description": "Olive Young Health promotion banner. Highlights a variety of health items and personalized supplements.",
+        "extracted_text": "(광고) [브랜드명], 세상 새로운 헬스케어 올영답게 시작 ✨, [브랜드명] 헬스+, 내일의 건강함 [브랜드명]에서 시작해요, 우먼케어, 이너뷰티, 면역, 라인케어, 나를 위한 건강기능식품 찾기, [브랜드명] 헬스 + 💪, 세상 새로운 헬스케어 올영답게 시작 🌺, 올영이 주목한 헬스 아이템들로 다양하게 준비했어요. 내일의 건강함 올영에서 시작하세요! 💕, 헬스케어 확인 ▶️"
+      },
+      {
+        "source_index": 111,
+        "filename": "IMG_5520.jpg",
+        "description": "Olive Health Dive W-Care promotion focusing on women's wellness products.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], 나를 위한 우먼 웰니스의 시작, [브랜드명] W케어, [날짜] ~ [날짜], [브랜드명] [이벤트명], 찝찝한 여름 불쾌지수 DOWN 데일리 Y존케어 오늘만 최대 [할인율]% OFF, 혜택 확인"
+      },
+      {
+        "source_index": 131,
+        "filename": "IMG_5540.jpg",
+        "description": "December Olive Young Sale Coming Soon banner with a pink shopping basket.",
+        "extracted_text": "(광고) [브랜드명], COMING SOON [이벤트명], [날짜] - [날짜], [월]_[이벤트명] #D-2 #[날짜](일) 시작, 세일 사전 혜택 미리 챙기기, ① 총 [할인금액] 쿠폰팩 받기 💌, ② 장바구니 담고 선물 도전!, [날짜] 부터 단 [수량]일간 [이벤트명] 100% 즐기기 👍, ① 매일 ~[할인금액] 쿠폰 받기, ② 매일 새로운 특가템 GET, 한 층 더 특별한 [이벤트명] 미리 준비해 보세요 ❤️, [이벤트명] 미리 즐기기 ▶️"
+      },
+      {
+        "source_index": 180,
+        "filename": "IMG_5591.jpg",
+        "description": "September Olive Day 3-combo benefit promotion banner.",
+        "extracted_text": "(광고) [브랜드명], [채널명] [할인금액] 즉시 할인, [채널명] [할인금액] 추가 적립, 최대 [할인금액] 할인 쿠폰, [월], 단, [수량]일간! OLIVE DAY, 올리브 멤버스만을 위한 혜택 확인 〉, [월] 올리브 멤버스 3Combo 혜택 📢 단 [수량]일간 누리는 3Combo 혜택 할인 쿠폰부터 올리브 특가, 선런칭 혜택까지 지금 나의 혜택 확인하기 🤩, [월] 혜택 확인"
+      },
+      {
+        "source_index": 187,
+        "filename": "IMG_5599.jpg",
+        "description": "November Olive Young x POV (Point Of View) collaboration diary promotion featuring leather diaries and coffee.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] X POV 콜라보 다이어리, [브랜드명] X POV 콜라보 다이어리 [[날짜]] 나를 가꾸는 매일의 기록 루틴, [연도] 다이어리북 콜라보 에디션 런칭 ❣️ [브랜드명]에서만 만나볼 수 있는 특별한 구성을 지금 바로 확인하세요!, 다이어리 만나기"
+      },
+      {
+        "source_index": 204,
+        "filename": "IMG_5466_2.jpg",
+        "description": "Sakura Cherry Blossom limited edition.",
+        "extracted_text": "(광고) [브랜드명]\n\n봄의 시작, [제품명] 리미티드 에디션\n\n화사하게 피어나는 벚꽃의 설렘을 담은\n[제품명]가 돌아왔습니다.\n\n부드러운 파스텔 핑크 보틀에 담긴\n봄의 향기를 가장 먼저 만나보세요.\n\n자세히 보기"
+      },
+      {
+        "source_index": 212,
+        "filename": "IMG_5452.jpg",
+        "description": "Scalp care serum promotion. Features product bottle and gua sha tool.",
+        "extracted_text": "(광고) [브랜드명], 건강한 모근을 위한 [제품명] SPECIAL SET, 3주정도 써보니 모발 자체가 튼튼해짐을 느꼈어요., 시트러스 허브 향이라 두피 마사지 할때마다 릴랙싱 효과가 좋아요!, [[브랜드명] 환절기 두피 솔루션], 두피 가려움과 힘없는 볼륨으로 고민이라면?, [제품명]으로 두피와 모발을 튼튼하게! 시트러스 허브 향으로 릴랙싱 효과도 느껴보세요., ◈ [기간] 한정 스페셜 혜택 ([기간], 소진 시 종료), ① [제품명] 구매 시, 괄사 증정, ② 구매 시, 핸드크림 [용량] 증정 (매장별 상이), ③ 두피 진단 시, 맞춤 샴푸&컨디 체험분 증정, 늦기 전에 두피 진단과 한정 혜택을 받아보세요!, *전국 [브랜드명] 매장에서 사용 가능 (아울렛, 면세점 제외), BEST [제품명]"
+      }
+    ]
+  },
+  {
+    "stage_index": 2,
+    "stage": "Retention",
+    "items": [
+      {
+        "source_index": 9,
+        "filename": "IMG_0657.PNG",
+        "description": "Eraser Pad lowest price promotion. Shows the jar and the refill pack. Price O won.",
+        "extracted_text": "지우개 패드 역대 최저가, O매 O -> O매 O, O원, (최종 쿠폰가), 🚨 지우개패드 최초 O천원대!, 🤑 [플랫폼]에서 다시 만나기 힘든 가격!, 🛒 지금 바로 구매하러 가 볼까요?, 👉 바로 담기"
+      },
+      {
+        "source_index": 74,
+        "filename": "IMG_5482.jpg",
+        "description": "Membership grade notification for PINK OLIVE. Details benefits and validity period.",
+        "extracted_text": "(광고) [브랜드명], [연도] 상반기 PINK OLIVE, [연도] 상반기 [브랜드명] 멤버스 안내, PINK OLIVE 소형선님 넘치는 혜택, 지금 바로 확인해 보세요!, ▶나의 등급 : [등급명], ▶등급 유지 기간 : [날짜]~[날짜], ▶최대 [할인금액] 상당의 혜택, - 쇼핑 쿠폰 [수량]매, 무료배송 쿠폰 [수량]매 생일 쿠폰 및 픽업 쿠폰까지!, - 매월 [브랜드명] 데이 멤버스 쿠폰 제공 및 키트 선착순 증정, - ★New★W케어/맨즈케어 할인쿠폰, 이 모든 것이 가능한 [브랜드명] 멤버스♥ 더 자세한 혜택은 APP에서 확인하세요."
+      },
+      {
+        "source_index": 106,
+        "filename": "IMG_5515.jpg",
+        "description": "2024 H2 Green Olive membership grade achievement and coupon benefits.",
+        "extracted_text": "(광고) [브랜드명], 24년 하반기 [등급명], [[브랜드명]] 24년 하반기 올리브 멤버스 등급 안내, 소형선님 [등급명] 달성! [등급명]에게만 드리는 ★[할인금액] 상당 쿠폰★ 지금 확인하세요!, ① 장바구니 쇼핑쿠폰 [수량]매, ② 무료배송쿠폰 [수량]매, 픽업쿠폰 [수량]매, ③ Luxe Edit 쿠폰 [수량]매, ④ 구강, 건강식품 등 헬스+ 쿠폰 [수량]매, ⑤ 생일 쿠폰, 올리브 데이 쿠폰 등, 24년 하반기 [등급명] 등급 유지 기간: [날짜]~[날짜]"
+      },
+      {
+        "source_index": 140,
+        "filename": "IMG_5549.jpg",
+        "description": "2025 H1 Pink Olive membership grade achievement and coupon benefits overview.",
+        "extracted_text": "(광고) [브랜드명], 2025 상반기 [등급명], [[브랜드명]] 소형선님! 25년 상반기 [등급명] 달성 ✨ ★ 최대 [할인금액] 상당 쿠폰 혜택 ★ 지금 바로 확인해 보세요~ ❤️ ① 쇼핑쿠폰 [수량]장, 배송쿠폰 [수량]장 ② LUXE EDIT [수량]장 ③ 헬스+ 쿠폰팩 ④ 픽업쿠폰, 생일 쿠폰 등 ✔️ 멤버스 등급: [등급명] ✔️ 유지기간: [날짜] ~ [날짜], 올리브 멤버스 혜택 보러가기"
+      },
+      {
+        "source_index": 216,
+        "filename": "IMG_5454_3.jpg",
+        "description": "Hair Serum repurchase benefit promotion.",
+        "extracted_text": "[[브랜드명] 헤어 세럼 재구매 혜택], [브랜드명] 헤어 세럼 어떠셨나요? 덥고 습해진 요즘, [제품명]으로 두피 케어를 다시 시작해 보세요!, ◆ 헤어 세럼 재구매 혜택, 기간: [기간], 혜택: [제품명] 구매 시, 여행용 샴푸 [용량] 증정, *한국 [브랜드명] 매장에서 사용 가능 (아울렛, 면세점, 공식몰 제외), 쿠폰함 바로 가기"
+      },
+      {
+        "source_index": 221,
+        "filename": "IMG_5458.jpg",
+        "description": "Summer hair care routine promotion.",
+        "extracted_text": "(광고) [브랜드명], 두피 진정부터 탄탄한 뿌리까지, BEST [제품명] & [제품명], [[브랜드명] 썸머 헤어 케어 루틴], 여름철 예민해진 두피를 위한 솔루션, 과한 유분은 [제품명]로 딥클렌징! 민감한 두피는 [제품명]으로 진정&강화!, [브랜드명]과 산뜻한 헤어 컨디션을 완성하세요., ■ 기간 한정 혜택 ■, ① 두피 진단 시, 헤어 세럼 [용량] 2종 증정([기간]), ② 헤어 제품 포함 [구매조건] 이상 구매 시, 샴푸 [용량] 증정(라인 랜덤 증정, [기간]), ③ 헤어 세럼 구매 시, 괄사 증정, ④ 샴푸&컨디셔너 [용량] 세트 구매 시, 리필 [할인금액] 할인 & 헤어 브러쉬 증정([기간]), *전국 [브랜드명] 매장에서 사용 가능 (아울렛, 면세점, 공식몰 제외), *모든 혜택 한정 수량, 소진 시 종료, 혜택 보러 가기, 쿠폰함 바로 가기"
+      }
+    ]
+  },
+  {
+    "stage_index": 3,
+    "stage": "Revenue",
+    "items": [
+      {
+        "source_index": 2,
+        "filename": "IMG_0650.PNG",
+        "description": "Focused on the 'O coupon pack'. Shows overlapping coupon graphics in red and gold. Promotion: 'Extra discount for just O won purchase'.",
+        "extracted_text": "O원만 구매해도 추가 할인!, O% 증정, 추가 할인 O종 쿠폰팩, 전원증정! 최대 O원 추가 할인, 공식몰 회원이라면 O원 이상 구매 시, O원 즉시 할인!, 노니/시카/모공잡티/더비타 > O가지 라인별 추가 할인까지 야무지게 챙기세요. 💌, 쿠폰혜택 받기"
+      },
+      {
+        "source_index": 8,
+        "filename": "IMG_0656.PNG",
+        "description": "Large volume Noni Ampoule sale banner. Shows two Noni Ampoule bottles (Oml and Oml). Main color is dark blue. Price dropped to O won.",
+        "extracted_text": "대용량 노니 앰플 파격 세일, Oml O -> Oml O, O원, (O원 이상 O% 쿠폰 적용 시), ⬇️ O원으로 내려왔어요, 🍀 노니 앰플을 최저가로 구매할 수 있는, 단 일주일 📅, 🏃‍♂️ [이벤트] 종료 전에 서둘러 주세요 💨, 파격가 GET"
+      },
+      {
+        "source_index": 11,
+        "filename": "IMG_0659.PNG",
+        "description": "Low-irritation cleansing/toner products. Shows Cica BHA Blemish Toner Pad and One Step Mild Cleansing Pad.",
+        "extracted_text": "🫧 저자극으로 말끔히, 💚 지우개 라인으로 매일 쓱쓱 편하게, ✔️ 지우개 시카 바하 블레미쉬 토너 패드 O매 기획 (+O매) : O원, ✔️ 지우개 원스텝 마일드 클렌징패드 O매 기획 (+O매) : O원, 한장으로 간단히"
+      },
+      {
+        "source_index": 14,
+        "filename": "IMG_0662.PNG",
+        "description": "[플랫폼] broadcast benefits: max O% discount and O% gift for review.",
+        "extracted_text": "단 O시간, 역대급 O등 혜택, 혜택 O 할인에 할인을 더하다! 더블 할인! 방송에서만 최대 O% 할인, 카드 O% + 멤버십 O% + [결제수단] O% 추가 할인, 혜택 O 구매 리뷰 작성 시 사은품 O% 증정 (정가 O원 상당), 지금 바로 혜택을 만나보세요 >, 올해 마지막 O% 할인 혜택, 단 O시간, 역대급 혜택과 추가 할인은 오직 방송 중에만 만나볼 수 있어요. 구매 후 리뷰 작성시 정가 O원 상당 사은품을 O% 증정해드려요. 🎁, 올해 마지막 혜택"
+      },
+      {
+        "source_index": 16,
+        "filename": "IMG_0664.PNG",
+        "description": "Basic Package for blemish care. O Creams + O Pads. O% discount. Monthly O won.",
+        "extracted_text": "품절 시 판매 종료, O%, 모공잡티크림 O개 + 모공잡티패드 O매 O개, O -> O원, 월 O원 (O개월 무이자 할부), [한정수량] 곧 품절됩니다., ✔️ 베이직 패키지: 기미잡티크림 O개 & 모공잡티패드 O매 O개를 O% 할인 된 가격으로 만나보세요. 기미 관리하기 최적인 시기! 기미잡티크림을 지금 특가로 만나보세요., 빠르게 입장⚡"
+      },
+      {
+        "source_index": 17,
+        "filename": "IMG_0665.PNG",
+        "description": "Last broadcast of the year recap. Shows product bottles on a lit pedestal. Dark, starry background.",
+        "extracted_text": "단 O시간, 올해 마지막 혜택 올해 마지막 방송, ON AIR 지금 바로 입장하세요 >>, [[시간] 종료🚨] 바로 입장하세요, 올해 마지막 방송 혜택이 O시간 뒤 종료되어요. 고민하는 순간 품절! 조기 매진이 예상되니 빠르게 입장하여 앵콜 파격 혜택 놓치지 마세요. ⚡, 매진 임박 ⏰"
+      },
+      {
+        "source_index": 21,
+        "filename": "IMG_0669.PNG",
+        "description": "Benefit O for popular pads. Shows Cica Eraser Pad and Eraser Pad bundles. Blue gradient background.",
+        "extracted_text": "혜택 O 대표 인기 패드 하나만 사도 무조건 증정, 시카 지우개패드 O매 세트 : O원, 지우개패드 O매 세트 : O원, O등 패드 구매 시, 사은품 O%, 누적 판매량 O만 개 돌파! 지우개패드 or 시카 지우개패드 하나만 구매해도 무조건 사은품을 선물로 드려요. ✔️ 세트 구매 시 무료배송, 패드 쟁여둘시간"
+      },
+      {
+        "source_index": 22,
+        "filename": "IMG_0670.PNG",
+        "description": "Benefit O for Global Bestsellers like Retinal Shot and Blemish Serum. Dark gradient background.",
+        "extracted_text": "혜택 O 글로벌 대란템 최대 할인 & 최다 증정, 레티날 샷 타이트닝 부스터 O+O : O원, 브라이트닝 모공잡티 세럼 Oml : O원, 미국, 일본 O등 글로벌 대란템 할인, 미국 아마존, 일본 큐텐 O등 🔥 해외에서 먼저 알아본 화제의 아이템! 잡티부터 모공, 탄력이 고민이라면? 압도적인 효과를 지금 바로 경험해 보세요., 최대 할인&증정"
+      },
+      {
+        "source_index": 23,
+        "filename": "IMG_0671.PNG",
+        "description": "Benefit O for Lucky Box event. Shows A and B type bundles for O won.",
+        "extracted_text": "혜택 O O개 한정 럭키박스 O원, A type | B type, O원 즉시 할인시 O원, 공식몰 한정 초특가세트 O원, 오직 공식몰에서만 만날 수 있는 럭키박스가 뜨거운 성원에 힘 입어 더 럭키하게 돌아왔어요! 준비된 수량이 소진되기 전에 행운의 기회를 잡아보세요., 망설이면 품절"
+      },
+      {
+        "source_index": 28,
+        "filename": "IMG_0676.PNG",
+        "description": "Eraser Pad & Cica Eraser Pad event. Price O won / O won.",
+        "extracted_text": "이벤트 대상 품목 O, 어성초 바하 지우개 필링 패드 O매 (+O매 증정기획) : O원 -> O원, 시카 지우개 패드 O매 기획세트 : O원 -> O원, 제품 보러가기"
+      },
+      {
+        "source_index": 29,
+        "filename": "IMG_0677.PNG",
+        "description": "Blemish Pad/Serum/Sunscreen event. Prices O won / O won / O won.",
+        "extracted_text": "이벤트 대상 품목 O, 브라이트닝 모공잡티 패드 O매 (+O매 증정기획) : O -> O원, 브라이트닝 모공잡티 세럼 Oml 기획 (+Oml) : O -> O원, 브라이트닝 모공잡티 선크림 Oml 기획 (+Oml) : O -> O원, 제품 보러가기"
+      },
+      {
+        "source_index": 32,
+        "filename": "IMG_0680.PNG",
+        "description": "O원 instant discount for O원 purchase.",
+        "extracted_text": "O원 이상 구매 시, O천원 즉시 할인, O원만 구매해도 추가 할인, 공식몰 회원이라면 누구나 O천원 즉시 할인! 지금 마이페이지에서 보유쿠폰을 확인하고 추가 할인 혜택을 누려보세요 :), 쿠폰 할인 받기"
+      },
+      {
+        "source_index": 34,
+        "filename": "IMG_0682.PNG",
+        "description": "Cooling massager gift for Noni Ampoule, Blemish Cream/Mask purchase.",
+        "extracted_text": "시원한 여름을 위한 쿨한 혜택 ❄️, 노니 앰플, 모공잡티 크림, 모공잡티 크림 마스크팩 구매 시, 쿨링 마사저 증정! 한여름 더위에 달아오른 피부를 시원하게 달래보세요., 쿨링뷰티템 할인"
+      },
+      {
+        "source_index": 38,
+        "filename": "IMG_0686.PNG",
+        "description": "Benefit O: Random coupon event (max O% off or O원 off) for O원 purchase.",
+        "extracted_text": "혜택 O 최대 O% 할인 랜덤 쿠폰 이벤트, 무조건 당첨! O원 이상 추가 할인, 공식몰 회원이라면 누구나! 참여만 해도 O천원 할인 or O% 할인 쿠폰 중 무조건 당첨! O원만 구매해도 O천원부터 즉시 할인되는 역대급 혜택에 도전해보세요., 당첨 쿠폰 확인"
+      },
+      {
+        "source_index": 42,
+        "filename": "IMG_0690.PNG",
+        "description": "Benefit O: Oth Anniversary Special Set (O units limited). O원 (final O원). A/B types.",
+        "extracted_text": "혜택 O O개 한정 O주년 특별 세트, 품절 대란 초특가 세트 O원, 오픈만 하면 품절되는 알짜배기 초특가 세트가 열띤 성원에 힘입어 더욱 특별하게 돌아왔어요. 지우개패드 O매는 기본, 시카 or 노니 구성 중 원하는 타입을 골라보세요!, 초특가세트 구매"
+      },
+      {
+        "source_index": 49,
+        "filename": "IMG_0697.PNG",
+        "description": "Niacinamide O% Serum sale: O -> O won.",
+        "extracted_text": "피부결이 거칠게 느껴질 때, 나이아신아마이드 O% 세럼, O원 -> O원, 매끈매끈한~~ 피부결 세럼, 거친 결을 매끄럽게 정돈하는 나이아신 O% 피부결 세럼 ✨, 보러가기"
+      },
+      {
+        "source_index": 50,
+        "filename": "IMG_0698.PNG",
+        "description": "PDRN O% Ampoule sale: O -> O won.",
+        "extracted_text": "속부터 빈틈없이 탄탄하게, PDRN O% 앰플, O원 -> O원, 쫀득쫀득한~~ 탄력 앰플, 연어 DNA에서 추출한 PDRN O%로 피부를 건강하고 탄력있게 💦, 보러가기"
+      },
+      {
+        "source_index": 51,
+        "filename": "IMG_0699.PNG",
+        "description": "Tranexamic Acid O% Cream sale: O -> O won.",
+        "extracted_text": "요즘 따라 칙칙해 보인다면, 트라넥삼산 O% 크림, O원 -> O원, 반짝반짝한~~ 맑은톤 크림, 얼룩덜룩한 톤을 맑고 환하게 밝히는 트라넥삼산 O% 데일리 미백 크림 🌸, 보러가기"
+      },
+      {
+        "source_index": 52,
+        "filename": "IMG_0700.PNG",
+        "description": "Retinal Oppm Cream sale: O -> O won.",
+        "extracted_text": "하루하루 깊어지는 주름 고민엔, 레티날 Oppm 크림, O원 -> O원, 탱글탱글한~~ 리프팅 크림, O주 후 주름의 깊이가 달라지는 진화된 비타민A 레티날 나이트 크림 🌙, 보러가기"
+      },
+      {
+        "source_index": 55,
+        "filename": "IMG_0703.PNG",
+        "description": "Pro EGF line prices: Essence (O won), Repair Ampoule (O won), Repair Cream (O won).",
+        "extracted_text": "신제품 오픈 특가, 프로 EGF 플렉시어좀 O% 퍼스트 에센스 O원, O% 리페어 앰플 O원, O% 리페어 크림 O원, 단 O일 특별 프로모션, 지금 구매하기"
+      },
+      {
+        "source_index": 56,
+        "filename": "IMG_0704.PNG",
+        "description": "[이벤트] ([시간/날짜]). [플랫폼] Exclusive. Vitamin CE (O won), Aquaporin Cream (O won), Niacinamide Tranexamic O% (O won).",
+        "extracted_text": "[시간/날짜] [이벤트], 단 O일! [플랫폼] 단독! [이벤트], 퓨어 비타민 CE 페롤릭 앰플 O -> O원, 아쿠아포린 수분크림 O -> O원, 나이아신 트라넥삼산 O% 세럼 O -> O원, 지금 할인 받기"
+      },
+      {
+        "source_index": 59,
+        "filename": "IMG_0707.PNG",
+        "description": "Vitamin CE Ferulic Ampoule EX O. O% off. Brightening ampoule.",
+        "extracted_text": "맑고 투명한 피부 완성, 비타민 C E 페롤릭 앰플 EX, O% OFF, 브라이트닝 앰플, 순수 비타민 C와 항산화 성분으로 피부를 맑고 빛나게!, 지금 구매하기"
+      },
+      {
+        "source_index": 60,
+        "filename": "IMG_0708.PNG",
+        "description": "Shea Butter O% Hand Cream. O% off. Fragrance-free.",
+        "extracted_text": "향 없이 수분 가득, 시어버터 O% 핸드크림, O% OFF, 시어버터 핸드크림, 시어버터 O%로 손끝까지 촉촉하게!, 지금 구매하기"
+      },
+      {
+        "source_index": 61,
+        "filename": "IMG_0709.PNG",
+        "description": "Dewy Fixing Cream Tint. O% off. ",
+        "extracted_text": "촉촉 이슬광 코팅, 듀이 픽싱 크림 틴트, O% OFF, 이슬광 크림 틴트, 부드럽게 스며들어 맑게 빛나는 컬러!, 지금 구매하기"
+      },
+      {
+        "source_index": 62,
+        "filename": "IMG_0710.PNG",
+        "description": "Madecassoside O% Powder. O% off. Spot care powder.",
+        "extracted_text": "예민해진 피부에 톡톡, 마데카소사이드 O% 파우더, O% OFF, 스팟케어 파우더, 고민되는 부위에 가볍게 톡톡!, 지금 구매하기"
+      }
+    ]
+  },
+  {
+    "stage_index": 4,
+    "stage": "Referral",
+    "items": [
+      {
+        "source_index": 12,
+        "filename": "IMG_0660.PNG",
+        "description": "[브랜드] x [플랫폼], [시간/날짜] 단 하루 오늘의 특가, #노니앰플 [플랫폼] 단독 대용량, Oml O -> Oml O원, 🎁 무료배송, [🚨 [시간/날짜] 단 하루] 오직 [플랫폼]에서만 노니앰플 대용량 특가! 찬바람 부는 요즘 노니앰플로 속보습 + 급진정 둘 다 잡으세요💚, [플랫폼] 오늘특가, 공유하기"
+      },
+      {
+        "source_index": 31,
+        "filename": "IMG_0679.PNG",
+        "description": "'[이벤트]' O billion sales celebration.",
+        "extracted_text": "O억 돌파 🎉 하반기 첫 세일!, 올해 상반기에만 전년도 매출을 넘어서는 놀라운 기록을 세웠어요! 놀라운 성장 스토리를 함께 만들어주신 고객님께 진심을 담아 특별한 혜택으로 준비했어요., 최대 O% 할인"
+      },
+      {
+        "source_index": 33,
+        "filename": "IMG_0681.PNG",
+        "description": "Million Seller max O% discount & gift. Cica Eraser Pad, Retinal Shot, Blemish Sunscreen.",
+        "extracted_text": "밀리언셀러 최대 O% 할인&증정, 누적 판매량 O만 개 이상 밀리언셀러 초특가 할인! 시카 지우개패드부터 유튜버 추천 모공잡티 선크림까지. [브랜드] 대표 상품을 공식몰 단독 최대 할인 & 최다 증정으로 만나보세요., 요즘뷰티템 할인"
+      },
+      {
+        "source_index": 63,
+        "filename": "IMG_5469.jpg",
+        "description": "Olive Young 'Health Theatre' neon-themed promotion banner for health routine specials.",
+        "extracted_text": "(광고) [브랜드명], Now Playing HEALTHEATRE, 건강 루틴 특가 [날짜] ~ [날짜], 최대 [할인율]%, 헬시어터 입장! 헬시템 최대 [할인율]% 할인 중, 낮 [시간]마다 선착순 쿠폰도 받기, 헬시어터 입장, 공유하기"
+      },
+      {
+        "source_index": 66,
+        "filename": "IMG_5472.jpg",
+        "description": "Olive Day special coupon for members. High value coupons for membership and KakaoPay.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY, 단 3일간! [브랜드명] 멤버스를 위한 특별 쿠폰, [날짜] ~ [날짜], 멤버십 추가 할인 최대 [할인금액], [채널명] 결제 시 최대 [할인금액], [🎁[할인금액]] 블프에 절대 밀리지 않는 쿠폰 폭탄! [브랜드명]의 축복이 끝이 없네💚, 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 67,
+        "filename": "IMG_5473.jpg",
+        "description": "Hero Olive Young Sale with max 70% discount. Various daily benefits and luxury category highlight.",
+        "extracted_text": "(광고) [브랜드명], [연도] 올해를 빛낸 히어로 [이벤트명], 최대 [할인율]% 할인, [날짜] ~ [날짜], 🗓늘 새로운 할인 혜택 오늘 단 하루! 오늘의 특가, ⏰매일 두 번의 기회 선착순 쿠폰 알림 설정!, 👑한층 더 럭셔리하게 [브랜드명]부터 [브랜드명]까지, 특가템 확인하기, 공유하기"
+      },
+      {
+        "source_index": 68,
+        "filename": "IMG_5475.jpg",
+        "description": "Olive Young Sale countdown banner. Mentions only 3 days left for the hero sale.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜] ~ [날짜], 남은 기간 단 3일, 올해를 빛낸 히어로, [이벤트명]!, 올해의 마지막 [이벤트명]과 함께, 건강하고 아름다운 연말 준비하러 함께 가볼까요? Let's [이벤트명]!, 혜택 확인하기▶"
+      },
+      {
+        "source_index": 69,
+        "filename": "IMG_5476.jpg",
+        "description": "Olive Young Sale last day banner. Mentions it's the final day of the hero sale.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜] ~ [날짜], 오늘이 마지막날, 🏆올해를 빛낸 히어로~ [이벤트명] ✨ 오늘이 마지막 날, 놓치지 마세요!, 마지막 득템하기, 공유하기"
+      },
+      {
+        "source_index": 70,
+        "filename": "IMG_5477.jpg",
+        "description": "Olive Young Awards 2023 promotion. Mentions award-winning products and Olive Kit Awards Edition.",
+        "extracted_text": "(광고) [브랜드명], 올해의 흥행지표 [브랜드명] 어워즈, [연도] OLIVE YOUNG AWARDS, [연도] [브랜드명] 어워즈 수상상품 체험분 [수량] ~ [수량]종 랜덤, [브랜드명] 키트 어워즈 에디션 받기 >, [연도] 올해를 빛낸 수상 상품 보러 가기 👉 [브랜드명] 키트 어워즈 에디션도 받자 💚, 어워즈 입장하기, 공유하기"
+      },
+      {
+        "source_index": 71,
+        "filename": "IMG_5478.jpg",
+        "description": "Year-end gift promotion by Olive Young. Includes Olive Members benefits and discount coupons.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명]이 준비한 연말 선물 🎁, [브랜드명] 멤버스 [구매조건] 이상 구매 시 keyword 북까지! [수량] ~ [수량]종 랜덤 증정, [브랜드명] 멤버스 단독 쿠폰 [구매조건] 이상 구매 시 [할인금액], 🎁연말 선물 🎁[할인금액] 할인 쿠폰 [연도] 트렌드 키워드도 확인하기 💚, 연말 선물 받기, 공유하기"
+      },
+      {
+        "source_index": 72,
+        "filename": "IMG_5479.jpg",
+        "description": "Olive Day Plus special coupon promotion for 5 days. High value coupons for membership and KakaoPay Money.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY plus+, 단 5일간! [브랜드명] 멤버스를 위한 특별 쿠폰, [날짜] ~ [날짜], 멤버십 추가 할인 최대 [할인금액], [채널명] 결제 시 최대 [할인금액], [🎅 단 5일간!] 산타가 왔어요! [할인금액] 쿠폰 받아가세요 💚, 🎁선물 받기, 공유하기"
+      },
+      {
+        "source_index": 73,
+        "filename": "IMG_5480.jpg",
+        "description": "Happy New Year promotion banner with special New Year gifts. Highlights Olive Kit and 3-day specials.",
+        "extracted_text": "(광고) [브랜드명], HAPPY NEW YEAR [연도] [브랜드명]에서 만나는 특별한 새해 선물, UP TO [할인율]%, 더마 3일 특가, [브랜드명] 키트, 특별 기획 구성, MUST HAVE ITEM, 🎁 새해 선물이 도착했어요 🎁 [브랜드명] 키트&3일 특가 확인하기 💚, 새해 첫 혜택, 공유하기"
+      },
+      {
+        "source_index": 75,
+        "filename": "IMG_5483.jpg",
+        "description": "48-hour limited discount coupon for Olive Members.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] 멤버스를 위한 단 48시간 할인 쿠폰 도착, [구매조건] 이상 구매 시 할인 [할인금액], 할인 쿠폰 받을 올리브 모여라 🙋‍♂️ 오직 48시간 동안만! ⌛, 할인 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 76,
+        "filename": "IMG_5484.jpg",
+        "description": "Olive Day Plus special coupon banner for 5 days. Mentions Luxe Edit and membership/KakaoPay benefits.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY plus+, 단 5일간! [브랜드명] 멤버스를 위한 특별 쿠폰, [날짜] ~ [날짜], 멤버십 추가 할인 최대 [할인금액], [채널명] 결제 시 최대 [할인금액], 이 달의 Luxe Edit day [브랜드명], [🔎시선 집중] [월]엔 특별히 올리브 데이 플러스 최대 [할인금액] 쿠폰 ➕ OLIVE DAY BOX 🎁, 혜택 받기 💚, 공유하기"
+      },
+      {
+        "source_index": 77,
+        "filename": "IMG_5485.jpg",
+        "description": "February promotion highlighting Olive Kit and 3-day specials for moisturizing products.",
+        "extracted_text": "(광고) [브랜드명], [월] [브랜드명]PICK 설 기프트, [월] [브랜드명] 키트, 3일특가 보습 충전 중 💙💙💙🤍🤍, [브랜드명] 키트로 사랑 충전 ❤️ 3일특가로 보습 충전 💙, [월] 혜택 보기, 공유하기"
+      },
+      {
+        "source_index": 78,
+        "filename": "IMG_5486.jpg",
+        "description": "Olive Members exclusive 5,000 KRW discount coupon on a heart background.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] 멤버스 단독 쿠폰 [할인금액] 할인, [구매조건] 이상 구매 시, [할인금액] 할인 쿠폰 도착 ❤️ 올리브영으로 더 완벽해질 연휴 💚, 할인 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 79,
+        "filename": "IMG_5487.jpg",
+        "description": "Olive Day special coupon banner for 3 days. Includes Luxe Edit and various payment benefits.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY, 3일간 [브랜드명]을 위한 특별한 쿠폰, [날짜] ~ [날짜], 멤버십 쿠폰 할인 최대 [할인금액], [채널명] 결제 시 최대 [할인금액], 이 달의 Luxe Edit [브랜드명], [[할인금액]] 매월 25일, 쿠폰이 와르르 💚 [브랜드명]이라면 무.조.건 💚, 혜택 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 80,
+        "filename": "IMG_5488.jpg",
+        "description": "Mission Olive Collect promotion. 100% coupon issuance for participating members.",
+        "extracted_text": "(광고) [브랜드명], 내일 이후엔 사라져요 ⏰ 최소 2장 이상, 쿠폰 100% 지급, To. 소형선님 ❤️ 내일이 지나면 사라지는 쿠폰 지금 바로 다운로드 받으세요! ※최대 [할인금액] 혜택은 안.비.밀, <mission, OLIVE COLLECT!>, ① 참여하기 버튼 누르기 ▶ 쿠폰 받기, ② [월] 모은 올리브로 ▶ 쿠폰 받기, ③ 미션 성공하면 ▶ 쇼핑지원금 까지, ~[날짜]까지만 만날 수 있는 찬스! 소형선님, 클릭 한번으로 최대 혜택 모두 완성하세요♡ 보너스)올리브데이도 함께 즐기기☆"
+      },
+      {
+        "source_index": 82,
+        "filename": "IMG_5490.jpg",
+        "description": "Olive Young Sale start banner. Up to 70% discount and daily benefits.",
+        "extracted_text": "(광고) [브랜드명], 우리가 사랑하는 [이벤트명] 시작 💚, 최대 [할인율]% 할인! [이벤트명] 시작!, [날짜] ~ [날짜], 매일 달라지는 혜택 🗓 오늘 단 하루! 오늘의 특가, [시간],[시간] 매일 두 번 ✌️ 선착순 쿠폰 알림 필수 ⏰, ✨ 프리미엄한 혜택 ✨ [브랜드명] Luxe Edit, [이벤트명] 입장, 공유하기"
+      },
+      {
+        "source_index": 83,
+        "filename": "IMG_5491.jpg",
+        "description": "Olive Young Sale countdown banner. Mentions only 4 days left and first spring sale.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜] ~ [날짜], 종료까지 남은 기간, 단 4일 ❤️, 우리가 사랑하는 [이벤트명] 💚 우리 모두가 사랑하는 [이벤트명]! 올해 첫 [이벤트명]과 함께 따스한 봄날을 맞이해요 🌷, [이벤트명] 더보기"
+      },
+      {
+        "source_index": 84,
+        "filename": "IMG_5492.jpg",
+        "description": "Olive Young Sale last day banner. Mentions final day of the sale.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜] ~ [날짜], ❤️❤️ 오늘이 마지막날 ❤️❤️, [이벤트명] 오늘이 마지막 날 🌷 늦기 전에 득템하세요 💚, 마지막 특가확인, 공유하기"
+      },
+      {
+        "source_index": 85,
+        "filename": "IMG_5493.jpg",
+        "description": "March Olive Kit and special price items promotion with a locker theme.",
+        "extracted_text": "(광고) [브랜드명], [월] [브랜드명] 키트, 3일특가, 🎊 쏟아지는 혜택 🎊 [월]의 [브랜드명] 키트와 특가템들이 가득 💗, [월] 혜택 받기, 공유하기"
+      },
+      {
+        "source_index": 86,
+        "filename": "IMG_5494.jpg",
+        "description": "Olive Day special coupon banner. Mentions maximum 20,000 KRW additional discount.",
+        "extracted_text": "(광고) [브랜드명], 올리브를 위한 OLIVE DAY, [날짜] ~ [날짜], 올리브 멤버스 추가 할인 최대 [할인금액], [채널명] 결제 시 최대 [할인금액], [쿠폰🎁] 오늘은 올리브 데이 ❤️ 올리브만 최대 [할인금액] 추가 할인!, 혜택 받기 💚, 공유하기"
+      },
+      {
+        "source_index": 87,
+        "filename": "IMG_5495.jpg",
+        "description": "April Olive Pick and Olive Kit arrival notification with floral theme.",
+        "extracted_text": "(광고) [브랜드명], [월] [브랜드명]픽 & [브랜드명] 키트 도착 🌷, [브랜드명] PICK [월], [브랜드명] 키트, [브랜드명]&[브랜드명] 최대 [할인율]% 할인에 사은품까지 🎁, 내 마음대로 바꾸는 나만의 바이브 💞, 🌺 봄맞이 추천템 🌺 [월]의 [브랜드명] PICK 📍, [월] 혜택 보기, 공유하기"
+      },
+      {
+        "source_index": 88,
+        "filename": "IMG_5496.jpg",
+        "description": "APP-only Festival promotion with up to 50% discount and participation rewards.",
+        "extracted_text": "(광고) [브랜드명], APP뿐 페스티벌, [날짜] ~ [날짜], Up to [할인율]%, #100%증정 #최대[할인율]%할인 봄과 함께 다가온 APP뿐 즐기기 ❤️, ▷APP뿐 200% 즐기는 방법◁, ① '[브랜드명]'를 찾으면 누/구/나 경품증정 프라다 백부터 디올 스카프까지 'o' *매일 하면 매일 드려요♡, ② 매일 밤 12시, 쿠폰이 쏟아진다! *최대 [할인금액] 쿠폰 준비했어요♡, ③ 최대 [할인율]% APP뿐만의 특가 상품, ▶APP뿐으로 건강한 봄 보내는 법◀, ① [브랜드명]) [제품명] [용량] [원가] ▶ [할인가], ② [브랜드명]) [제품명] 기획 [원가] ▶ [할인가]"
+      },
+      {
+        "source_index": 89,
+        "filename": "IMG_5497.jpg",
+        "description": "Olive Members exclusive 5,000 KRW discount coupon on a heart bubble background.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] 멤버스 단독 쿠폰 [구매조건] 이상 구매 시 [할인금액] 할인, 단 이틀! [브랜드명] 멤버스 쿠폰 받고 ❤️ 설레는 봄 만끽하기 🌸, 할인 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 91,
+        "filename": "IMG_5499.jpg",
+        "description": "Olive Day special coupon with membership and KakaoPay benefits.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 올리브를 위한 특별한 쿠폰, [날짜] ~ [날짜], 멤버스 추가 할인 최대 [할인금액], [채널명] 결제 시 최대 [할인금액], [💚올리브 데이] 쉿, 여기 올리브 아닌 사람 없죠? 지금 바로 쿠폰 받아가세요! 🎁, 쿠폰 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 92,
+        "filename": "IMG_5500.jpg",
+        "description": "Olive Health Dive promotion featuring health kits and daily/weekly hero deals.",
+        "extracted_text": "(광고) [브랜드명], ✨ [이벤트명] ✨, 단 하루만! 선착순 증정 [브랜드명] 키트 🎁, 매일 새로운 브랜드 특별한 가격! [제품라인] 데일리 히어로 ❤️, 일주일간 최대 [할인율]% 특가템 [제품라인] 위클리 히어로 💚, 헬스케어 시작, 공유하기"
+      },
+      {
+        "source_index": 95,
+        "filename": "IMG_5504.jpg",
+        "description": "May Olive Members exclusive 5,000 KRW discount coupon on a pink bubble background.",
+        "extracted_text": "(광고) [브랜드명], [월] 올리브 키트, [브랜드명] 멤버스 단독 쿠폰 [구매조건] 이상 구매 시 [할인금액] 할인, 혹쉬.. 너도 선물 고민 중? 🎁 ✨ 쿠폰+증정 ✨ 지금이 딱 좋은 타이밍, 할인 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 96,
+        "filename": "IMG_5505.jpg",
+        "description": "Healthy Tag campaign banner. Encourages finding personal health items at Olive Young Health+.",
+        "extracted_text": "(광고) [브랜드명], ✔️ What's your Healthy Tag?, [브랜드명] 헬스+에서 인생 헬스템 찾기 💚, 헬스케어 시작, 공유하기"
+      },
+      {
+        "source_index": 97,
+        "filename": "IMG_5506.jpg",
+        "description": "May Olive Day promotion banner. Mentions membership and KakaoPay benefits.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 올리브를 위한 특별한 쿠폰, [날짜] ~ [날짜], 멤버스 최대 할인 [할인금액], [채널명] 최대 할인 [할인금액], 💌 쿠폰 있어요 💌 [월]의 올리브 데이 올리브라면 지금 바로 확인 💚, 혜택 확인 👆, 공유하기"
+      },
+      {
+        "source_index": 98,
+        "filename": "IMG_5507.jpg",
+        "description": "Summer Olive Young Sale start banner with pixel art style.",
+        "extracted_text": "(광고) [브랜드명], 우리의 여름은 온통, [이벤트명] 🌊, 최대 [할인율]% 할인, [이벤트명] 시작, [날짜] ~ [날짜], 매일 달라지는 특가 상품! 오늘의 특가 보기, 하루 두 번, 선착순 쿠폰! ⏰ 매일 [시간], [시간] ⏰, 프리미엄도 역시 [브랜드명] ✨ Luxe Edit ✨, [이벤트명] 입장, 공유하기"
+      },
+      {
+        "source_index": 99,
+        "filename": "IMG_5508.jpg",
+        "description": "Summer Olive Young Sale countdown banner. Mentions only 4 days left.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜] ~ [날짜], 📢 ... 종료까지 남은 기간, 단 4일 ... 📢, 올 여름, [이벤트명]으로 한방에 준비! ⛱️, 우리의 여름은 온통, [이벤트명] 🌊 [이벤트명]과 함께라면 여름도 두렵지 않아! 선착순 쿠폰, 오늘의 특가 등 [이벤트명]이 준비한 더 많은 혜택을 알아보세요! 👉, 더 알아보기 👆"
+      },
+      {
+        "source_index": 100,
+        "filename": "IMG_5509.jpg",
+        "description": "Summer Olive Young Sale last day banner. Mentions final day and up to 70% discount.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜] ~ [날짜], 📢 ... 오늘이 마지막 날 ... 📢, [오늘 종료] 아 맞다, [이벤트명]! 🤫 최대 [할인율]% 초특급 할인받으러 지금 당장 달려가자 💚, [이벤트명] 입장, 공유하기"
+      },
+      {
+        "source_index": 101,
+        "filename": "IMG_5510.jpg",
+        "description": "June Olive Pick promotion with a green summer theme. Mentions Dr.G and Round Lab specials.",
+        "extracted_text": "(광고) [브랜드명], 이달에 꼭 만나봐야 할 [월] [브랜드명]PICK, JUNE [브랜드명] 키트, 여름을 깨우는 [월]의 [브랜드명] 키트 💛 [브랜드명] [브랜드명] 특가도 놓치지마 🎊, [월] 혜택 받기, 공유하기"
+      },
+      {
+        "source_index": 102,
+        "filename": "IMG_5511.jpg",
+        "description": "June Recipe Kit and Men's All-in-one Kit arrival promotion with a beach theme.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명]과 함께 준비하는 여름, 레시피 키트 & 맨즈 올인원 키트, [월]은 선물이 [수량]개나?! 🍉 레시피 키트 & 맨즈 올인원 키트 도착 🎁, 혜택 바로 보기, 공유하기"
+      },
+      {
+        "source_index": 104,
+        "filename": "IMG_5513.jpg",
+        "description": "June Olive Day special coupon with membership and KakaoPay benefits on an underwater background.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 올리브를 위한 특별한 쿠폰, [날짜] ~ [날짜], 멤버스 최대 할인 [할인금액], [채널명] 최대 할인 [할인금액], [[할인금액] 할인] 베테랑 올리브라면 놓치지 않아 🔥 매월 25일 돌아오는 쿠폰 혜택 꼭 받아 가세요 📢, 쿠폰 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 105,
+        "filename": "IMG_5514.jpg",
+        "description": "July Olive Kit and Body & Hair MEGA special week promotion.",
+        "extracted_text": "(광고) [브랜드명], [월]의 [브랜드명] 키트, 바디 & 헤어 MEGA 특가, 핫한 혜택이 가득한 [월]의 [브랜드명] ❤️ + 바디 & 헤어 Special Week 즐기기 😘, [월] 혜택 받기, 공유하기"
+      },
+      {
+        "source_index": 107,
+        "filename": "IMG_5516.jpg",
+        "description": "Olive Members exclusive 5,000 KRW discount coupon on a melting ice cream background.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] 멤버스 단독 쿠폰 [구매조건] 이상 구매 시 [할인금액] 할인, 💌 [할인금액] 할인 쿠폰 당첨! 올스킨 올케어 키트까지 완벽한 [월] 만들기 🎁, 쿠폰 확인 하기, 공유하기"
+      },
+      {
+        "source_index": 108,
+        "filename": "IMG_5517.jpg",
+        "description": "July Olive Day Plus special coupon banner (5 days).",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY plus+, 단 5일간! 올리브 멤버스를 위한 특별 쿠폰, [날짜] ~ [날짜], [채널명] 결제 시 최대 [할인금액] 할인, 멤버스 추가 할인 최대 [할인금액], [쿠폰 도착 🛫] 올리브라면 최대 [할인금액] 할인 💙 단 5일간! ➕ 올리브 데이 플러스 ➕ 깜짝 혜택 놓치지 마세요 ❤️, 할인 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 109,
+        "filename": "IMG_5518.jpg",
+        "description": "August Olive Kit and Clean Beauty special promotion with a beach theme.",
+        "extracted_text": "(광고) [브랜드명], [월]의 [브랜드명] 키트, 클린뷰티 특가, 💫 [월]의 [브랜드명] 키트와 함께 시원한 여름 🎁 📢 우리의 일상을 지키는 클린뷰티 탐구생활 🔍, 나의 혜택 보기, 공유하기"
+      },
+      {
+        "source_index": 110,
+        "filename": "IMG_5519.jpg",
+        "description": "Olive Young Health promotion emphasizing health care is the 'right' choice.",
+        "extracted_text": "(광고) [브랜드명], 헬스케어도 나에게 옳은쪽!, [브랜드명] 헬스+, 오직 [브랜드명] 채널 친구만! 🎁 헬스 다이브 키트 증정, 매일매일 혜택이 달라져요 🗓️ 헬스 데일리 히어로, 일주일동안 만나는 특급 혜택 🍀 헬스 위클리 히어로, 증정 쿠폰 받기, 공유하기, 헬스 다이브 키트 증정 무료 쿠폰 [브랜드명] 매장에서 사용 가능"
+      },
+      {
+        "source_index": 112,
+        "filename": "IMG_5521.jpg",
+        "description": "Olive Members exclusive 5,000 KRW discount coupon with silver ring graphic.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] 멤버스 단독 쿠폰 [할인금액]원, [날짜] - [날짜], [구매조건] 이상 구매 시, 지금 당장 [브랜드명]으로 달려가야 하는 이유? 🔥 #[할인금액]원 쿠폰 #헬스 다이브 #우먼웰니스 키트 💚, 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 113,
+        "filename": "IMG_5522.jpg",
+        "description": "August Olive Day special coupon with membership and KakaoPay benefits on a bubble background.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 올리브만을 위한 특별 쿠폰, [날짜] ~ [날짜], 멤버스 추가 할인 최대 [할인금액], [채널명] 결제 시 최대 [할인금액], [쿠폰 도착 🎁] 올리브라면 확인 필수! 여름 마무리는 올리브 데이와 함께 가보자고 💙, 혜택 확인하기, 공유하기"
+      },
+      {
+        "source_index": 114,
+        "filename": "IMG_5523.jpg",
+        "description": "Autumn Olive Young Sale start banner. Mentions max 70% discount and daily benefits.",
+        "extracted_text": "(광고) [브랜드명], 우리의 가을을 버라이어티하게, [이벤트명], 최대 [할인율]% 할인, [이벤트명] 시작!, [날짜] ~ [날짜], [시간], [시간] 매일 두 번! ⏰ 선착순 쿠폰 받기, 오늘의 특가 💝 단 하루만! 오늘이 기회, 매일 달라지는 오늘의 브랜드 🖤 쿠폰&특가로 GET!, [이벤트명] 입장, 공유하기"
+      },
+      {
+        "source_index": 115,
+        "filename": "IMG_5524.jpg",
+        "description": "Autumn Olive Young Sale countdown banner featuring colorful furry characters. Only 4 days left.",
+        "extracted_text": "(광고) [브랜드명], SALE UP TO [할인율]%, [이벤트명], [이벤트명] 남은 기간 단 4일, 우리의 가을을 버라이어티하게, [이벤트명] 🍂 [이벤트명]과 함께 따스한 가을을 보내요! 선착순 쿠폰, 오늘의 브랜드 등 더 많은 혜택을 알아보세요 👉, 더 알아보기 ▶️"
+      },
+      {
+        "source_index": 116,
+        "filename": "IMG_5525.jpg",
+        "description": "Autumn Olive Young Sale last day banner. Mentions max 70% discount ending today.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜] ~ [날짜], 오늘이 마지막 날, ✨ 오늘이 끝나면 사라질 마지막 기회 ✨ 최대 [할인율]% 초특급 할인 서두르세요! 🏃‍♂️, 세일 입장 ▶️, 공유하기"
+      },
+      {
+        "source_index": 117,
+        "filename": "IMG_5526.jpg",
+        "description": "September Olive Kit and Seoul Beauty Kit promotion with a light blue and green theme.",
+        "extracted_text": "(광고) [브랜드명], [월]의 [브랜드명] 키트 & 서울뷰티 키트, [선물 🎁] 올영세일 가고 키트 폭탄 왔다! 💣 [브랜드명] 키트 + 서울뷰티 키트 모두 받기 💚, 혜택 받기, 공유하기"
+      },
+      {
+        "source_index": 118,
+        "filename": "IMG_5527.jpg",
+        "description": "Seoul Beauty Special promotion with a destination signpost theme highlighting major Seoul areas.",
+        "extracted_text": "(광고) [브랜드명], Make Up My SEOUL, [브랜드명], 서울뷰티 [날짜] ~ [날짜], 브랜드 특가, Gangnam, Cheongdam, Seongsu, Hongdae, [특가 도착 📢] 이번 목적지는 서울뷰티 🚩 나만의 서울, 나만의 뷰티, [브랜드명] 서울뷰티 💜, 특가 확인하기, 공유하기"
+      },
+      {
+        "source_index": 119,
+        "filename": "IMG_5528.jpg",
+        "description": "September Olive Day special coupon with membership and KakaoPay benefits shown on a simple pink stand.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 올리브만을 위한 특별 쿠폰, [날짜] ~ [날짜], 올리브 멤버스 추가 최대 [할인금액] 즉시할인, [채널명] 결제 시 최대 [할인금액] 할인, [🎁쿠폰] 쿠폰 배송이 완료되었습니다 🙂 올리브라면 최대 [할인금액] 즉시 할인 💜, 할인 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 120,
+        "filename": "IMG_5529.jpg",
+        "description": "October Olive Kit 'Slow-Aging' special promotion with autumn leaf graphics.",
+        "extracted_text": "(광고) [브랜드명], [월]의 [브랜드명] 키트 슬로우에이징 특가, [증정 🎁] 나의 피부 시간을 느리게, ⌛ 소중한 피부 지키기, 지금 시작하세요! 💞, 키트 받기, 공유하기"
+      },
+      {
+        "source_index": 121,
+        "filename": "IMG_5530.jpg",
+        "description": "Slow Aging Kit promotion with products like Anua and a 5,000 KRW coupon.",
+        "extracted_text": "(광고) [브랜드명], 나의 피부 시간을 느리게 슬로우에이징 키트, [[할인금액] 쿠폰] 피부 고민에 맞는 관리법 [브랜드명] 슬로우에이징과 함께해요 🧡, 혜택 보러가기, 공유하기"
+      },
+      {
+        "source_index": 122,
+        "filename": "IMG_5531.jpg",
+        "description": "October Olive Day special coupon with membership and KakaoPay benefits on an orange background.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 올리브만을 위한 특별 쿠폰, [날짜] ~ [날짜], 올리브 멤버스 추가 최대 [할인금액] 즉시할인, [채널명] 결제 시 최대 [할인금액] 즉시할인, [쿠폰💣] [브랜드명]은 유명한 쿠폰 맛집임 😋 ⏰ 단 3일! 올리브라면 지금 바로 받아가세요 💚, 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 123,
+        "filename": "IMG_5532.jpg",
+        "description": "Olive Young Black Friday Coming Soon banner with a yellow mascot and a shopping cart.",
+        "extracted_text": "(광고) [브랜드명], [날짜] - [날짜], [이벤트명] COMING SOON, #1년에한번 #[이벤트명] #D-2 #[날짜](금)에 시작 ❤️, ★스피드 올영 챌린지★ 미리 시작! 총 4천명 선물 드림 🎁 (내일까지 참여자 전원 쿠폰 지급), ✔️ 올영 블프 혜택 모음 Zip, ① 매일 오전 [시간], 선착순 랜덤쿠폰, ② ~[할인율]%할인 라스트픽, ③ 일주일 특가&하루특가, 소형선님! 올영 블프 함께해요 ✨, 블프 미리 준비하기 ▶️"
+      },
+      {
+        "source_index": 124,
+        "filename": "IMG_5533.jpg",
+        "description": "Olive Young Black Friday start banner with a gift box and coupons.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜](금) ~ [날짜](목), [선착순 쿠폰 🎁] 역대급 [이벤트명] 시작! 1년에 단 한 번! 최대 [할인금액] 쿠폰 혜택 🖤, 블프 혜택 확인, 공유하기"
+      },
+      {
+        "source_index": 125,
+        "filename": "IMG_5534.jpg",
+        "description": "Health Dive Kit giveaway promotion for one day (11.8).",
+        "extracted_text": "(광고) [브랜드명], 올영에서 차근차근 헬스케어 정주행 🏃‍♀️, [이벤트명], [날짜] 단, 하루 선착순 증정, 올영에서 헬스케어 정주행 하고 🏃‍♀️ 지금 바로 헬스 다이브 키트 받자! 🎁, 키트 받으러가기, 공유하기"
+      },
+      {
+        "source_index": 127,
+        "filename": "IMG_5536.jpg",
+        "description": "Olive Members exclusive 5,000 KRW discount coupon for two days (11.15-11.16).",
+        "extracted_text": "(광고) [브랜드명], 올리브 멤버스 단독 쿠폰, [날짜](금) - [날짜](토) 단 이틀간!, [구매조건] 이상 구매 시 [할인금액] 할인, [✨[할인금액]] 블프 놓치신 분 주목! 딱, 이틀만 ⏰ [할인금액] 쿠폰 드림! 지금 당장 받으러 가자 💨, 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 130,
+        "filename": "IMG_5539.jpg",
+        "description": "November Olive Day special coupon with membership and KakaoPay benefits on an outdoor billboard theme.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 올리브만을 위한 특별 쿠폰, [날짜] ~ [날짜], 올리브 멤버스 추가 최대 [할인금액] 즉시할인, [채널명] 결제 시 최대 [할인금액] 즉시할인, [🎀쿠폰] 올리브들을 위한 쿠폰 축제! 🥳 3일간, 최대 [할인금액] 🎁 쿠폰과 혜택 잔뜩 뿌립니다!, 쿠폰 확인하기, 공유하기"
+      },
+      {
+        "source_index": 132,
+        "filename": "IMG_5541.jpg",
+        "description": "December Olive Young Sale start banner with pink and blue star icons.",
+        "extracted_text": "(광고) [브랜드명], 이 겨울, 가장 특별 ✨ [이벤트명], 최대 [할인율]% 할인, [이벤트명] 시작!!, [날짜] - [날짜], 매일매일 달라져요! 오늘의 특가 확인 👀, 하루에 [수량]번, 선착순 쿠폰! ⏰ 매일 [시간], [시간] ⏰, 가장 프리미엄한 베네핏 ✨ Luxe Edit ✨, [이벤트명] 시작, 공유하기"
+      },
+      {
+        "source_index": 133,
+        "filename": "IMG_5542.jpg",
+        "description": "December Olive Young Sale countdown banner with pink bubble text. 3 days left.",
+        "extracted_text": "(광고) [브랜드명], [할인율]% SALE UP TO, [이벤트명], [날짜] - [날짜], 3일 뒤면 끝나요!, 🌟 이 겨울 가장 특별, [이벤트명] 🌟 이 겨울 가장 특별! [이벤트명] ✨ 올해의 마지막 [이벤트명]과 함께 따뜻한 겨울을 보내세요 ❤️ 선착순 쿠폰, 오늘의 브랜드 등 더 많은 혜택을 알아보세요 🥳, 더 알아보기 ▶️"
+      },
+      {
+        "source_index": 134,
+        "filename": "IMG_5543.jpg",
+        "description": "December Olive Young Sale last day banner with a megaphone icon.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명], [날짜] - [날짜], 오늘이 마지막 날!, [[오늘 종료 📢]] [이벤트명] 마지막 날 🌟 최대 [할인율]% 할인의 마지막 기회 💚, 마지막 날 입장, 공유하기"
+      },
+      {
+        "source_index": 135,
+        "filename": "IMG_5544.jpg",
+        "description": "December Olive Young Awards 10th anniversary kit promotion with a golden trophy graphic.",
+        "extracted_text": "(광고) [브랜드명], 12월 [브랜드명] 어워즈, ★ 올리브 키트 어워즈 에디션 ★ 어워즈 선착순 쿠폰, [구매조건] 이상 구매 시 [할인금액] 원, 2024년을 빛낸 어워즈 [수량]위 상품 보러 가기 👆 다양한 혜택들로 연말을 따뜻하게 만들어드릴게요 💛, 어워즈 보러가기, 공유하기"
+      },
+      {
+        "source_index": 136,
+        "filename": "IMG_5545.jpg",
+        "description": "Olive Young Awards 10th anniversary 'Hall of Fame' special sale in a snow globe setup.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] 어워즈 10주년 명예의 전당, [[할인🎀]] 너도 이거 써? 올해 가장 사랑받은 [브랜드명]템이 궁금하다면? 💚 명예의 전당 10주년 기념 특별 할인으로 득템까지 🎁, 할인 받기, 공유하기"
+      },
+      {
+        "source_index": 138,
+        "filename": "IMG_5547.jpg",
+        "description": "December Olive Day Plus holiday coupon banner with a Christmas wreath background.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY plus+, 올리브만을 위한 특별 쿠폰, [날짜] ~ [날짜], 올리브 멤버스 추가 최대 [할인금액] 즉시할인, [채널명] 결제 시 최대 [할인금액] 즉시할인, [[단 5일]] 산타가 준비한 선물 🎅 최대 [할인금액] 쿠폰 🎄 이번 홀리데이는 올리브 데이와 💚, 선물 열기 🎁, 공유하기"
+      },
+      {
+        "source_index": 141,
+        "filename": "IMG_5550.jpg",
+        "description": "New Year New benefits 5,000 KRW discount coupon on a snowy background.",
+        "extracted_text": "(광고) [브랜드명], 올리브 멤버스 단독 쿠폰, [날짜](금) ~ [날짜](토), 단 이틀 간!, [구매조건] 이상 구매 시 [할인금액] 원, [[할인금액] 쿠폰 💝] 새해 선물이 도착했어요 단 2일만, 기회 놓치지 말고 바로 달려가기 💨, 쿠폰 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 142,
+        "filename": "IMG_5551.jpg",
+        "description": "January Olive Day Plus special coupon banner featuring envelopes and cards.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY plus+, 올리브만을 위한 특별 쿠폰, [날짜] ~ [날짜], 단 5일, 올리브 멤버스 추가 최대 [할인금액] 즉시할인, [채널명] 결제 시 최대 [할인금액] 즉시할인, [[🎁쿠폰 왔다!]] 올리브 데이 쿠폰 봉투 도착 💌 올리브라면 최대 [할인금액] 할인 😘, 할인 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 143,
+        "filename": "IMG_5552.jpg",
+        "description": "February Olive Kit and 4-day special promotion with a pink heart and bubble theme.",
+        "extracted_text": "(광고) [브랜드명], [월]의 [브랜드명] 키트 & [수량]일 특가, [증정 💗] [월]의 [브랜드명] 키트 & [수량]일 특가 왔어요! 💦, 키트 받기 🎁, 공유하기"
+      },
+      {
+        "source_index": 145,
+        "filename": "IMG_5555.jpg",
+        "description": "February Olive Day special coupon with membership and KakaoPay benefits.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 올리브만을 위한 특별 쿠폰, [날짜] ~ [날짜], 단 3일, 올리브 멤버스 추가 최대 [할인금액] 즉시 할인, [채널명] 결제 시 최대 [할인금액] 즉시 할인, [🎁 쿠폰 도착] 올리브 멤버스 한정 쿠폰! 최대 [할인금액] 할인 받기 💞, 할인 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 146,
+        "filename": "IMG_5556.jpg",
+        "description": "March Olive Young Sale start banner with clover and floral motifs.",
+        "extracted_text": "(광고) [브랜드명], 우리가 원하던 [이벤트명] 시작 🍀, [날짜] - [날짜], 오늘 단 하루 진행하는 깜짝특가 ✨ 매일 알려드려요!, 매일 받는 선착순 쿠폰 ⏰ [시간],[시간],[시간] 세 번!, [브랜드명]에서 만나는 프리미엄 브랜드, Luxe Edit, [이벤트명] 시작, 공유하기"
+      },
+      {
+        "source_index": 148,
+        "filename": "IMG_5558.jpg",
+        "description": "March Olive Young Sale last day banner with a pink background and clover icons.",
+        "extracted_text": "(광고) [브랜드명], 오늘이 마지막날 [이벤트명], [날짜] - [날짜], [이벤트명] 마지막 날이에요 🍀 ⏰ 오늘까지만 최대 [할인율]% 할인!, [이벤트명] 입장, 공유하기"
+      },
+      {
+        "source_index": 149,
+        "filename": "IMG_5559.jpg",
+        "description": "March Olive Kit and 4-day special promotion with a green field theme.",
+        "extracted_text": "(광고) [브랜드명], [월]의 [브랜드명] 키트 & [수량]일 특가, [증정 🍀] [월]의 [브랜드명] 키트! [수량]일 특가로 득템까지 🌼, 키트 받기 🎁, 공유하기"
+      },
+      {
+        "source_index": 150,
+        "filename": "IMG_5560.jpg",
+        "description": "March Olive Day 3-Combo benefit promotion with multiple discount cards.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 3 Combo 혜택! 올리브만을 위한 특별 쿠폰 [날짜] - [날짜], 단 3일, ① 오직 올리브 데이 올리브 특가, ② 추가 쿠폰 할인 최대 [할인율]%, ③ [브랜드명] [채널명] [할인율]% 청구 할인, [🎁 쿠폰 도착] 올리브들을 위한 3 Combo 혜택 💚 [수량]일간의 특급 할인 🚅, 쿠폰 혜택 받기, 공유하기"
+      },
+      {
+        "source_index": 152,
+        "filename": "IMG_5562.jpg",
+        "description": "April Olive Kit 'As Slow As Possible' (Slow Aging) promotion featuring a pink clock face.",
+        "extracted_text": "(광고) [브랜드명], 피부속도, 나만의 루틴으로 As Slow As Possible 슬로우에이징 키트 & 특가, [선물명], [증정 🧡] 슬로우에이징 나만의 루틴으로 ⏰ 슬로우에이징 키트와 특가 ✨ 지금 [브랜드명]에서 만나요!, 키트 받기 🎁, 공유하기"
+      },
+      {
+        "source_index": 155,
+        "filename": "IMG_5565.jpg",
+        "description": "Olive Members exclusive 5,000 KRW discount coupon for two days (Apr 11-12) with an alarm clock graphic.",
+        "extracted_text": "(광고) [브랜드명], 올리브 멤버스 단독 쿠폰, 단 이틀 간!, [날짜](금) ~ [날짜](토), [구매조건] 이상 구매 시 [할인금액] 원 할인쿠폰, [[할인금액] 쿠폰] 도착 💌 이번 주 슬로우에이징 특가도 체크! 🧡, 쿠폰 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 158,
+        "filename": "IMG_5569.jpg",
+        "description": "April Olive Day 3 major benefits promotion with pink and green coupon cards.",
+        "extracted_text": "(광고) [브랜드명], OLIVE DAY 올리브만을 위한 3가지 혜택, [날짜](금) ~ [날짜](일), 단 3일, 오직 올리브 데이 올리브 특가, 올리브 멤버스 할인 최대 [할인금액], 올리브영 현대카드 최대 [할인금액] 청구할인, [[🎁쿠폰]] 올리브 데이! 최대 [할인금액] 쿠폰 받기 🌸 내가 받을 수 있는 혜택이 궁금하다면? 💚, 쿠폰 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 159,
+        "filename": "IMG_5570.jpg",
+        "description": "May Health Supplement Grand Sale featuring product images and lightning bolt icons.",
+        "extracted_text": "(광고) [브랜드명], 건강식품 대전 최대 [할인율]% 할인, [날짜](목) ~ [날짜](목), [[특가 ⚡️]] 체력이 필요한 모든 순간 💪 건강식품 대전+ 최대 [할인금액] 쿠폰+[브랜드명]키트 증정 💙, 키트 받기 🎁, 공유하기"
+      },
+      {
+        "source_index": 160,
+        "filename": "IMG_5571.jpg",
+        "description": "Olive Members exclusive 5,000 KRW discount coupon for three days (May 9-11) with a large heart background.",
+        "extracted_text": "(광고) [브랜드명], 올리브 멤버스 단독 쿠폰 [구매조건] 이상 구매 시 [할인금액] 원 할인, [날짜](금) ~ [날짜](일) 단 3일!, [[📢단 3일간]] [할인금액] 쿠폰 💞 체력 충전 특가, 최대 [할인율]% 할인도 만나요 🌟, 쿠폰 받기 ❤️, 공유하기"
+      },
+      {
+        "source_index": 162,
+        "filename": "IMG_5573.jpg",
+        "description": "June Olive Young Sale start banner with vibrant pink and green comic-style graphics.",
+        "extracted_text": "(광고) [브랜드명], 최대 [할인율]%할인! [이벤트명] 시작 🎊, 혜택이 빵! 터지는 [이벤트명] [날짜]-[날짜], [이벤트명] 쿠폰 혜택, 더 커졌다 😲 최대 [할인금액]!, 오직 오늘만! 깜짝특가 OPEN 🥳 매일 알려드려요!, [이벤트명]에서 만나는 프리미엄 브랜드, Luxe Edit, [이벤트명] 시작, 공유하기"
+      },
+      {
+        "source_index": 164,
+        "filename": "IMG_5575.jpg",
+        "description": "June Olive Young Sale last day banner with vibrant graphics.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명] [날짜]-[날짜], 오늘이 마지막 날, 🔥 [이벤트명] 마지막 날 최대 [할인율]%할인 종료 임박 ⏰ 놓치지 마세요!, [이벤트명] 입장, 공유하기"
+      },
+      {
+        "source_index": 165,
+        "filename": "IMG_5576.jpg",
+        "description": "June Olive Kit and 3-day special promotion with Summer Essentials box.",
+        "extracted_text": "(광고) [브랜드명], [월] [브랜드명] 키트 & [수량]일 특가, [날짜](금) ~ [날짜](일) 단 [수량]일!, [증정 💙] 여름 필수템! [브랜드명] 키트 ⛱️ [수량]일 특가 ⏰와 함께 여름 준비 시작~, 키트 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 167,
+        "filename": "IMG_5578.jpg",
+        "description": "July Olive Young x Sanrio Characters collaboration 'LOVE SUMMER' event with characters eating watermelon.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명]에 [파트너명]가 놀러왔어요! LOVE SUMMER, [브랜드명] X [파트너명], 🍉 [브랜드명] X [파트너명]의 만남! LOVE SUMMER 출발 💞, 특별 굿즈 받기, 공유하기"
+      },
+      {
+        "source_index": 170,
+        "filename": "IMG_5581.jpg",
+        "description": "July Summer Festa coupon (48 hours) featuring Sanrio characters in athletic gear.",
+        "extracted_text": "(광고) [브랜드명], 단 [시간]! 쿠폰 받고 여름 즐기기, [구매조건] 이상 구매 시 [할인금액] 원 할인쿠폰, 단 [시간]! [할인금액] 할인 쿠폰 ⏰ 썸머페스타 특가도 놓치지 마세요 !!!, 쿠폰 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 172,
+        "filename": "IMG_5583.jpg",
+        "description": "August Olive Kit and 3-day special promotion with Summer Cool Tip box.",
+        "extracted_text": "(광고) [브랜드명], [월] [브랜드명] 키트 & [수량]일 특가, [증정] 여름템 가득한 [브랜드명] 키트 단 [수량]일만! 특가 혜택까지 만나보세요 💚, 혜택 보기 👆, 공유하기"
+      },
+      {
+        "source_index": 173,
+        "filename": "IMG_5584.jpg",
+        "description": "August Men's Care Week promotion featuring male-targeted stickers and a 5,000 KRW discount coupon.",
+        "extracted_text": "(광고) [브랜드명], 올리브 멤버스 단독 쿠폰 단 이틀간!, [날짜](금) ~ [날짜](토), [이벤트명], [구매조건] 이상 구매 시 [할인금액] 원 할인쿠폰, [📣단 [시간]] [할인금액] 쿠폰 도착 [이벤트명] 특가도 바로 확인하기 💪, 할인 쿠폰 받기, 공유하기"
+      },
+      {
+        "source_index": 175,
+        "filename": "IMG_5586.jpg",
+        "description": "August-September Olive Young Sale start banner with vibrant cosmic-style graphics.",
+        "extracted_text": "(광고) [브랜드명], [이벤트명] 💫 모두를 YOUNG에 가까이, [이벤트명] [날짜]-[날짜], [이벤트명] 쿠폰 대방출 ⭐ 최대 [할인금액] 쿠폰 ⭐, 매일 다른 브랜드 특급 혜택 단 하루 깜짝특가!, [브랜드명]에서 만나는 프리미엄 브랜드, Luxe Edit, [이벤트명] 시작, 공유하기"
+      },
+      {
+        "source_index": 177,
+        "filename": "IMG_5588.jpg",
+        "description": "September Olive Young Sale last day banner with a pink background and vibrant text.",
+        "extracted_text": "(광고) [브랜드명], 오늘이 마지막날 [이벤트명] [날짜]-[날짜], [이벤트명] 마지막 날 🔥 최대 [할인금액] 쿠폰 🔥 최대 [할인율]% 할인까지! 바로 확인하기 👀, 최대 혜택 확인, 공유하기"
+      },
+      {
+        "source_index": 178,
+        "filename": "IMG_5589.jpg",
+        "description": "September Olive Kit and Color Beauty special promotion featuring various cushion foundation products.",
+        "extracted_text": "(광고) [브랜드명], [월] [브랜드명] 키트 & 컬러뷰티 특가, [🎁 선착순] [월] [브랜드명] 키트 증정 컬러뷰티 특가까지 지금 확인하기! 💄, 키트 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 181,
+        "filename": "IMG_5592.jpg",
+        "description": "October Hair & Body Olive Kit and special promotion with balloons in the sky.",
+        "extracted_text": "(광고) [브랜드명], [월] [브랜드명] 키트 & 헤어바디 특가, [🎁 선착순] [월] 헤어바디 [브랜드명] 키트 💞 한층 더 아름답게, 특가 혜택까지 GET!, 키트 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 184,
+        "filename": "IMG_5596.jpg",
+        "description": "November Olive Young 'Blue Friday' sale start banner with yellow and black theme and a character egg.",
+        "extracted_text": "(광고) [브랜드명], 최대 [할인율]% 할인 🖤 [이벤트명] 시작, [날짜] - [날짜], 블프라이즈 박스 🎁 [할인율]만원 상당의 정품을 [할인율]만원에!, 매일 받는 선착순 쿠폰 ⏰ 오전 [시간]/오후 [시간] 두 번, 최대 [할인율]% 할인 LAST PICK 👆 득템하러 가기!, 올영 블프 입장, 공유하기"
+      },
+      {
+        "source_index": 185,
+        "filename": "IMG_5597.jpg",
+        "description": "November Olive Members exclusive 5,000 KRW discount coupon for two days (Nov 14-15) with an orange bubble background.",
+        "extracted_text": "(광고) [브랜드명], 올리브 멤버스 단독 쿠폰 단 이틀간!, [날짜](금) ~ [날짜](토), [구매조건] 이상 구매 시 [할인금액] 원 할인 쿠폰, 딱 이틀만 💛 [할인금액] 쿠폰 도착! 콜라겐 & 비타민 특가까지 지금 만나보기 🥰, 쿠폰 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 186,
+        "filename": "IMG_5598.jpg",
+        "description": "November Olive Young N-Seongsu 1st anniversary promotion featuring store exterior and gift illustrations.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] N 성수 [수량]주년 단독 프로모션 [날짜](월) ~ [날짜](일), [브랜드명] N 성수 1주년 함께 축하해 주세요 🎊 - 기간: [날짜](월) ~ [날짜](일) [[브랜드명] N 성수 단독 프로모션] 🎁 N 성수 단독 일주일 특가 🎁 N 성수 굿즈 토트백 증정 ([할인율]만원 이상) 🎁 기프트카드 [할인율]만원 증정 ([할인율]만원 이상) 🎁 데일리 N 성수 굿즈 선착순 증정 (구매 시), 혜택 확인"
+      },
+      {
+        "source_index": 189,
+        "filename": "IMG_5601.jpg",
+        "description": "November-December Olive Young Sale start banner with a magic/circus theme on a black background.",
+        "extracted_text": "(광고) [브랜드명], [최대 [할인율]%] [이벤트명] 시작 🎁, [이벤트명] [날짜]-[날짜], 마법처럼 쏟아지는 혜택! 🪄 최대 [할인금액] 쿠폰 🪄, 매일 달라지는 특가! 오늘의 특가 확인하기 👀, 올해 가장 사랑받은 상품들만! [브랜드명] 어워즈 특가 🏆, [이벤트명] 시작, 공유하기"
+      },
+      {
+        "source_index": 191,
+        "filename": "IMG_5603.jpg",
+        "description": "December Olive Young Sale last day banner with a red background and top hat icon.",
+        "extracted_text": "(광고) [브랜드명], 오늘이 마지막 날 [이벤트명] [날짜]-[날짜], [오늘 종료] [연도] [이벤트명] 마지막 날 🎩 ✨ 최대 [할인율]% 할인 ✨ 놓치지 마세요, [이벤트명] 입장, 공유하기"
+      },
+      {
+        "source_index": 192,
+        "filename": "IMG_5604.jpg",
+        "description": "December Olive Kit and Olive Young Awards Edition promotion.",
+        "extracted_text": "(광고) [브랜드명], [월] [브랜드명] 키트 [브랜드명] 어워즈 에디션, [선착순 🎁] 올리브 키트 어워즈 에디션 💚 올해를 빛낸 제품들, 특가 혜택까지 GET!, 혜택 보기 👆, 공유하기"
+      },
+      {
+        "source_index": 193,
+        "filename": "IMG_5605.jpg",
+        "description": "December Olive Young Awards 5,000 KRW discount coupon for three days (Dec 19-21) with a purple stage theme.",
+        "extracted_text": "(광고) [브랜드명], [연도] [브랜드명] 어워즈 할인 쿠폰 단 [수량]일간!, [날짜](금)~[날짜](일), [브랜드명] 멤버스 [구매조건] 이상 구매 시 [할인금액] 원 할인 쿠폰, [[브랜드명] 어워즈] 단 [수량]일간! [할인금액] 쿠폰 💞 쿠폰 받고, 어워즈 수상템 보러 가기 🏆, 쿠폰 받기 👆, 공유하기"
+      },
+      {
+        "source_index": 196,
+        "filename": "IMG_5464_2.jpg",
+        "description": "Welcome message with brand ambassador video.",
+        "extracted_text": "(광고) [브랜드명]\n\n[브랜드명]\n\n[브랜드명]의 새로운 앰버서더,\n[모델명]과 함께한 특별한 영상을 공개합니다.\n\n그가 사랑하는 [브랜드명]의 향기,\n그리고 그가 전하는 특별한 메시지를\n지금 바로 확인해보세요.\n\n영상 보러가기"
+      },
+      {
+        "source_index": 199,
+        "filename": "IMG_5464_5.jpg",
+        "description": "Holiday collection teaser. Checkerboard theme.",
+        "extracted_text": "(광고) [브랜드명]\n\n[브랜드명] 크리스마스 컬렉션\n\n반짝이는 별들로 가득한\n[브랜드명]의 크리스마스 원더랜드로 여러분을 초대합니다.\n\n마법 같은 홀리데이의 순간을\n[브랜드명]와 함께 준비해보세요.\n\n기프트 보기"
+      },
+      {
+        "source_index": 203,
+        "filename": "IMG_5466_1.jpg",
+        "description": "Gift recommendation for him.",
+        "extracted_text": "(광고) [브랜드명]\n\n그를 위한 완벽한 기프트\n\n세련된 감각을 지닌 그에게\n[브랜드명]의 베스트 셀러, [제품명]를 선물하세요.\n\n카카오톡 선물하기에서만 만날 수 있는\n특별한 포장 서비스와 함께 마음을 전해보세요.\n\n선물하기"
+      },
+      {
+        "source_index": 206,
+        "filename": "IMG_5467_2.jpg",
+        "description": "Holiday gift recommendation. Checkerboard packaging.",
+        "extracted_text": "(광고) [브랜드명]\n\n특별한 오늘을 위한 홀리데이 기프트\n\n마음을 전하기 좋은 오늘, 더 빛나는 만남이 되길 바라다면.\n보내는 분의 센스가 돋보일 스페셜 기프트!\n마음을 더욱 특별하게 전합니다.\n\n단 하루![브랜드명] 스페셜 혜택과 함께, 홀리데이 카드로,\n모든 메시지로 기억에 남을 선물을 완성해보세요.\n\n자세히 보기"
+      },
+      {
+        "source_index": 208,
+        "filename": "IMG_5467_4.jpg",
+        "description": "Holiday gift recommendation with blue/red geometric theme.",
+        "extracted_text": "(광고) [브랜드명]\n\n지금 아니면 못 볼 조 말론 런던 X 카카오\n\n완벽한 홀리데이를 위한 올해의 컬러, 신나는 시즌 코롱부터 시즌 한정 배스 앤 바디, 달콤한 속 조 말론 런던 크리스마스 컬렉션을 카카오 단독 혜택과 함께 가장 먼저 만나보세요.\n\n방송 중 전 구매 시, 정품 레이어링 기프트 3종을 증정합니다.\n\n라이브 알림\n자세히 보기"
+      },
+      {
+        "source_index": 210,
+        "filename": "IMG_5451.jpg",
+        "description": "Welcome benefit promotion with yellow styling. Highlights first purchase discount and membership benefits.",
+        "extracted_text": "(광고) [브랜드명], 지속가능한 뷰티, [브랜드명]과의 즐거운 첫 만남을 가져보세요💛, 🎁 공식몰 첫구매 [할인율]% 할인, ✔ 사용 방법 : 공식몰 회원가입 후 첫 구매 시, 혜택 적용, 🎁 [브랜드명] 멤버십 가입 시, 카카오 쇼핑포인트 [적립률]% 적립, ✔ 사용 방법 : 카카오 선물하기 구매 완료 화면 내 이벤트 배너를 통해 참여 가능, 🎁 [브랜드명] 친구 웰컴 쿠폰*, ✔ 사용 방법 : 아래 쿠폰버튼 클릭, ✔ 추가 혜택 : 매장에서 신규가입 후 구매 시, 트래블사이즈 1종 추가 증정, * 1인 1회 사용 가능 (재발급 불가) / 한정 수량으로 조기 종료 가능, 공식몰 바로가기, 웰컴 쿠폰 받기"
+      },
+      {
+        "source_index": 211,
+        "filename": "IMG_5451_2.jpg",
+        "description": "Spring gift promotion featuring Hand Cream & Roll-on set. Pink and yellow floral theme.",
+        "extracted_text": "[단독] [제품명] & [제품명], 행운이 필요한 모든 분에게🍀 작지만 잊히지 않는 선물의 정석, [브랜드명]💛 새로운 시작을 응원하는 봄, 주머니 속 작은 행운을 선물하세요., 💌 언제 어디서나 함께하는 힐링 모먼트, 아로마 [제품명] & [제품명], 지금 선물하기"
+      },
+      {
+        "source_index": 213,
+        "filename": "IMG_5453.jpg",
+        "description": "Body care shower oil promotion for Gift Month. Features shower oil bottle.",
+        "extracted_text": "(광고) [브랜드명], 바디케어 1위* [제품명], 100% Yes!** 피부 스트레스까지 풀리는 힐링 샤워 타임, [브랜드명] 선물의 달 기프트 추천, 소중한 분들이 생각나는 [기간], 힐링 타임을 선사하는 [제품명]로 고마운 마음을 전해보세요., ♥ [기간] 한정 스페셜 혜택 ♥, ① [제품명] 구매 시, 아몬드 바디 세트 체험분 증정([기간]), ② 리미티드 스페셜 쇼핑백 제공, ③ 선물 세트별 추가 증정품 혜택, ▶ 장소: 전국 [브랜드명] 매장 (아울렛, 면세점, 공식몰 제외), * 스페셜 혜택은 한정 수량으로 조기 마감 가능, [브랜드명] 추천 기프트 보러 가기, 쿠폰함 바로 가기"
+      },
+      {
+        "source_index": 215,
+        "filename": "IMG_5454_2.jpg",
+        "description": "Secret Coupon arrival. Special benefits for May.",
+        "extracted_text": "[[브랜드명]] 시크릿 쿠폰 도착!, 소중한 고객님께 드리는 시크릿 쿠폰❤ [브랜드명] 기프트 추천템과 함께 사용해 보세요!, ■ [기간] 한정 스페셜 혜택, ① 기프트 추천템 구매 시, 디럭스 샘플 1종 증정 ([기간]), ② [제품명] 구매 시, 아몬드 바디 세트 체험분 증정 ([기간]), * 전국 [브랜드명] 매장에서 사용 가능 (아울렛, 면세점, 공식몰 제외), 쿠폰함 바로 가기"
+      },
+      {
+        "source_index": 218,
+        "filename": "IMG_5456.jpg",
+        "description": "Department store renewal anniversary event.",
+        "extracted_text": "(광고) [브랜드명], [브랜드명] [지점명] 리뉴얼 1주년 기념 이벤트, [[브랜드명] [지점명] 이벤트 안내], [브랜드명] [지점명] 고객님을 위해 리뉴얼 1주년 기념 이벤트를 준비했어요., 6월 10일, 헤어 데이도 참여해 보세요!, ◆ 전 구매 고객 대상 이벤트, [기간] 기간 내 구매 시, 라벤더 핸드크림 [용량] 증정, ◆ 헤어 데이 이벤트 ([날짜] 단 하루!), 두피 진단 & 마사지 서비스와 함께 맞춤 헤어 제품을 추천해드려요 ❤, ① 사전 예약자 선착순 기프트 증정, ② 구매 금액별 정품 증정 혜택, * 선착순, 한정 수량으로 조기 마감 가능, * 본 문자 소지한 본인에 한해 증정 가능, 매장 위치 보기"
+      },
+      {
+        "source_index": 219,
+        "filename": "IMG_5456_2.jpg",
+        "description": "Body care recommendation for summer.",
+        "extracted_text": "[[브랜드명] 바디케어 추천], [브랜드명] [제품명] ❤ 여름철, 잦은 샤워에도 촉촉한 피부! 은은한 아몬드 향으로 일상 속 힐링을 느껴보세요., ■ [기간] 스페셜 혜택 ■, - 기간: [기간], - 혜택: [제품명] 구매 시, 아몬드 핸드 & 바디 세트 체험분 증정, - 장소: 전국 [브랜드명] 매장 (아울렛, 면세점, 공식몰 제외), 쿠폰함 바로 가기"
+      },
+      {
+        "source_index": 220,
+        "filename": "IMG_5457.jpg",
+        "description": "Summer Essentials promotion with limited edition benefits.",
+        "extracted_text": "(광고) [브랜드명], 지금 만나야 할 [브랜드명] 썸머 에센셜, 🍋 리미티드 [제품명] 에디션 [채널명] 단독 선출시 혜택, ✨ 강세일 역대급 혜택 베스트셀러 기간 한정 특가 찬스, 💛 상큼한 여름 선물 샤워젤 + 샤워볼 단독 기프트, 지금 선물하기, 공유하기"
+      },
+      {
+        "source_index": 224,
+        "filename": "IMG_5460_2.jpg",
+        "description": "Kakao exclusive gift promotion with keyring.",
+        "extracted_text": "(광고) [브랜드명], [카카오 단독] [제품명] 기프트, 나를 위해, 소중한 사람을 위해 부담 없이 선물하기 좋은 [제품명] [용량] & [제품명] 키링 기프트!, 오직 카카오톡 선물하기에서 한정 수량으로 만나볼 수 있는 기프트로 힐링 샤워 타임을 선물해보세요., 지금 선물하기"
+      }
+    ]
+  }
+]

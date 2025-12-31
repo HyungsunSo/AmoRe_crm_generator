@@ -1,0 +1,364 @@
+{
+    "CRM_FOMO_Psychology_50": {
+        "1_Acquisition_초기진입_압박": [
+            {
+                "id": "F1",
+                "style": "이모지",
+                "title": "{alarm_emoji} 종료 임박! 신규 회원 혜택이 사라져요",
+                "content": "{user_name}님께만 부여된 {welcome_period} 한정 혜택이 곧 만료됩니다. 지금 안 쓰면 소멸돼요!",
+                "cta": "{check_benefit_action}"
+            },
+            {
+                "id": "F2",
+                "style": "텍스트",
+                "title": "[공지] {brand_name} 무료 체험 키트 잔여 수량 안내",
+                "content": "준비된 {total_qty}개의 샘플 중 현재 {remain_qty}개 남았습니다. 소진 시 자동 종료됩니다.",
+                "cta": "{apply_now_action}"
+            },
+            {
+                "id": "F3",
+                "style": "텍스트",
+                "title": "{age_group}대가 가장 먼저 선택한 {product_name}",
+                "content": "벌써 {user_count}명이 경험했습니다. 남들보다 늦게 시작하면 피부 개선 주기만 늦어질 뿐입니다.",
+                "cta": "{view_trend_action}"
+            },
+            {
+                "id": "F4",
+                "style": "이모지",
+                "title": "{lock_emoji} {time_limit}분 후, 가입 감사 쿠폰이 회수됩니다",
+                "content": "망설이는 사이에 혜택이 사라지고 있어요. {brand_name}의 첫 경험을 {special_price}으로 시작하세요.",
+                "cta": "{get_discount_action}"
+            },
+            {
+                "id": "F5",
+                "style": "텍스트",
+                "title": "{product_category} 카테고리 실시간 인기 급상승 안내",
+                "content": "지금 이 순간에도 {product_name}의 재고가 빠르게 소진되고 있습니다. 구매 기회를 놓치지 마세요.",
+                "cta": "{check_stock_action}"
+            },
+            {
+                "id": "F6",
+                "style": "이모지",
+                "title": "{fire_emoji} 남들은 다 받은 {brand_name} 웰컴 팩",
+                "content": "{user_name}님만 아직 못 받으셨나요? {event_deadline} 전까지만 신청 가능한 한정 구성입니다.",
+                "cta": "{join_event_action}"
+            },
+            {
+                "id": "F7",
+                "style": "텍스트",
+                "title": "원료 수급 이슈로 인한 {product_name} 한정 판매 공지",
+                "content": "{ingredient_name}의 희소성으로 인해 이번 차수 물량은 선착순 {limit_count}명에게만 제공됩니다.",
+                "cta": "{reserve_action}"
+            },
+            {
+                "id": "F8",
+                "style": "이모지",
+                "title": "{timer_emoji} {brand_name} 첫 구매 딜 종료 카운트다운",
+                "content": "이 가격은 다시 오지 않습니다. {end_time} 이후에는 정가로 환원되는 점 양해 부탁드립니다.",
+                "cta": "{shop_now_action}"
+            },
+            {
+                "id": "F9",
+                "style": "텍스트",
+                "title": "[비교] {user_name}님과 비슷한 피부 타입의 선택",
+                "content": "동일 연령대 고객의 {conversion_rate}%가 이미 {product_name}으로 루틴을 교체했습니다.",
+                "cta": "{compare_view_action}"
+            },
+            {
+                "id": "F10",
+                "style": "이모지",
+                "title": "{shh_emoji} 오직 가입 후 {wait_time}시간 내에만 열리는 페이지",
+                "content": "비밀스러운 웰컴 시크릿 페이지는 곧 닫힙니다. {brand_name}의 베스트셀러를 선점하세요.",
+                "cta": "{open_secret_action}"
+            }
+        ],
+        "2_Activation_행동유도_압박": [
+            {
+                "id": "F11",
+                "style": "이모지",
+                "title": "{cart_emoji} 장바구니에 담으신 상품, 곧 품절됩니다",
+                "content": "{user_name}님이 고민하시는 동안 {order_count}개의 주문이 결제되었습니다. 현재 재고 {min_qty}개!",
+                "cta": "{go_to_cart_action}"
+            },
+            {
+                "id": "F12",
+                "style": "텍스트",
+                "title": "{ingredient_name} 성분의 최적 활성 상태 기간 안내",
+                "content": "신선하게 제조된 {product_name}의 초기 물량이 얼마 남지 않았습니다. 가장 좋은 상태의 제품을 선점하세요.",
+                "cta": "{check_batch_action}"
+            },
+            {
+                "id": "F13",
+                "style": "텍스트",
+                "title": "[알림] {user_name}님이 찜하신 상품 가격 변동 예정",
+                "content": "{event_name} 종료와 함께 가격이 조정됩니다. 최저가 혜택을 누릴 마지막 {time_left}입니다.",
+                "cta": "{buy_at_lowest_action}"
+            },
+            {
+                "id": "F14",
+                "style": "이모지",
+                "title": "{eyes_emoji} 지금 {view_count}명이 이 상품을 함께 보고 있어요",
+                "content": "실시간 인기 폭주 중! 남들보다 빠르게 클릭해야 {gift_item} 증정 명단에 들 수 있습니다.",
+                "cta": "{view_product_action}"
+            },
+            {
+                "id": "F15",
+                "style": "텍스트",
+                "title": "전문가 추천 {care_routine} 패키지 한정 수량 안내",
+                "content": "{special_edition_name}은 공정 특성상 소량 생산됩니다. 현재 준비된 세트가 거의 소진되었습니다.",
+                "cta": "{check_package_action}"
+            },
+            {
+                "id": "F16",
+                "style": "이모지",
+                "title": "{clapping_emoji} 벌써 리뷰 {review_count}개 돌파! 검증된 효과",
+                "content": "실제 사용자들의 감탄사로 가득한 후기들. {user_name}님만 아직 경험하지 못하셨나요?",
+                "cta": "{read_reviews_action}"
+            },
+            {
+                "id": "F17",
+                "style": "텍스트",
+                "title": "{brand_name} {target_year} 어워즈 후보 상품 매진 주의",
+                "content": "올해 가장 사랑받은 {product_name}이 품절을 앞두고 있습니다. 다음 입고는 {restock_date} 예정입니다.",
+                "cta": "{check_now_action}"
+            },
+            {
+                "id": "F18",
+                "style": "이모지",
+                "title": "{gift_emoji} 지금 결제하면 사은품 {gift_name} 자동 포함",
+                "content": "사은품 재고가 단 {last_qty}개 남았습니다. 지금 주문해야 누락 없이 받으실 수 있습니다.",
+                "cta": "{get_gift_action}"
+            },
+            {
+                "id": "F19",
+                "style": "텍스트",
+                "title": "[안내] 오늘 밤 {cutoff_time}시, 무료배송 쿠폰 만료",
+                "content": "배송비 {shipping_fee}원을 아낄 수 있는 기회가 몇 시간 남지 않았습니다. 잊지 말고 적용하세요.",
+                "cta": "{use_coupon_action}"
+            },
+            {
+                "id": "F20",
+                "style": "이모지",
+                "title": "{running_emoji} 선착순 {max_count}명 한정 혜택 마감 직전",
+                "content": "이미 {current_count}명이 참여했습니다. {user_name}님이 마지막 혜택의 주인공이 될 수 있습니다.",
+                "cta": "{apply_action}"
+            }
+        ],
+        "3_Retention_이탈방지_압박": [
+            {
+                "id": "F21",
+                "style": "텍스트",
+                "title": "{user_name}님, 보유하신 {point_value}P가 내일 사라집니다",
+                "content": "현금처럼 사용 가능한 소중한 포인트입니다. 사라지기 전에 {product_name} 재구매에 사용하세요.",
+                "cta": "{check_point_action}"
+            },
+            {
+                "id": "F22",
+                "style": "이모지",
+                "title": "{cry_emoji} 잊으셨나요? {brand_name} VIP 등급 유지 조건",
+                "content": "이번 달 {purchase_gap}만 더 채우면 {next_tier} 혜택을 지킬 수 있습니다. 기회를 놓치지 마세요.",
+                "cta": "{tier_status_action}"
+            },
+            {
+                "id": "F23",
+                "style": "텍스트",
+                "title": "{product_name} 공병 상태 체크: 피부 개선 흐름 주의",
+                "content": "중단 시 피부 컨디션이 되돌아갈 수 있습니다. {ingredient_name}의 지속적인 공급이 필요합니다.",
+                "cta": "{repurchase_action}"
+            },
+            {
+                "id": "F24",
+                "style": "이모지",
+                "title": "{wave_emoji} 다시 돌아오신 분들을 위한 ‘라스트 챈스’",
+                "content": "{user_name}님을 기다리며 보관 중이던 재방문 쿠폰이 오늘 최종 만료됩니다. 지금 확인하세요.",
+                "cta": "{open_coupon_action}"
+            },
+            {
+                "id": "F25",
+                "style": "텍스트",
+                "title": "[보고] {brand_name} 멤버십 고객 대상 단독 특가 종료 알림",
+                "content": "회원님들께만 제공되던 {event_price} 혜택이 일반가로 전환되기까지 {time_left} 남았습니다.",
+                "cta": "{check_member_price_action}"
+            },
+            {
+                "id": "F26",
+                "style": "이모지",
+                "title": "{broken_heart_emoji} 장바구니에서 {product_name}이 사라질 수 있어요",
+                "content": "장기 미결제 상품은 보관함에서 자동 삭제될 예정입니다. {discount_rate} 혜택과 함께 선점하세요.",
+                "cta": "{save_item_action}"
+            },
+            {
+                "id": "F27",
+                "style": "텍스트",
+                "title": "{user_name}님만 제외된 {membership_event} 참여 현황",
+                "content": "동일 등급 고객의 {participation_rate}%가 이미 혜택을 수령했습니다. {user_name}님도 참여하세요.",
+                "cta": "{get_benefit_action}"
+            },
+            {
+                "id": "F28",
+                "style": "이모지",
+                "title": "{calendar_emoji} 정기 구독 신청 시 평생 {discount_rate} 고정 혜택 마감",
+                "content": "신규 구독자 {max_sub_count}명 한정 평생 할인 이벤트가 마감 임박 상태입니다.",
+                "cta": "{sub_apply_action}"
+            },
+            {
+                "id": "F29",
+                "style": "텍스트",
+                "title": "[안내] 고객님을 위한 {product_category} 맞춤 추천 상품 품절 주의",
+                "content": "{user_name}님께만 제안된 맞춤형 {product_name}이 현재 타 채널에서도 주문 폭주 중입니다.",
+                "cta": "{view_recommend_action}"
+            },
+            {
+                "id": "F30",
+                "style": "이모지",
+                "title": "{gift_box_emoji} {user_name}님을 기다리는 미확인 선물이 있습니다",
+                "content": "열어보지 않은 혜택이 곧 회수됩니다. {brand_name}이 준비한 마지막 정성을 확인하세요.",
+                "cta": "{confirm_gift_action}"
+            }
+        ],
+        "4_Revenue_전환극대화_압박": [
+            {
+                "id": "F31",
+                "style": "이모지",
+                "title": "{alarm_emoji} {time_limit} 타임세일: 남은 시간 단 {min_left}분",
+                "content": "가격표가 바뀌기 직전입니다! {product_name}을 {lowest_price}원에 가져갈 마지막 기회입니다.",
+                "cta": "{fast_buy_action}"
+            },
+            {
+                "id": "F32",
+                "style": "텍스트",
+                "title": "[공지] {product_name} 전 수량 매진 임박 (현재 {percent_left}% 남음)",
+                "content": "준비된 한정 기획 세트가 예상보다 빠르게 소진되고 있습니다. 지금 결제해야 안전하게 배송됩니다.",
+                "cta": "{order_now_action}"
+            },
+            {
+                "id": "F33",
+                "style": "이모지",
+                "title": "{bag_emoji} {bundle_count}개 이상 구매 시 사은품 선착순 증정",
+                "content": "사은품 잔여량이 {last_qty}개입니다. 지금 장바구니를 채우고 {gift_item}을 확보하세요!",
+                "cta": "{add_to_cart_action}"
+            },
+            {
+                "id": "F34",
+                "style": "텍스트",
+                "title": "{brand_name} 계절 한정 {season_name} 컬렉션 생산 종료 안내",
+                "content": "더 이상 생산되지 않는 유니크한 구성입니다. 이번 기회를 놓치면 다시는 만날 수 없습니다.",
+                "cta": "{collection_view_action}"
+            },
+            {
+                "id": "F35",
+                "style": "이모지",
+                "title": "{money_emoji} 페이백 이벤트 종료까지 단 {hour_left}시간",
+                "content": "최대 {cashback_amount}원을 돌려받을 수 있는 골든 타임! 남들보다 현명하게 쇼핑하세요.",
+                "cta": "{get_cashback_action}"
+            },
+            {
+                "id": "F36",
+                "style": "텍스트",
+                "title": "[긴급] {card_company} 결제 추가 할인 예산 조기 소진 안내",
+                "content": "카드사 제휴 혜택이 선착순 마감을 앞두고 있습니다. 추가 {discount_rate} 혜택을 서둘러 받으세요.",
+                "cta": "{apply_card_benefit_action}"
+            },
+            {
+                "id": "F37",
+                "style": "이모지",
+                "title": "{fire_emoji} 실시간 판매 {rank_no}위! 초읽기 품절 주의",
+                "content": "지금 1초에 {sales_speed}개씩 판매 중. {user_name}님이 보신 그 상품이 사라지기 직전입니다.",
+                "cta": "{grab_it_action}"
+            },
+            {
+                "id": "F38",
+                "style": "텍스트",
+                "title": "연간 최대 규모 {event_name} 혜택 일괄 종료 공지",
+                "content": "내일부터는 다시 정가로 판매됩니다. 1년을 기다려야 하는 이 기회를 놓치지 마세요.",
+                "cta": "{final_check_action}"
+            },
+            {
+                "id": "F39",
+                "style": "이모지",
+                "title": "{truck_emoji} 오늘 {delivery_cutoff}시 전 주문 시에만 내일 도착 보장",
+                "content": "당장 내일 피부 관리가 필요한가요? 배송 마감 시간이 {min_left}분 남았습니다.",
+                "cta": "{fast_order_action}"
+            },
+            {
+                "id": "F40",
+                "style": "텍스트",
+                "title": "VIP 전용 {pre_order_benefit} 선점 경쟁 안내",
+                "content": "전체 물량 중 {open_rate}%가 이미 VIP 분들께 판매되었습니다. 일반 판매 전 물량을 확보하세요.",
+                "cta": "{pre_purchase_action}"
+            }
+        ],
+        "5_Referral_추천유도_압박": [
+            {
+                "id": "F41",
+                "style": "이모지",
+                "title": "{group_emoji} 친구 초대 리워드 {point_value}P 상향 이벤트 마감",
+                "content": "혜택이 {event_date}에 종료됩니다. 아직 초대하지 못한 친구가 있다면 지금 알려주세요!",
+                "cta": "{invite_friend_action}"
+            },
+            {
+                "id": "F42",
+                "style": "텍스트",
+                "title": "{brand_name} {target_year} 앰배서더 모집 최종 마감 공지",
+                "content": "수천 명의 지원자 중 단 {select_count}명만 선발합니다. 마지막 {day_left}일, 도전하세요.",
+                "cta": "{apply_ambassador_action}"
+            },
+            {
+                "id": "F43",
+                "style": "이모지",
+                "title": "{gift_box_emoji} 친구에게 보낼 수 있는 무료 샘플권이 만료됩니다",
+                "content": "좋은 건 같이 써야죠! {user_name}님께 부여된 나눔 권한 {ticket_count}장이 오늘 사라집니다.",
+                "cta": "{share_ticket_action}"
+            },
+            {
+                "id": "F44",
+                "style": "텍스트",
+                "title": "베스트 리뷰어 선정 후보 {rank_no}인 발표 안내",
+                "content": "{user_name}님도 후보에 계신가요? 추가 리뷰 작성 시 선정 확률이 {multiplier}배 올라갑니다.",
+                "cta": "{write_review_action}"
+            },
+            {
+                "id": "F45",
+                "style": "이모지",
+                "title": "{camera_emoji} 한정판 굿즈 증정 인증 이벤트 마감 임박",
+                "content": "준비된 굿즈가 {last_qty}개 남았습니다. SNS 인증 완료하고 희귀 템을 선점하세요.",
+                "cta": "{auth_event_action}"
+            },
+            {
+                "id": "F46",
+                "style": "텍스트",
+                "title": "[공지] {brand_name} 커뮤니티 전용 시크릿 코드 공유 종료",
+                "content": "지인들에게만 공유 가능한 {secret_discount} 코드가 오늘 밤 비활성화됩니다.",
+                "cta": "{share_code_action}"
+            },
+            {
+                "id": "F47",
+                "style": "이모지",
+                "title": "{couple_emoji} 친구와 함께 결제 시 1+1 혜택 마감",
+                "content": "커플/우정 템 맞출 마지막 시간! 둘이 합쳐 {total_price}원으로 예뻐질 기회입니다.",
+                "cta": "{invite_to_buy_action}"
+            },
+            {
+                "id": "F48",
+                "style": "텍스트",
+                "title": "고객 투표 {award_name} 선정 참여 마감 안내",
+                "content": "내가 사랑한 {product_name}이 1위가 될 수 있도록 한 표를 더해주세요. 투표 시 혜택 증정!",
+                "cta": "{vote_now_action}"
+            },
+            {
+                "id": "F49",
+                "style": "이모지",
+                "title": "{game_emoji} 공유할수록 커지는 룰렛 포인트, 오늘이 마지막!",
+                "content": "최대 {max_point}P의 행운! 공유 횟수가 많을수록 당첨 확률은 기하급수적으로 올라갑니다.",
+                "cta": "{play_game_action}"
+            },
+            {
+                "id": "F50",
+                "style": "텍스트",
+                "title": "[최종] {brand_name} 지인 추천왕 랭킹 발표 및 경품 회수",
+                "content": "미수령 리워드가 있는지 확인하세요. 일정 기간 경과 시 혜택이 소멸됩니다.",
+                "cta": "{reward_check_action}"
+            }
+        ]
+    }
+}
