@@ -129,6 +129,7 @@ def build_exaone_prompt(
     stage_index: int,
     crm_snippets: List[Dict[str, Any]],
     fomo_examples: List[str],
+    campaign_templates: List[str] = [],
 ) -> List[Dict[str, str]]:
     stage_name = STAGE_ORDER[stage_index]
     persona_summary = summarize_persona(persona)
@@ -142,6 +143,7 @@ def build_exaone_prompt(
         [f"- ({round(s['score'],3)}) {s['text']}" for s in crm_snippets]
     ) if crm_snippets else '- (none)'
     fomo_refs = '\n'.join([f"- {ex}" for ex in fomo_examples]) if fomo_examples else '- (none)'
+    template_refs = '\n'.join([f"--- [Template] ---\n{t}" for t in campaign_templates]) if campaign_templates else '- (none)'
 
     user_prompt = f"""다음 초안을 CRM 톤에 맞게 보정하세요. 출력은 JSON 형태로 title/body를 제공합니다.
 
@@ -168,6 +170,9 @@ CTA 스타일: {crm_goal.get('cta_style','')}
 
 [FOMO 예시]
 {fomo_refs}
+
+[CRM 캠페인 템플릿 예시 (스타일/톤 참고용)]
+{template_refs}
 
 규칙:
 1) 금지 맥락과 과한 할인/과장 표현을 피하고, 허용 맥락 안에서 자연스럽게 씁니다.
@@ -279,7 +284,10 @@ def main():
     brand_stories = load_json(os.path.join(data_dir, 'brand_stories.json'))
     crm_goals = load_json(os.path.join(data_dir, 'crm_goals.json'))
     crm_categorized = load_json(os.path.join(data_dir, 'crm_analysis_results_categorized.json'))
-    fomo_data = load_json(os.path.join(data_dir, 'FOMO.json'))
+    crm_categorized = load_json(os.path.join(data_dir, 'crm_analysis_results_categorized.json'))
+    # fomo_data = load_json(os.path.join(data_dir, 'FOMO.json'))
+    integrated_templates = load_json(os.path.join(data_dir, 'integrated_crm_templates.json'))
+    fomo_data = integrated_templates.get('FOMO_Psychology_Style', {}).get('content', {})
 
     persona = find_persona(personas, args.persona)
     brand_story = pick_brand_story(brand_stories, args.brand)
