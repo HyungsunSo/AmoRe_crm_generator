@@ -141,12 +141,20 @@ class LocalQwenGenerator:
         
         return generated_text.strip(), t_end - t_start
     
-    def generate_marketing_draft(self, brand_name, product_name, persona, reviews, highlights):
+    def generate_marketing_draft(self, brand_name, product_name, persona, reviews, highlights, campaign_event_info=None):
         """생성: 마케팅 초안 (One-Stage)."""
         persona_traits = ", ".join(persona.get("traits", []) if isinstance(persona.get("traits"), list) else [])
         review_text = "\n".join([f"- {r.get('text', '')[:150]}" for r in reviews[:3]])
         highlights_text = "\n".join([f"- {h}" for h in highlights[:3]])
         
+        event_section = ""
+        if campaign_event_info:
+            event_section = f"""
+[캠페인/이벤트 정보]
+이벤트명: {campaign_event_info.get('name', '')}
+상세 내용: {campaign_event_info.get('detail', '')}
+"""
+
         prompt = f"""당신은 마케팅 카피라이터입니다. 아래 정보를 바탕으로 마케팅 초안을 작성하세요.
 
 [제품]
@@ -156,7 +164,7 @@ class LocalQwenGenerator:
 [타겟 페르소나]
 특성: {persona_traits}
 주요 관심사: {persona.get('value_focus', '제품 품질')}
-
+{event_section}
 [고객 리뷰 요약]
 {review_text}
 
@@ -173,9 +181,10 @@ class LocalQwenGenerator:
 (페르소나 공감과 제품 효과 중심, 200~300자)
 
 2. 리뷰에서 확인 가능한 사실만 사용하세요.
-3. 숫자, 할인율, 이벤트명은 절대 사용하지 마세요.
-4. 페르소나의 가치관을 반영하되, 페르소나 이름(고객군명)은 절대 직접 언급하지 마세요.
-5. 고객을 "당신", "이 제품을 원하는 분들" 등으로 표현하세요.
+3. 숫자, 할인율, 이벤트명은 절대 사용하지 마세요. 
+4. 단, [캠페인/이벤트 정보]가 제공된 경우 해당 내용은 적극 활용하세요
+5. 페르소나의 가치관을 반영하되, 페르소나 이름(고객군명)은 절대 직접 언급하지 마세요.
+6. 고객을 "당신", "이 제품을 원하는 분들" 등으로 표현하세요.
 """
 
         messages = [
