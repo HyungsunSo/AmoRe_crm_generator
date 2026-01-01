@@ -30,3 +30,7 @@ AmoRe_crm_generator/finetuning/finetuning_data/
 
 # Exclude Amore~ folder
 Amore~/
+
+# Data
+data/
+adapters_dpo/
