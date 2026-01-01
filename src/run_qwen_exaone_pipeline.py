@@ -248,6 +248,13 @@ def main():
         },
         "stage_index": args.stage_index,
         "stage_name": STAGE_ORDER[args.stage_index],
+        "stage_kr": crm_goal.get('stage_kr', ''),
+        "objective": crm_goal.get('objective', ''),
+        "target_state": crm_goal.get('target_state', ''),
+        "style_index": args.style_index,
+        "style_type": style_type,
+        "style_templates": style_ref_templates,
+        "is_event": True if args.is_event == 1 else False,
         "selected_event": selected_event,
         "qwen": {
             "model": args.qwen_model,
@@ -307,7 +314,8 @@ def main():
     print(exa_output[:400])
     print("\n--- Exaone 입력 프롬프트 ---")
     print(exa_prompt_text[:1200])
-
+    
+    return out
 
 if __name__ == '__main__':
     main()

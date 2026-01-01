@@ -82,6 +82,93 @@ def _format_prompt(summarization):
     return json.dumps(summarization, ensure_ascii=False, indent=2)
 
 
+def _format_event(selected_event):
+    if selected_event in (None, "", {}):
+        return "없음"
+    if isinstance(selected_event, dict):
+        for key in ("title", "name", "event_name", "event"):
+            if selected_event.get(key):
+                return str(selected_event.get(key))
+        return json.dumps(selected_event, ensure_ascii=False)
+    return str(selected_event)
+
+
+def _format_price(price):
+    if price in (None, ""):
+        return ""
+    if isinstance(price, (int, float)):
+        return f"{int(price):,}원"
+    text = str(price).strip()
+    if not text:
+        return ""
+    if "원" in text:
+        return text
+    if text.replace(",", "").isdigit():
+        return f"{int(text.replace(',', '')):,}원"
+    return text
+
+
+def _format_persona(persona_profile):
+    if not isinstance(persona_profile, dict):
+        return str(persona_profile or "")
+    name = persona_profile.get("name", "")
+    extras = []
+    value_focus = persona_profile.get("value_focus")
+    skin_type = persona_profile.get("skin_type")
+    traits = persona_profile.get("traits")
+    shopping_style = persona_profile.get("shopping_style")
+    if value_focus:
+        extras.append(str(value_focus))
+    if skin_type:
+        extras.append(str(skin_type))
+    if traits:
+        if isinstance(traits, list):
+            extras.append(", ".join([str(t) for t in traits if t]))
+        else:
+            extras.append(str(traits))
+    if shopping_style:
+        extras.append(str(shopping_style))
+    extra_text = ", ".join([e for e in extras if e])
+    if name and extra_text:
+        return f"{name} ({extra_text})"
+    return name or extra_text
+
+
+def _build_prompt_text(meta, fallback_text):
+    persona = _format_persona(meta.get("persona_profile") if isinstance(meta, dict) else None)
+    stage = ""
+    if isinstance(meta, dict):
+        stage = meta.get("stage_name") or meta.get("stage_kr") or ""
+    brand = meta.get("brand") if isinstance(meta, dict) else ""
+    product_basic = meta.get("product_basic") if isinstance(meta, dict) else None
+    product_name = ""
+    price = ""
+    if isinstance(product_basic, dict):
+        product_name = product_basic.get("name", "") or ""
+        price = _format_price(product_basic.get("price"))
+    product_query = meta.get("product_query") if isinstance(meta, dict) else ""
+    if not product_name:
+        product_name = product_query or ""
+
+    event_text = _format_event(meta.get("selected_event") if isinstance(meta, dict) else None)
+
+    lines = ["[컨텍스트]"]
+    if persona:
+        lines.append(f"- Persona: {persona}")
+    if stage:
+        lines.append(f"- Stage: {stage}")
+    if brand or product_name:
+        lines.append(f"- Brand/Product: {brand} / {product_name}".strip())
+    if price:
+        lines.append(f"- Price: {price}")
+    lines.append(f"- Event: {event_text}")
+
+    prompt = "\n".join(lines).strip()
+    if prompt:
+        return prompt
+    return _format_prompt(fallback_text)
+
+
 def _candidate_text(candidate):
     if isinstance(candidate, dict):
         return (
@@ -91,6 +178,12 @@ def _candidate_text(candidate):
             or candidate.get("content")
         )
     return str(candidate)
+
+
+def _candidate_meta(candidate):
+    if isinstance(candidate, dict):
+        return candidate.get("meta") or {}
+    return {}
 
 
 def _normalize_candidates(raw):
@@ -115,7 +208,13 @@ def _normalize_candidates(raw):
         text = _candidate_text(item)
         if not text:
             continue
-        normalized.append({"response_id": idx, "text": text})
+        normalized.append(
+            {
+                "response_id": idx,
+                "text": text,
+                "meta": _candidate_meta(item),
+            }
+        )
     return normalized
 
 
@@ -161,6 +260,45 @@ def _extract_response_text(data):
     raise ValueError(f"Invalid evaluator response: {data}")
 
 
+def _format_meta(meta):
+    if not isinstance(meta, dict):
+        return str(meta)
+
+    lines = []
+    persona_profile = meta.get("persona_profile")
+    if persona_profile is not None:
+        lines.append(f"persona_profile: {json.dumps(persona_profile, ensure_ascii=False)}")
+    brand = meta.get("brand")
+    if brand:
+        lines.append(f"brand: {brand}")
+    stage_kr = meta.get("stage_kr")
+    if stage_kr:
+        lines.append(f"stage_kr: {stage_kr}")
+    objective = meta.get("objective")
+    if objective:
+        lines.append(f"objective: {objective}")
+    target_state = meta.get("target_state")
+    if target_state:
+        lines.append(f"target_state: {target_state}")
+    style_templates = meta.get("style_templates")
+    if style_templates:
+        if isinstance(style_templates, list):
+            lines.append("style_templates:")
+            for item in style_templates:
+                lines.append(f"- {item}")
+        else:
+            lines.append(f"style_templates: {style_templates}")
+    selected_event = meta.get("selected_event")
+    if selected_event is not None:
+        if isinstance(selected_event, (dict, list)):
+            event_text = json.dumps(selected_event, ensure_ascii=False)
+        else:
+            event_text = str(selected_event)
+        lines.append(f"selected_event: {event_text}")
+
+    return "\n".join(lines) if lines else "(context unavailable)"
+
+
 def _call_gpt(prompt_text, candidates):
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
@@ -168,21 +306,28 @@ def _call_gpt(prompt_text, candidates):
 
     candidate_lines = []
     for idx, candidate in enumerate(candidates):
-        candidate_lines.append(f"[{idx}] {candidate.get('text', '')}")
+        meta_block = _format_meta(candidate.get("meta", {}))
+        candidate_lines.append(
+            f"[{idx}]\n"
+            f"crm_message:\n{candidate.get('text', '')}\n\n"
+            f"context:\n{meta_block}"
+        )
     candidate_block = "\n\n".join(candidate_lines)
 
     system_prompt = (
-        "너는 마케팅 문장 평가자다.\n"
-        "목표는 “전환 가능성이 더 높은 CRM 메시지”를 고르는 것이다.\n\n"
-        "다음 기준으로 두 응답을 비교하라:\n"
+        "너는 CRM 메시지 평가자다.\n"
+        "목표는 전환 가능성이 더 높은 메시지를 고르는 것이다.\n"
+        "각 후보에는 메시지와 그 메시지에 사용된 컨텍스트가 함께 주어진다.\n\n"
+        "다음 기준으로 비교하라:\n"
         "1. 수신자가 실제 행동(클릭/재구매)을 할 가능성\n"
-        "2. persona와 구매 단계 적합성\n"
-        "3. 상품·브랜드 핵심 장점 전달력\n"
-        "4. 불필요한 장식 없이 명확한가\n\n"
-        "더 나은 쪽을 선택하라."
+        "2. persona 및 stage_kr/objective/target_state 적합성\n"
+        "3. 브랜드 핵심 장점 전달력\n"
+        "4. style_templates 및 selected_event 반영 정도\n"
+        "5. 불필요한 장식 없이 명확한가\n\n"
+        "더 나은 후보 하나를 선택하라."
     )
     user_prompt = (
-        "요약:\n"
+        "컨텍스트:\n"
         f"{prompt_text}\n\n"
         "후보:\n"
         f"{candidate_block}\n\n"
@@ -248,19 +393,37 @@ def _save_records(path, records):
 
 def _extract_pipeline_output(result):
     if isinstance(result, dict):
+        if "qwen" in result or "exaone" in result:
+            qwen = result.get("qwen", {}) or {}
+            exaone = result.get("exaone", {}) or {}
+            summarization = qwen.get("draft") or qwen.get("qwen_draft")
+            crm_message = exaone.get("result_raw") or exaone.get("crm_message")
+            meta = {
+                "persona_profile": result.get("persona_profile"),
+                "brand": result.get("brand"),
+                "product_basic": result.get("product_basic"),
+                "product_query": result.get("product_query"),
+                "stage_name": result.get("stage_name"),
+                "stage_kr": result.get("stage_kr"),
+                "objective": result.get("objective"),
+                "target_state": result.get("target_state"),
+                "style_templates": result.get("style_templates"),
+                "selected_event": result.get("selected_event"),
+            }
+            return summarization, crm_message, meta
         summarization = result.get("summarization")
         crm_message = result.get("crm_message")
-    elif isinstance(result, (list, tuple)) and len(result) >= 2:
+        return summarization, crm_message, {}
+    if isinstance(result, (list, tuple)) and len(result) >= 2:
         summarization, crm_message = result[0], result[1]
-    elif isinstance(result, str):
+        return summarization, crm_message, {}
+    if isinstance(result, str):
         try:
             parsed = json.loads(result)
         except json.JSONDecodeError as exc:
             raise ValueError(f"Unexpected pipeline output: {result}") from exc
         return _extract_pipeline_output(parsed)
-    else:
-        raise ValueError(f"Unexpected pipeline output: {result}")
-    return summarization, crm_message
+    raise ValueError(f"Unexpected pipeline output: {result}")
 
 
 def _parse_stdout_payload(stdout_text):
@@ -348,14 +511,19 @@ def _run_pipeline(pipeline_main, row):
 def _collect_candidates(inference_pipeline, row, num_candidates):
     summarization = None
     candidates = []
+    summary_mismatch = False
     for attempt in range(1, num_candidates + 1):
         _log(f"  [Attempt {attempt}/{num_candidates}] Running pipeline")
         result = _run_pipeline(inference_pipeline, row)
-        s, message = _extract_pipeline_output(result)
+        s, message, meta = _extract_pipeline_output(result)
         if summarization is None and s:
             summarization = s
+        elif s and summarization and s != summarization:
+            summary_mismatch = True
         if isinstance(message, str) and message.strip():
-            candidates.append({"text": message.strip()})
+            candidates.append({"text": message.strip(), "meta": meta})
+    if summary_mismatch:
+        _log("  [Warn] Qwen draft differs across candidates; using the first one.")
     return summarization, candidates
 
 
@@ -393,7 +561,8 @@ def generate_dpo_data(csv_path, output_path, max_rows=None, num_candidates=4):
             _log(f"[Row {idx}] Pipeline error: {exc}")
             continue
 
-        prompt_text = _format_prompt(summarization)
+        meta_for_prompt = candidates[0].get("meta", {}) if candidates else {}
+        prompt_text = _build_prompt_text(meta_for_prompt, summarization)
         if not prompt_text:
             _log(f"[Row {idx}] Empty summarization, skipping")
             continue
