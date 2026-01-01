@@ -1,25 +1,125 @@
+import argparse
 import csv
+import inspect
 import json
 import os
 import re
+import sys
 import urllib.error
 import urllib.request
-
-from model_2b import generate_n
-from model_8b import refine_with_8b
-
-MODEL_BASE_DIR = "../models"
+from contextlib import redirect_stdout
+from io import StringIO
 
 
-def _ensure_list(value):
-    if value is None:
-        return []
-    if isinstance(value, list):
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DEFAULT_CSV = os.path.join(BASE_DIR, "random_persona_campaign.csv")
+DEFAULT_OUTPUT = os.path.join(BASE_DIR, "finetuning_data_dpo", "cycle_01.json")
+SRC_DIR = os.path.abspath(os.path.join(BASE_DIR, "..", "src"))
+
+def _log(message):
+    print(message)
+
+
+def _import_pipeline_main():
+    if SRC_DIR not in sys.path:
+        sys.path.insert(0, SRC_DIR)
+    try:
+        from run_qwen_exaone_pipeline import main as pipeline_main
+    except Exception as exc:
+        raise ImportError(
+            "Failed to import main from ../src/run_qwen_exaone_pipeline.py"
+        ) from exc
+    return pipeline_main
+
+
+def _parse_bool(value):
+    if isinstance(value, bool):
         return value
-    return [value]
+    if value is None:
+        return False
+    if isinstance(value, (int, float)):
+        return bool(value)
+    text = str(value).strip().lower()
+    return text in {"1", "true", "yes", "y", "t"}
 
 
-def _dedupe(items):
+def _load_pairs(csv_path):
+    with open(csv_path, "r", newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            if not row:
+                continue
+            persona_raw = row.get("persona", "").strip()
+            brand_raw = row.get("brand", "").strip()
+            product_raw = row.get("product", "").strip()
+            stage_raw = row.get("stage_index", "").strip()
+            style_raw = row.get("style_index", "").strip()
+            if not persona_raw or not brand_raw or not product_raw:
+                continue
+            if not stage_raw or not style_raw:
+                continue
+            try:
+                persona = int(persona_raw)
+                stage_index = int(stage_raw)
+                style_index = int(style_raw)
+            except ValueError:
+                continue
+            yield {
+                "persona": persona,
+                "brand": brand_raw,
+                "product": product_raw,
+                "stage_index": stage_index,
+                "style_index": style_index,
+                "is_event": _parse_bool(row.get("is_event", "")),
+            }
+
+
+def _format_prompt(summarization):
+    if summarization is None:
+        return ""
+    if isinstance(summarization, str):
+        return summarization.strip()
+    return json.dumps(summarization, ensure_ascii=False, indent=2)
+
+
+def _candidate_text(candidate):
+    if isinstance(candidate, dict):
+        return (
+            candidate.get("text")
+            or candidate.get("crm_message")
+            or candidate.get("message")
+            or candidate.get("content")
+        )
+    return str(candidate)
+
+
+def _normalize_candidates(raw):
+    if raw is None:
+        return []
+    if isinstance(raw, dict):
+        if "candidates" in raw:
+            raw = raw["candidates"]
+        elif "messages" in raw:
+            raw = raw["messages"]
+        elif "crm_messages" in raw:
+            raw = raw["crm_messages"]
+        elif "crm_message" in raw and isinstance(raw["crm_message"], list):
+            raw = raw["crm_message"]
+        else:
+            raw = [raw]
+    if not isinstance(raw, list):
+        raw = [raw]
+
+    normalized = []
+    for idx, item in enumerate(raw):
+        text = _candidate_text(item)
+        if not text:
+            continue
+        normalized.append({"response_id": idx, "text": text})
+    return normalized
+
+
+def _dedupe_candidates(items):
     seen = set()
     result = []
     for item in items:
@@ -32,68 +132,6 @@ def _dedupe(items):
         seen.add(key)
         result.append(item)
     return result
-
-
-def _candidate_text(candidate):
-    if isinstance(candidate, dict):
-        return candidate.get("text", "") or candidate.get("response", "")
-    return candidate
-
-
-def _format_analysis(analysis):
-    if isinstance(analysis, dict):
-        lines = ["ANALYSIS"]
-        persona_summary = analysis.get("persona_summary", "")
-        product_summary = analysis.get("product_summary", "")
-        key_preferences = analysis.get("key_preferences", [])
-        key_constraints = analysis.get("key_constraints", [])
-
-        if persona_summary:
-            lines.append(f"persona_summary: {persona_summary}")
-        if product_summary:
-            lines.append(f"product_summary: {product_summary}")
-        if key_preferences:
-            lines.append("key_preferences:")
-            for item in key_preferences:
-                lines.append(f"- {item}")
-        if key_constraints:
-            lines.append("key_constraints:")
-            for item in key_constraints:
-                lines.append(f"- {item}")
-
-        return "\n".join(lines)
-    return str(analysis)
-
-
-def _normalize_candidates(candidates):
-    if isinstance(candidates, dict) and "candidates" in candidates:
-        candidates = candidates["candidates"]
-
-    if candidates is None:
-        return []
-
-    normalized = []
-    for idx, item in enumerate(_ensure_list(candidates)):
-        if isinstance(item, dict):
-            text = _candidate_text(item)
-            response_id = item.get("response_id", idx)
-        else:
-            text = str(item)
-            response_id = idx
-
-        if not text:
-            continue
-        normalized.append({"response_id": response_id, "text": text})
-    return normalized
-
-
-def _resolve_choice_index(choice, candidates):
-    for idx, candidate in enumerate(candidates):
-        if candidate.get("response_id", idx) == choice:
-            return idx
-    if 0 <= choice < len(candidates):
-        return choice
-    raise ValueError(f"Evaluator index out of range: {choice}")
 
 
 def _extract_response_text(data):
@@ -123,29 +161,32 @@ def _extract_response_text(data):
     raise ValueError(f"Invalid evaluator response: {data}")
 
 
-def _call_gpt4o(analysis, candidates):
+def _call_gpt(prompt_text, candidates):
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
         raise RuntimeError("OPENAI_API_KEY is not set.")
-    print(f"candidates : {candidates}")
+
     candidate_lines = []
-    for i, candidate in enumerate(candidates):
-        response_id = candidate.get("response_id", i)
-        candidate_lines.append(f"[{response_id}] {candidate.get('text', '')}")
+    for idx, candidate in enumerate(candidates):
+        candidate_lines.append(f"[{idx}] {candidate.get('text', '')}")
     candidate_block = "\n\n".join(candidate_lines)
 
     system_prompt = (
-        "당신은 DPO 학습용 최종 답변을 고르는 평가자입니다. "
-        "명확성, 요청된 출력 형식(제목/본문 및 길이 제한) 준수, 톤 일치, "
-        "전반적인 유용성을 기준으로 가장 좋은 후보 1개를 선택하세요."
+        "너는 마케팅 문장 평가자다.\n"
+        "목표는 “전환 가능성이 더 높은 CRM 메시지”를 고르는 것이다.\n\n"
+        "다음 기준으로 두 응답을 비교하라:\n"
+        "1. 수신자가 실제 행동(클릭/재구매)을 할 가능성\n"
+        "2. persona와 구매 단계 적합성\n"
+        "3. 상품·브랜드 핵심 장점 전달력\n"
+        "4. 불필요한 장식 없이 명확한가\n\n"
+        "더 나은 쪽을 선택하라."
     )
     user_prompt = (
-        "분석:\n"
-        f"{_format_analysis(analysis)}\n\n"
+        "요약:\n"
+        f"{prompt_text}\n\n"
         "후보:\n"
         f"{candidate_block}\n\n"
-        "가장 좋은 후보의 response_id만 정수로 반환하세요. "
-        "동점이면 가장 낮은 response_id를 선택하세요."
+        "더 나은 후보의 인덱스만 정수로 반환하라."
     )
 
     payload = {
@@ -178,115 +219,234 @@ def _call_gpt4o(analysis, candidates):
     except urllib.error.HTTPError as exc:
         body = exc.read().decode("utf-8", errors="replace")
         raise RuntimeError(f"OpenAI API error {exc.code}: {body}") from exc
-    content = _extract_response_text(data)
 
+    content = _extract_response_text(data)
     match = re.search(r"-?\d+", content)
     if not match:
         raise ValueError(f"Invalid evaluator response: {content}")
-
     choice = int(match.group(0))
-    return _resolve_choice_index(choice, candidates)
+    if choice < 0 or choice >= len(candidates):
+        raise ValueError(f"Evaluator index out of range: {choice}")
+    return choice
 
 
-def gpt4o_pick_best(analysis, candidates):
-    if not candidates:
-        return ""
-
-    best_index = _call_gpt4o(analysis, candidates)
-    return candidates[best_index]
-
-
-def save_csv(path, rows):
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["prompt", "chosen", "rejected"])
-        writer.writeheader()
-        writer.writerows(rows)
-
-
-def _load_existing_rows(path):
+def _load_existing_records(path):
     if not os.path.exists(path):
         return []
-    with open(path, "r", newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
-        rows = []
-        for row in reader:
-            if not row:
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if not isinstance(data, list):
+        raise ValueError(f"Expected a list in {path}")
+    return data
+
+
+def _save_records(path, records):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(records, f, ensure_ascii=False, indent=2)
+
+
+def _extract_pipeline_output(result):
+    if isinstance(result, dict):
+        summarization = result.get("summarization")
+        crm_message = result.get("crm_message")
+    elif isinstance(result, (list, tuple)) and len(result) >= 2:
+        summarization, crm_message = result[0], result[1]
+    elif isinstance(result, str):
+        try:
+            parsed = json.loads(result)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"Unexpected pipeline output: {result}") from exc
+        return _extract_pipeline_output(parsed)
+    else:
+        raise ValueError(f"Unexpected pipeline output: {result}")
+    return summarization, crm_message
+
+
+def _parse_stdout_payload(stdout_text):
+    for line in reversed(stdout_text.splitlines()):
+        line = line.strip()
+        if not line:
+            continue
+        if not line.startswith("{") or not line.endswith("}"):
+            continue
+        try:
+            return json.loads(line)
+        except json.JSONDecodeError:
+            continue
+    raise ValueError("Pipeline did not return a usable payload.")
+
+
+def _run_pipeline_via_argv(pipeline_main, row):
+    argv = [
+        "run_qwen_exaone_pipeline.py",
+        "--persona",
+        str(row["persona"]),
+        "--brand",
+        row["brand"],
+        "--product",
+        row["product"],
+        "--stage_index",
+        str(row["stage_index"]),
+        "--style_index",
+        str(row["style_index"]),
+        "--is_event",
+        "1" if row.get("is_event", False) else "0",
+    ]
+    buf = StringIO()
+    old_argv = sys.argv
+    try:
+        sys.argv = argv
+        with redirect_stdout(buf):
+            result = pipeline_main()
+    finally:
+        sys.argv = old_argv
+    if result is not None:
+        return result
+    return _parse_stdout_payload(buf.getvalue())
+
+
+def _run_pipeline(pipeline_main, row):
+    params = {
+        "persona": row["persona"],
+        "brand": row["brand"],
+        "product": row["product"],
+        "stage_index": row["stage_index"],
+        "style_index": row["style_index"],
+        "is_event": row.get("is_event", False),
+    }
+    try:
+        sig = inspect.signature(pipeline_main)
+    except (TypeError, ValueError):
+        sig = None
+
+    if sig is not None and len(sig.parameters) == 0:
+        return _run_pipeline_via_argv(pipeline_main, row)
+
+    try:
+        return pipeline_main(**params)
+    except TypeError:
+        pass
+
+    try:
+        if sig is not None and len(sig.parameters) == 1:
+            return pipeline_main(row)
+    except TypeError:
+        pass
+
+    ordered = [
+        params["persona"],
+        params["brand"],
+        params["product"],
+        params["stage_index"],
+        params["style_index"],
+        params["is_event"],
+    ]
+    return pipeline_main(*ordered)
+
+
+def _collect_candidates(inference_pipeline, row, num_candidates):
+    summarization = None
+    candidates = []
+    for attempt in range(1, num_candidates + 1):
+        _log(f"  [Attempt {attempt}/{num_candidates}] Running pipeline")
+        result = _run_pipeline(inference_pipeline, row)
+        s, message = _extract_pipeline_output(result)
+        if summarization is None and s:
+            summarization = s
+        if isinstance(message, str) and message.strip():
+            candidates.append({"text": message.strip()})
+    return summarization, candidates
+
+
+def generate_dpo_data(csv_path, output_path, max_rows=None, num_candidates=4):
+    inference_pipeline = _import_pipeline_main()
+    records = _load_existing_records(output_path)
+    _log(f"CSV: {csv_path}")
+    _log(f"Output: {output_path}")
+    _log(f"Candidates per row: {num_candidates}")
+    _log(f"Loaded existing records: {len(records)}")
+
+    added = 0
+    for idx, row in enumerate(_load_pairs(csv_path)):
+        if max_rows is not None and idx >= max_rows:
+            break
+
+        _log(
+            "[Row {idx}] persona={persona} brand={brand} product={product} "
+            "stage_index={stage_index} style_index={style_index} is_event={is_event}".format(
+                idx=idx,
+                persona=row["persona"],
+                brand=row["brand"],
+                product=row["product"],
+                stage_index=row["stage_index"],
+                style_index=row["style_index"],
+                is_event=row.get("is_event", False),
+            )
+        )
+
+        try:
+            summarization, candidates = _collect_candidates(
+                inference_pipeline, row, num_candidates
+            )
+        except Exception as exc:
+            _log(f"[Row {idx}] Pipeline error: {exc}")
+            continue
+
+        prompt_text = _format_prompt(summarization)
+        if not prompt_text:
+            _log(f"[Row {idx}] Empty summarization, skipping")
+            continue
+
+        _log(f"[Row {idx}] Raw candidates: {len(candidates)}")
+        candidates = _dedupe_candidates(_normalize_candidates(candidates))
+        _log(f"[Row {idx}] Deduped candidates: {len(candidates)}")
+        if len(candidates) < 2:
+            _log(f"[Row {idx}] Not enough candidates, skipping")
+            continue
+
+        try:
+            best_idx = _call_gpt(prompt_text, candidates)
+        except Exception as exc:
+            _log(f"[Row {idx}] Evaluator error: {exc}")
+            continue
+
+        _log(f"[Row {idx}] Best candidate index: {best_idx}")
+        best_text = candidates[best_idx]["text"]
+        for candidate in candidates:
+            if candidate is candidates[best_idx]:
                 continue
-            rows.append({
-                "prompt": row.get("prompt", ""),
-                "chosen": row.get("chosen", ""),
-                "rejected": row.get("rejected", ""),
-            })
-        return rows
-
-
-def _next_cycle_id(data_dir):
-    if not os.path.isdir(data_dir):
-        return 1
-
-    cycle_ids = []
-    for name in os.listdir(data_dir):
-        match = re.match(r"cycle_(\d+)\.csv$", name)
-        if match:
-            cycle_ids.append(int(match.group(1)))
-    return max(cycle_ids) + 1 if cycle_ids else 1
-
-
-def generate_cycle(cycle_id, model_2b, model_8b, prompts):
-    out_path = f"finetuning_data/cycle_{cycle_id:02d}.csv"
-    rows = _load_existing_rows(out_path)
-    print(f"[Cycle {cycle_id:02d}] Loaded existing rows: {len(rows)}")
-    for p in prompts:
-        print("[Stage 1] Analyzer: start")
-        analysis_result = generate_n(model_2b, p, n=4)
-        if isinstance(analysis_result, dict) and "analysis" in analysis_result:
-            analysis = analysis_result.get("analysis")
-            n_candidates = analysis_result.get("n", 4)
-        else:
-            analysis = analysis_result
-            n_candidates = 4
-
-        if not analysis:
-            print("[Stage 1] Analyzer: empty analysis, skipping")
-            continue
-
-        generator_input = {"analysis": analysis, "n": n_candidates}
-        print(f"[Stage 1] Analyzer: done (n={n_candidates})")
-        print("[Stage 2] Generator: start")
-        raw_candidates = refine_with_8b(model_8b, generator_input)
-        candidates = _dedupe(_normalize_candidates(raw_candidates))
-        if not candidates:
-            print("[Stage 2] Generator: no candidates, skipping")
-            continue
-        print(f"[Stage 2] Generator: done (candidates={len(candidates)})")
-
-        print("[Stage 3] Discriminator: start")
-        best = gpt4o_pick_best(analysis, candidates)
-        if not best:
-            print("[Stage 3] Discriminator: no best candidate, skipping")
-            continue
-        print("[Stage 3] Discriminator: done")
-
-        analysis_prompt = _format_analysis(analysis)
-        best_text = _candidate_text(best)
-
-        for r in candidates:
-            if r != best:
-                rejected_text = _candidate_text(r)
-                if not rejected_text:
-                    continue
-                rows.append({
-                    "prompt": analysis_prompt,
+            rejected_text = candidate["text"]
+            if not rejected_text:
+                continue
+            records.append(
+                {
+                    "prompt": prompt_text,
                     "chosen": best_text,
-                    "rejected": rejected_text
-                })
+                    "rejected": rejected_text,
+                }
+            )
+            added += 1
 
-    save_csv(out_path, rows)
-    print(f"[Cycle {cycle_id:02d}] Saved rows: {len(rows)} -> {out_path}")
+    _save_records(output_path, records)
+    _log(f"Saved {added} new records to {output_path}")
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--csv_path", default=DEFAULT_CSV)
+    parser.add_argument("--output_path", default=DEFAULT_OUTPUT)
+    parser.add_argument("--max_rows", type=int, default=None)
+    parser.add_argument("--num_candidates", type=int, default=4)
+    args = parser.parse_args()
+
+    generate_dpo_data(
+        args.csv_path,
+        args.output_path,
+        args.max_rows,
+        args.num_candidates,
+    )
 
 
 if __name__ == "__main__":
-    raise RuntimeError(
-        "Call generate_cycle(cycle_id, model_2b, model_8b, prompts) from your runner."
-    )
+    main()
