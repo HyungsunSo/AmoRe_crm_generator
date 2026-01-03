@@ -160,8 +160,8 @@ class LocalQwenGenerator:
             pass
         if cache_allowed:
             self._CACHE[cache_key] = {
-            "tokenizer": self.tokenizer,
-            "model": self.model,
+                "tokenizer": self.tokenizer,
+                "model": self.model,
             }
         print("[로컬 Qwen] 모델 로딩 완료")
     
