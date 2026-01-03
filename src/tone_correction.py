@@ -20,6 +20,7 @@ import json
 import os
 import sys
 from datetime import datetime, timezone
+from functools import lru_cache
 from typing import Dict, List, Any
 
 import torch
@@ -40,6 +41,7 @@ FOMO_STAGE_KEYS = {
 }
 
 
+@lru_cache(maxsize=None)
 def load_json(path: str) -> Any:
     with open(path, 'r', encoding='utf-8') as f:
         return json.load(f)
@@ -197,10 +199,19 @@ def get_device() -> str:
 
 class ExaoneToneCorrector:
     """Exaone 로컬 모델을 통한 톤 보정."""
+    _CACHE = {}
 
     def __init__(self, model_name: str = "LGAI-EXAONE/EXAONE-4.0-1.2B"):
         self.device = get_device()
         self.model_name = model_name
+        cache_key = (self.device, model_name)
+        cached = self._CACHE.get(cache_key)
+        if cached:
+            self.tokenizer = cached["tokenizer"]
+            self.model = cached["model"]
+            print(f"[Exaone] 캐시 로딩: {model_name}")
+            return
+
         print(f"[Exaone] 디바이스: {self.device}")
         print(f"[Exaone] 모델 로딩 중: {model_name}...")
 
@@ -216,6 +227,10 @@ class ExaoneToneCorrector:
             self.model.eval()
         except Exception:
             pass
+        self._CACHE[cache_key] = {
+            "tokenizer": self.tokenizer,
+            "model": self.model,
+        }
         print("[Exaone] 모델 로딩 완료")
 
     def generate(self, messages: List[Dict[str, str]], max_tokens: int = 512, temperature: float = 0.4):
@@ -250,6 +265,51 @@ class ExaoneToneCorrector:
         text = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
         return text.strip()
 
+
+    def generate_batch(self, messages_list, max_tokens: int = 512, temperature: float = 0.4):
+        if not messages_list:
+            return []
+
+        input_texts = []
+        for messages in messages_list:
+            try:
+                input_text = self.tokenizer.apply_chat_template(
+                    messages,
+                    tokenize=False,
+                    add_generation_prompt=True
+                )
+            except Exception:
+                input_text = "\n".join(
+                    [f"{m['role']}: {m['content']}" for m in messages]
+                )
+            input_texts.append(input_text)
+
+        inputs = self.tokenizer(
+            input_texts,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            max_length=3072
+        ).to(self.device)
+
+        with torch.inference_mode():
+            output_ids = self.model.generate(
+                **inputs,
+                max_new_tokens=max_tokens,
+                temperature=temperature,
+                top_p=0.9,
+                do_sample=True,
+                repetition_penalty=1.1,
+                pad_token_id=self.tokenizer.eos_token_id
+            )
+
+        input_lengths = inputs["attention_mask"].sum(dim=1).tolist()
+        outputs = []
+        for i, input_len in enumerate(input_lengths):
+            generated_ids = output_ids[i][int(input_len):]
+            text = self.tokenizer.decode(generated_ids, skip_special_tokens=True)
+            outputs.append(text.strip())
+        return outputs
 
 def main():
     parser = argparse.ArgumentParser()
