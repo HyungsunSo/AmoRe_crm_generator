@@ -188,6 +188,8 @@ def _normalize_row(row):
 
 
 def _run_pipeline(args, data=None, q_generator=None, exa_generator=None):
+    total_start = time.time()
+    load_duration = 0.0
     # Resolve stage and style indices with fallbacks
     if 0 <= args.stage_index < len(STAGE_ORDER):
         aarrr_stage = STAGE_ORDER[args.stage_index]
@@ -203,7 +205,9 @@ def _run_pipeline(args, data=None, q_generator=None, exa_generator=None):
 
     base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     if data is None:
+        load_start = time.time()
         data = _load_data(base)
+        load_duration = time.time() - load_start
 
     personas = data['personas']
     products = data['products']
@@ -243,12 +247,13 @@ def _run_pipeline(args, data=None, q_generator=None, exa_generator=None):
         campaign_event_info=selected_event
     )
     qwen_end = time.time()
+    qwen_duration = q_dur if q_dur is not None else (qwen_end - qwen_start)
     timeline.append({
         "step": "qwen_generation",
         "model": args.qwen_model,
         "started_at": datetime.fromtimestamp(qwen_start, timezone.utc).isoformat(),
         "ended_at": datetime.fromtimestamp(qwen_end, timezone.utc).isoformat(),
-        "duration_seconds": q_dur if q_dur is not None else (qwen_end - qwen_start),
+        "duration_seconds": qwen_duration,
         "output_raw": q_draft
     })
 
@@ -256,7 +261,9 @@ def _run_pipeline(args, data=None, q_generator=None, exa_generator=None):
     brand_story = pick_brand_story(brand_stories, args.brand)
     crm_goal = load_crm_goal_meta(crm_goals, args.stage_index)
     bucket = select_stage_bucket(crm_categorized, args.stage_index)
+    rag_start = time.time()
     crm_snippets = rag_crm_snippets(bucket, q_draft[:500], top_k=args.top_k)
+    rag_duration = time.time() - rag_start
 
     # Pick CRM style templates for Exaone
     selected_templates = []
@@ -352,49 +359,58 @@ def _run_pipeline(args, data=None, q_generator=None, exa_generator=None):
         "timeline": timeline
     }
 
-    # Write log output
-    log_dir = os.path.join(base, 'log')
-    os.makedirs(log_dir, exist_ok=True)
+    # # Write log output
+    # log_dir = os.path.join(base, 'log')
+    # os.makedirs(log_dir, exist_ok=True)
 
-    timestamp_str = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
-    log_filename = f"pipeline_{args.brand}_{STAGE_ORDER[args.stage_index]}_{timestamp_str}.json"
-    log_path = os.path.join(log_dir, log_filename)
+    # timestamp_str = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+    # log_filename = f"pipeline_{args.brand}_{STAGE_ORDER[args.stage_index]}_{timestamp_str}.json"
+    # log_path = os.path.join(log_dir, log_filename)
 
-    with open(log_path, 'w', encoding='utf-8') as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
+    # with open(log_path, 'w', encoding='utf-8') as f:
+    #     json.dump(out, f, ensure_ascii=False, indent=2)
 
-    # Write lightweight output
-    final_output_dir = os.path.join(base, 'outputs')
-    os.makedirs(final_output_dir, exist_ok=True)
+    # # Write lightweight output
+    # final_output_dir = os.path.join(base, 'outputs')
+    # os.makedirs(final_output_dir, exist_ok=True)
 
-    # Minimal result for user
-    user_output = {
-        "persona_id": args.persona,
-        "product_id": product.get('product_id'),
-        "send_purpose": STAGE_ORDER[args.stage_index],
-        "customer_segment": persona.get('name'),
-        "has_event": True if args.is_event == 1 else False,
-        "marketing_draft": q_draft,
-        "crm_message": exa_output
-    }
-    if selected_event:
-        user_output["event_info"] = selected_event
+    # # Minimal result for user
+    # user_output = {
+    #     "persona_id": args.persona,
+    #     "product_id": product.get('product_id'),
+    #     "send_purpose": STAGE_ORDER[args.stage_index],
+    #     "customer_segment": persona.get('name'),
+    #     "has_event": True if args.is_event == 1 else False,
+    #     "marketing_draft": q_draft,
+    #     "crm_message": exa_output
+    # }
+    # if selected_event:
+    #     user_output["event_info"] = selected_event
 
-    output_filename = f"result_{args.brand}_{timestamp_str}.json"
-    output_path = args.out_path or os.path.join(final_output_dir, output_filename)
+    # output_filename = f"result_{args.brand}_{timestamp_str}.json"
+    # output_path = args.out_path or os.path.join(final_output_dir, output_filename)
 
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(user_output, f, ensure_ascii=False, indent=2)
+    # with open(output_path, 'w', encoding='utf-8') as f:
+    #     json.dump(user_output, f, ensure_ascii=False, indent=2)
 
-    print("Log saved:", log_path)
-    print("Result saved:", output_path)
-    print("--- Qwen draft ---")
-    print(q_draft[:400])
-    print("\n--- Exaone refined ---")
-    print(exa_output[:400])
-    print("\n--- Exaone prompt ---")
-    print(exa_prompt_text[:1200])
+    # print("Log saved:", log_path)
+    # print("Result saved:", output_path)
+    # print("--- Qwen draft ---")
+    # print(q_draft[:400])
+    # print("\n--- Exaone refined ---")
+    # print(exa_output[:400])
+    # print("\n--- Exaone prompt ---")
+    # print(exa_prompt_text[:1200])
 
+    total_duration = time.time() - total_start
+    print(
+        "[Timing] "
+        f"load={load_duration:.2f}s "
+        f"qwen={qwen_duration:.2f}s "
+        f"rag={rag_duration:.2f}s "
+        f"exaone={exa_end - exa_start:.2f}s "
+        f"total={total_duration:.2f}s"
+    )
     return out
 
 
@@ -404,7 +420,7 @@ def main():
     parser.add_argument('--brand', required=False, help='Brand name (brand_stories.json key)')
     parser.add_argument('--product', required=False, help='Product name (partial match allowed)')
     parser.add_argument('--stage_index', type=int, required=False, help='CRM stage index (0~4)')
-    parser.add_argument('--top_k', type=int, default=5, help='RAG Top-K and review Top-K')
+    parser.add_argument('--top_k', type=int, default=3, help='RAG Top-K and review Top-K')
     parser.add_argument('--qwen_model', default='Qwen/Qwen2.5-1.5B-Instruct', help='Qwen local model name')
     parser.add_argument('--exa_model', default='LGAI-EXAONE/EXAONE-4.0-1.2B', help='Exaone local model name')
     parser.add_argument('--is_event', type=int, default=0, help='Include campaign event (0 or 1)')
