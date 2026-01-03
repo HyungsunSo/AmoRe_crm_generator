@@ -167,10 +167,11 @@ function updateCampaignInfo() {
     if (!eventChipsEl) return;
     const selected = state.selectedEvent ? '1' : '0';
     eventChipsEl.innerHTML = `
-        <button class="chip ${selected === '0' ? 'active' : ''}" data-event="0">??? ??</button>
-        <button class="chip ${selected === '1' ? 'active' : ''}" data-event="1">??? ??</button>
+        <button class=\"chip ${selected === '0' ? 'active' : ''}\" data-event=\"0\">&#xc774;&#xbc24;&#xd2b8; &#xc5c6;&#xc74c;</button>
+        <button class=\"chip ${selected === '1' ? 'active' : ''}\" data-event=\"1\">&#xc774;&#xbc24;&#xd2b8; &#xc788;&#xc74c;</button>
     `;
 }
+
 
 
 function selectEvent(value) {
