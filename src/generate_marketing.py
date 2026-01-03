@@ -126,12 +126,14 @@ def get_device():
 class LocalQwenGenerator:
     """로컬 Qwen 모델을 사용하여 마케팅 초안을 생성합니다."""
     _CACHE = {}
+    CACHE_ENABLED = True
     
-    def __init__(self, model_name="Qwen/Qwen2.5-1.5B-Instruct"):
+    def __init__(self, model_name="Qwen/Qwen2.5-1.5B-Instruct", use_cache=True):
         self.device = get_device()
         self.model_name = model_name
         cache_key = (self.device, model_name)
-        cached = self._CACHE.get(cache_key)
+        cache_allowed = use_cache and self.CACHE_ENABLED
+        cached = self._CACHE.get(cache_key) if cache_allowed else None
         if cached:
             self.tokenizer = cached["tokenizer"]
             self.model = cached["model"]
@@ -156,10 +158,11 @@ class LocalQwenGenerator:
             self.model.eval()
         except Exception:
             pass
-        self._CACHE[cache_key] = {
+        if cache_allowed:
+            self._CACHE[cache_key] = {
             "tokenizer": self.tokenizer,
             "model": self.model,
-        }
+            }
         print("[로컬 Qwen] 모델 로딩 완료")
     
     def generate_text(self, messages, max_tokens=512, temperature=0.1):

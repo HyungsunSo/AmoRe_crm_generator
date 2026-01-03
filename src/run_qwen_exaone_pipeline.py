@@ -39,10 +39,12 @@ from tone_correction import (  # noqa: E402
 
 
 def top_highlights_for_product(persona, product, top_k=3):
-    cache_key = _highlight_cache_key(persona, product, top_k)
-    cached = _HIGHLIGHT_CACHE.get(cache_key)
-    if cached is not None:
-        return cached
+    cache_key = None
+    if CACHE_ENABLED:
+        cache_key = _highlight_cache_key(persona, product, top_k)
+        cached = _HIGHLIGHT_CACHE.get(cache_key)
+        if cached is not None:
+            return cached
     query = build_persona_query(persona)
     candidates = extract_candidate_texts(product)
     all_texts = [query] + candidates
@@ -66,7 +68,8 @@ def top_highlights_for_product(persona, product, top_k=3):
                 "snippet": extract_highlight_snippet(text),
             }
         )
-    _HIGHLIGHT_CACHE[cache_key] = highlights
+    if CACHE_ENABLED and cache_key is not None:
+        _HIGHLIGHT_CACHE[cache_key] = highlights
     return highlights
 
 
@@ -83,22 +86,38 @@ _QWEN_GENERATOR_CACHE = {}
 _EXAONE_GENERATOR_CACHE = {}
 _STYLE_POOL_CACHE = {}
 _HIGHLIGHT_CACHE = {}
+CACHE_ENABLED = True
+_TIMING_WINDOW = 100
+_TIMING_AGG = {
+    "count": 0,
+    "sum": {
+        "load": 0.0,
+        "qwen": 0.0,
+        "rag": 0.0,
+        "exaone": 0.0,
+        "total": 0.0,
+    },
+}
 
 
 def _get_qwen_generator(model_name):
+    if not CACHE_ENABLED:
+        return LocalQwenGenerator(model_name=model_name, use_cache=False)
     cached = _QWEN_GENERATOR_CACHE.get(model_name)
     if cached:
         return cached
-    generator = LocalQwenGenerator(model_name=model_name)
+    generator = LocalQwenGenerator(model_name=model_name, use_cache=True)
     _QWEN_GENERATOR_CACHE[model_name] = generator
     return generator
 
 
 def _get_exaone_generator(model_name):
+    if not CACHE_ENABLED:
+        return ExaoneToneCorrector(model_name=model_name, use_cache=False)
     cached = _EXAONE_GENERATOR_CACHE.get(model_name)
     if cached:
         return cached
-    generator = ExaoneToneCorrector(model_name=model_name)
+    generator = ExaoneToneCorrector(model_name=model_name, use_cache=True)
     _EXAONE_GENERATOR_CACHE[model_name] = generator
     return generator
 
@@ -114,10 +133,12 @@ def _highlight_cache_key(persona, product, top_k):
 
 
 def _get_style_candidates(style_data, aarrr_stage):
-    key = (id(style_data), aarrr_stage)
-    cached = _STYLE_POOL_CACHE.get(key)
-    if cached is not None:
-        return cached
+    key = None
+    if CACHE_ENABLED:
+        key = (id(style_data), aarrr_stage)
+        cached = _STYLE_POOL_CACHE.get(key)
+        if cached is not None:
+            return cached
 
     candidates_pool = []
     for group_val in style_data.values():
@@ -131,8 +152,55 @@ def _get_style_candidates(style_data, aarrr_stage):
                     if aarrr_stage in item['stage']:
                         candidates_pool.extend(item['data'])
 
-    _STYLE_POOL_CACHE[key] = candidates_pool
+    if CACHE_ENABLED and key is not None:
+        _STYLE_POOL_CACHE[key] = candidates_pool
     return candidates_pool
+
+
+def _set_cache_enabled(enabled):
+    global CACHE_ENABLED
+    if CACHE_ENABLED == enabled:
+        return
+    CACHE_ENABLED = enabled
+    if not enabled:
+        _QWEN_GENERATOR_CACHE.clear()
+        _EXAONE_GENERATOR_CACHE.clear()
+        _STYLE_POOL_CACHE.clear()
+        _HIGHLIGHT_CACHE.clear()
+        if hasattr(load_json, "cache_clear"):
+            load_json.cache_clear()
+    try:
+        LocalQwenGenerator.CACHE_ENABLED = enabled
+        if not enabled:
+            LocalQwenGenerator._CACHE.clear()
+    except Exception:
+        pass
+    try:
+        ExaoneToneCorrector.CACHE_ENABLED = enabled
+        if not enabled:
+            ExaoneToneCorrector._CACHE.clear()
+    except Exception:
+        pass
+
+
+def _record_timing(timing):
+    agg = _TIMING_AGG
+    agg["count"] += 1
+    for key in agg["sum"]:
+        agg["sum"][key] += timing.get(key, 0.0)
+    if agg["count"] % _TIMING_WINDOW == 0:
+        avg = {key: agg["sum"][key] / _TIMING_WINDOW for key in agg["sum"]}
+        print(
+            "[TimingAvg] "
+            f"n={_TIMING_WINDOW} "
+            f"load={avg['load']:.2f}s "
+            f"qwen={avg['qwen']:.2f}s "
+            f"rag={avg['rag']:.2f}s "
+            f"exaone={avg['exaone']:.2f}s "
+            f"total={avg['total']:.2f}s"
+        )
+        for key in agg["sum"]:
+            agg["sum"][key] = 0.0
 
 def _load_data(base):
     data_dir = os.path.join(base, 'data')
@@ -190,6 +258,12 @@ def _normalize_row(row):
 def _run_pipeline(args, data=None, q_generator=None, exa_generator=None):
     total_start = time.time()
     load_duration = 0.0
+    rag_duration = 0.0
+    qwen_duration = 0.0
+    if hasattr(args, "disable_cache"):
+        _set_cache_enabled(not args.disable_cache)
+        if not CACHE_ENABLED and hasattr(load_json, "cache_clear"):
+            load_json.cache_clear()
     # Resolve stage and style indices with fallbacks
     if 0 <= args.stage_index < len(STAGE_ORDER):
         aarrr_stage = STAGE_ORDER[args.stage_index]
@@ -359,6 +433,18 @@ def _run_pipeline(args, data=None, q_generator=None, exa_generator=None):
         "timeline": timeline
     }
 
+    exa_duration = exa_end - exa_start
+    total_duration = time.time() - total_start
+    timing = {
+        "load": load_duration,
+        "qwen": qwen_duration,
+        "rag": rag_duration,
+        "exaone": exa_duration,
+        "total": total_duration,
+    }
+    out["timing"] = timing
+    _record_timing(timing)
+
     # # Write log output
     # log_dir = os.path.join(base, 'log')
     # os.makedirs(log_dir, exist_ok=True)
@@ -402,14 +488,13 @@ def _run_pipeline(args, data=None, q_generator=None, exa_generator=None):
     # print("\n--- Exaone prompt ---")
     # print(exa_prompt_text[:1200])
 
-    total_duration = time.time() - total_start
     print(
         "[Timing] "
-        f"load={load_duration:.2f}s "
-        f"qwen={qwen_duration:.2f}s "
-        f"rag={rag_duration:.2f}s "
-        f"exaone={exa_end - exa_start:.2f}s "
-        f"total={total_duration:.2f}s"
+        f"load={timing['load']:.2f}s "
+        f"qwen={timing['qwen']:.2f}s "
+        f"rag={timing['rag']:.2f}s "
+        f"exaone={timing['exaone']:.2f}s "
+        f"total={timing['total']:.2f}s"
     )
     return out
 
@@ -427,9 +512,11 @@ def main():
     parser.add_argument('--style_index', type=int, default=0, help='CRM template style index (0~5)')
     parser.add_argument('--out_path', default=None, help='Output path')
     parser.add_argument('--batch_json', default=None, help='Batch input JSON path (list of rows)')
+    parser.add_argument('--disable_cache', action='store_true', help='Disable in-process caches')
     args = parser.parse_args()
 
     base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    _set_cache_enabled(not args.disable_cache)
 
     if args.batch_json:
         with open(args.batch_json, 'r', encoding='utf-8') as f:
@@ -437,9 +524,13 @@ def main():
         if not isinstance(rows, list):
             raise ValueError('batch_json must be a list of row dicts')
 
-        data = _load_data(base)
-        q_generator = _get_qwen_generator(args.qwen_model)
-        exa_generator = _get_exaone_generator(args.exa_model)
+        data = None
+        q_generator = None
+        exa_generator = None
+        if not args.disable_cache:
+            data = _load_data(base)
+            q_generator = _get_qwen_generator(args.qwen_model)
+            exa_generator = _get_exaone_generator(args.exa_model)
         outputs = []
 
         for idx, row in enumerate(rows, start=1):
