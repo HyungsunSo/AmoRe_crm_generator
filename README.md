@@ -1,6 +1,6 @@
 # AmoRe_crm_generator
 
-# data
+## data
 
 product.json
 : 탑100제품과 그 리뷰에 대한 크롤링 데이터
