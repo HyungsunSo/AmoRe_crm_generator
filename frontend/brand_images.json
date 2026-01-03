@@ -1,0 +1,176 @@
+{
+    "설화수": {
+        "name_kr": "설화수",
+        "name_en": "Sulwhasoo",
+        "logo_url": "https://images-kr.amoremall.com/fileupload/brand/18/2023/02/27/LOGO_png.png",
+        "color": "#C4893C"
+    },
+    "라네즈": {
+        "name_kr": "라네즈",
+        "name_en": "Laneige",
+        "logo_url": "https://images-kr.amoremall.com/fileupload/brand/31/2024/10/08/LANEIGE_256x256.png",
+        "color": "#00A3E0"
+    },
+    "이니스프리": {
+        "name_kr": "이니스프리",
+        "name_en": "Innisfree",
+        "logo_url": "https://images-kr.amoremall.com/fileupload/brand/204/2023/02/28/%EC%9D%B4%EB%8B%88%EC%8A%A4%ED%94%84%EB%A6%AC_%EB%A1%9C%EA%B3%A0_%EC%9E%91%EC%97%85%EB%AC%BC02.png",
+        "color": "#0D613B"
+    },
+    "헤라": {
+        "name_kr": "헤라",
+        "name_en": "HERA",
+        "logo_url": "https://images-kr.amoremall.com/fileupload/brand/15/2022/12/20/%E1%84%92%E1%85%A6%E1%84%85%E1%85%A1%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AF.png",
+        "color": "#1A1A1A"
+    },
+    "아이오페": {
+        "name_kr": "아이오페",
+        "name_en": "IOPE",
+        "logo_url": "https://images-kr.amoremall.com/fileupload/brand/17/2022/12/20/%E1%84%8B%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A9%E1%84%91%E1%85%A6%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AF.png",
+        "color": "#1864AB"
+    },
+    "에뛰드": {
+        "name_kr": "에뛰드",
+        "name_en": "Etude",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/dc9beac6-26a4-40b9-880e-e22c45cb2b5b.png",
+        "color": "#FF6B9D"
+    },
+    "마몽드": {
+        "name_kr": "마몽드",
+        "name_en": "Mamonde",
+        "logo_url": "https://images-kr.amoremall.com/fileupload/brand/11/2023/10/04/mamonde_256x256.png",
+        "color": "#FF6B35"
+    },
+    "한율": {
+        "name_kr": "한율",
+        "name_en": "Hanyul",
+        "logo_url": "https://images-kr.amoremall.com/fileupload/brand/25/2022/12/20/%E1%84%92%E1%85%A1%E1%86%AB%E1%84%8B%E1%85%B2%E1%86%AF%20%E1%84%85%E1%85%A9%E1%84%80%E1%85%A9_%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%A5%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AF.png",
+        "color": "#6B7D34"
+    },
+    "프리메라": {
+        "name_kr": "프리메라",
+        "name_en": "Primera",
+        "logo_url": "https://image.thehyundai.com/static/image/sect/brand/small_img/smallM18448.png",
+        "color": "#00997A"
+    },
+    "에스트라": {
+        "name_kr": "에스트라",
+        "name_en": "Aestura",
+        "logo_url": "https://images-kr.amoremall.com/fileupload/brand/53/2023/10/04/AESTURA_256x256.png",
+        "color": "#4CB8B3"
+    },
+    "일리윤": {
+        "name_kr": "일리윤",
+        "name_en": "Illiyoon",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/9676d0a8-b992-45b2-be19-5af8be65e518.png",
+        "color": "#7B93DB"
+    },
+    "미쟝센": {
+        "name_kr": "미쟝센",
+        "name_en": "mise en scène",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/ae3a8aec-21cf-4c6c-8ac8-a71cd13f5dae.png",
+        "color": "#8B4513"
+    },
+    "코스알엑스": {
+        "name_kr": "코스알엑스",
+        "name_en": "COSRX",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/24809220-7091-4908-bfb4-3adc67562bca.png",
+        "color": "#E53935"
+    },
+    "오설록": {
+        "name_kr": "오설록",
+        "name_en": "Osulloc",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/afe9dd1f-72e7-45d5-82ce-e226dd08b001.png",
+        "color": "#2E7D32"
+    },
+    "려": {
+        "name_kr": "려",
+        "name_en": "Ryo",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/39819531-26c3-4089-b73c-3967005ca3c7.png",
+        "color": "#5D4037"
+    },
+    "에스쁘아": {
+        "name_kr": "에스쁘아",
+        "name_en": "Espoir",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/5366d6b2-dc72-4284-b9b2-c0f4011f7969.png",
+        "color": "#C62828"
+    },
+    "라보에이치": {
+        "name_kr": "라보에이치",
+        "name_en": "Labo-H",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/c8b322b1-0f96-4f26-a69b-525a0cdff70a.png",
+        "color": "#388E3C"
+    },
+    "비레디": {
+        "name_kr": "비레디",
+        "name_en": "Beready",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/5ce6a6c5-6a37-46c7-8447-dab0662ed578.png",
+        "color": "#1565C0"
+    },
+    "바이탈뷰티": {
+        "name_kr": "바이탈뷰티",
+        "name_en": "Vitalbeautie",
+        "logo_url": "https://images-kr.amoremall.com/fileupload/brand/12/2025/05/09/아모레몰 로고(2).png",
+        "color": "#AD1457"
+    },
+    "해피바스": {
+        "name_kr": "해피바스",
+        "name_en": "Happy Bath",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/e91acca5-1b72-43c1-bb02-f135667c5b6c.png",
+        "color": "#FBC02D"
+    },
+    "오딧세이": {
+        "name_kr": "오딧세이",
+        "name_en": "Odyssey",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/6c7baba2-959b-4280-ad66-e183dfca2844.png",
+        "color": "#1A237E"
+    },
+    "메디안": {
+        "name_kr": "메디안",
+        "name_en": "Median",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/3e291628-9fa1-4174-87b2-226a130a0833.png",
+        "color": "#0277BD"
+    },
+    "롱테이크": {
+        "name_kr": "롱테이크",
+        "name_en": "Longtake",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/e0932a4d-acbc-4a19-b1f0-5e76dbb7144a.png",
+        "color": "#33691E"
+    },
+    "아모스프로페셔널": {
+        "name_kr": "아모스프로페셔널",
+        "name_en": "Amos Professional",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/6d5efc9b-e762-4939-abf6-d27480a8fe74.png",
+        "color": "#424242"
+    },
+    "메이크온": {
+        "name_kr": "메이크온",
+        "name_en": "Givenchy Beauty",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/5f61c50b-ffcf-414a-8d2d-ebcf4a346ac2.png",
+        "color": "#000000"
+    },
+    "보타닉센스": {
+        "name_kr": "보타닉센스",
+        "name_en": "Botanicsens",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/206b493b-045c-49b2-a066-407acbfadfb8.png",
+        "color": "#4CAF50"
+    },
+    "세잔느": {
+        "name_kr": "세잔느",
+        "name_en": "Cezanne",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/d3fb62c0-49d7-43b3-afce-9b13078229f9.png",
+        "color": "#FF80AB"
+    },
+    "아모레퍼시픽": {
+        "name_kr": "아모레퍼시픽",
+        "name_en": "Amorepacific",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/dcc7fe7e-1ae8-402f-adec-a568886e2072.png",
+        "color": "#00695C"
+    },
+    "에이피뷰티": {
+        "name_kr": "에이피뷰티",
+        "name_en": "AP Beauty",
+        "logo_url": "https://images-kr.amoremall.com/sis/images/2025/11/28/bfa7b8ce-7c29-4f8f-a5a5-88ff7a63c154.png",
+        "color": "#212121"
+    }
+}
