@@ -154,20 +154,7 @@
 
                         <div class="divider"></div>
 
-                        <!-- Custom Event -->
-                        <div class="form-group">
-                            <label>커스텀 캠페인/이벤트 추가</label>
-                            <div class="form-row" style="gap:8px; margin-bottom: 8px;">
-                                <input type="text" id="new-event-name" placeholder="이벤트명 (예: 게릴라 럭키박스)" style="flex:1;">
-                                <button class="action-btn secondary" onclick="addCustomEvent()"
-                                    style="flex-shrink: 0;">추가</button>
-                            </div>
-                            <textarea id="new-event-detail" placeholder="상세 이벤트 설명 (메시지 생성에 활용됩니다)" rows="2"
-                                style="margin-bottom: 8px;"></textarea>
-                            <div id="added-events-list" class="added-items-list"></div>
-                        </div>
-
-                        <div class="divider"></div>
+                        
 
                         <!-- Custom Goal & Style (Row) -->
                         <div class="form-row" style="gap: 16px; align-items: flex-start;">
@@ -200,40 +187,12 @@
 
                     <div class="settings-container">
                         <div class="settings-card">
-                            <h3>발송 목적</h3>
-                            <div class="chip-group" id="stage-chips">
-                                <button class="chip" data-value="0">첫 유입</button>
-                                <button class="chip" data-value="1">첫 구매</button>
-                                <button class="chip" data-value="2">재구매</button>
-                                <button class="chip" data-value="3">매출 증대</button>
-                                <button class="chip" data-value="4">추천</button>
-                                <button class="chip add-custom-btn" onclick="addCustomStage()"
-                                    style="background:#F2F4F6;color:#333;border:1px dashed #B0B8C1;">+ 직접 입력</button>
-                            </div>
-                        </div>
-                        <div class="settings-card">
-                            <h3>스타일</h3>
-                            <div class="chip-group" id="style-chips">
-                                <button class="chip" data-value="0">긴박함</button>
-                                <button class="chip" data-value="1">정보</button>
-                                <button class="chip" data-value="2">FOMO</button>
-                                <button class="chip" data-value="3">감성</button>
-                                <button class="chip" data-value="4">시즌</button>
-                                <button class="chip add-custom-btn" onclick="addCustomStyle()"
-                                    style="background:#F2F4F6;color:#333;border:1px dashed #B0B8C1;">+ 직접 입력</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="settings-card">
-                        <h3>이벤트 선택</h3>
-                        <div class="chip-group" id="event-chips" style="margin-bottom: 12px;">
-                            <span style="color:#8B95A1;font-size:13px;">위에서 발송 목적을 먼저 선택하세요</span>
-                        </div>
-                        <div class="campaign-info-box" id="event-detail-box">
-                            <p style="color:#8B95A1;font-size:13px;">이벤트 선택 시 상세정보가 표시됩니다</p>
-                        </div>
-                    </div>
+    <h3>&#xc774;&#xbc24;&#xd2b8; &#xc5ec;&#xbd80;</h3>
+    <div class="chip-group" id="event-chips" style="margin-bottom: 12px;">
+        <button class="chip" data-event="0">&#xc774;&#xbc24;&#xd2b8; &#xc5c6;&#xc74c;</button>
+        <button class="chip" data-event="1">&#xc774;&#xbc24;&#xd2b8; &#xc5c6;&#xc74c;</button>
+    </div>
+</div>
                 </section>
 
                 <section class="step-section" id="step-4">

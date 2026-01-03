@@ -27,6 +27,9 @@ let AARRR = ['Acquisition', 'Activation', 'Retention', 'Revenue', 'Referral'];
 let AARRR_KR = ['유입', '구매', '재구매', '매출', '추천'];
 let STYLES_KR = ['긴박', '정보', 'FOMO', '감성', '시즌'];
 
+const API_BASE = window.API_BASE || (location.origin && location.origin !== "null" ? location.origin : "");
+const API_ENDPOINT = API_BASE ? `${API_BASE.replace(/\/$/, "")}/generate_batch` : "";
+
 const $ = id => document.getElementById(id);
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -58,6 +61,13 @@ function setupEvents() {
         e.target.classList.add('active');
         state.stageIndex = +e.target.dataset.value;
         updateCampaignInfo(); updateSidebar();
+    };
+
+    $('event-chips').onclick = e => {
+        if (!e.target.classList.contains('chip')) return;
+        document.querySelectorAll('#event-chips .chip').forEach(c => c.classList.remove('active'));
+        e.target.classList.add('active');
+        selectEvent(e.target.dataset.event);
     };
 
     $('style-chips').onclick = e => {
@@ -153,47 +163,22 @@ function renderProducts(cat = 'all') {
 }
 
 function updateCampaignInfo() {
-    if (state.stageIndex === null) return;
-
-    const stage = AARRR[state.stageIndex];
-    const stageData = CAMPAIGN_EVENTS[stage];
-    if (!stageData) return;
-
-    // Get promotion events (promotion_y has promotions)
-    const promoEvents = stageData.promotion_y || [];
-    const nonPromoEvents = stageData.promotion_n || [];
-    const allEvents = [...promoEvents, ...nonPromoEvents, ...state.customEvents];
-
-    // Render event chips
     const eventChipsEl = $('event-chips');
-    if (eventChipsEl) {
-        eventChipsEl.innerHTML = allEvents.map((ev, i) => `
-            <span class="chip ${state.selectedEvent?.id === ev.id ? 'active' : ''}" 
-                  data-event-id="${ev.id}" onclick="selectEvent('${ev.id}')">${ev.name}</span>
-        `).join('');
-    }
-
-    // Show event detail if selected
-    const detailBox = $('event-detail-box');
-    if (detailBox && state.selectedEvent) {
-        detailBox.innerHTML = `
-            <div class="info-row"><span class="label">이벤트</span><span class="val">${state.selectedEvent.name}</span></div>
-            <div class="info-row"><span class="label">상세</span><span class="val desc">${state.selectedEvent.detail}</span></div>
-        `;
-        detailBox.style.display = 'block';
-    } else if (detailBox) {
-        detailBox.innerHTML = '<p style="color:#8B95A1;font-size:13px;">목적 선택 시 표시됩니다</p>';
-    }
+    if (!eventChipsEl) return;
+    const selected = state.selectedEvent ? '1' : '0';
+    eventChipsEl.innerHTML = `
+        <button class="chip ${selected === '0' ? 'active' : ''}" data-event="0">??? ??</button>
+        <button class="chip ${selected === '1' ? 'active' : ''}" data-event="1">??? ??</button>
+    `;
 }
 
-function selectEvent(eventId) {
-    const stage = AARRR[state.stageIndex];
-    const stageData = CAMPAIGN_EVENTS[stage];
-    const allEvents = [...(stageData?.promotion_y || []), ...(stageData?.promotion_n || []), ...state.customEvents];
-    state.selectedEvent = allEvents.find(e => e.id === eventId);
+
+function selectEvent(value) {
+    state.selectedEvent = value === '1';
     updateCampaignInfo();
     updateSidebar();
 }
+
 
 function updateSidebar() {
     $('sidebar-brand').textContent = state.selectedBrand || '선택 필요';
@@ -297,19 +282,79 @@ async function generateMessages() {
     }
     steps.forEach(s => { $(s).classList.remove('active'); $(s).classList.add('done'); });
 
+    let generatedMap = null;
+    try {
+        generatedMap = await requestGeneratedMessages();
+    } catch (e) {
+        console.error('Generate API error:', e);
+    }
+
     overlay.style.display = 'none';
-    renderPhoneMockups();
+    renderPhoneMockups(generatedMap);
     goToStep(4);
 }
 
-function renderPhoneMockups() {
+
+function splitMessage(text, brand) {
+    const cleaned = String(text || '').trim();
+    if (!cleaned) {
+        return { title: `[${brand}] \uba54\uc2dc\uc9c0`, body: '' };
+    }
+    const parts = cleaned.split('\n').map(p => p.trim()).filter(Boolean);
+    if (parts.length >= 2) {
+        return { title: parts[0], body: parts.slice(1).join('\n') };
+    }
+    return { title: `[${brand}] \uba54\uc2dc\uc9c0`, body: cleaned };
+}
+
+async function requestGeneratedMessages() {
+    if (!API_ENDPOINT) {
+        throw new Error('API base is not configured');
+    }
+    if (!state.selectedBrand || !state.selectedProduct || state.stageIndex === null || state.styleIndex === null) {
+        return null;
+    }
+    if (!state.selectedProduct.product_id) {
+        return null;
+    }
+    const items = PERSONAS.map((p, idx) => ({
+        persona: idx,
+        brand: state.selectedBrand,
+        product: state.selectedProduct.name,
+        stage_index: state.stageIndex,
+        style_index: state.styleIndex,
+        is_event: state.selectedEvent ? 1 : 0
+    }));
+    const res = await fetch(API_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items })
+    });
+    if (!res.ok) {
+        const text = await res.text();
+        throw new Error(text || res.statusText);
+    }
+    const data = await res.json();
+    const results = data.results || [];
+    const map = {};
+    results.forEach((result, idx) => {
+        const personaName = PERSONAS[idx]?.name || result?.persona_profile?.name;
+        const message = result?.exaone?.result_raw || result?.crm_message;
+        if (personaName && message) {
+            map[personaName] = splitMessage(message, state.selectedBrand);
+        }
+    });
+    return map;
+}
+
+function renderPhoneMockups(generatedMap) {
     const brand = state.selectedBrand;
     const info = BRAND_IMAGES[brand] || {};
     const color = info.color || '#3182F6';
     const logo = info.logo_url || '';
     const product = state.selectedProduct?.name || '제품';
     const price = state.selectedProduct?.price ? parseInt(state.selectedProduct.price).toLocaleString() : '';
-    const eventName = state.selectedEvent?.name || '';
+    const eventLabel = state.selectedEvent ? '\uc774\ubca4\ud2b8' : '\uc624\ub298\ub9cc';
 
     // Realistic persona-specific messages
     const personaMessages = {
@@ -322,7 +367,7 @@ function renderPhoneMockups() {
             body: `${product}은 저자극 테스트 완료 제품입니다.\n피부과 전문의 추천 포뮬러로 순하게 케어하세요 🌿`
         },
         'Budget_Seeker': {
-            title: `[${brand}] ${eventName || '오늘만'} 특가!`,
+            title: `[${brand}] ${eventLabel} 특가!`,
             body: `${product} ${price ? `정가 ₩${price}` : ''}\n지금 20% 할인 + 무료배송 ✨`
         },
         'Trend_Follower': {
@@ -335,11 +380,15 @@ function renderPhoneMockups() {
         }
     };
 
-    const msgs = PERSONAS.map(p => ({
+    const msgs = PERSONAS.map(p => {
+    const generated = generatedMap && generatedMap[p.name];
+    const fallback = personaMessages[p.name] || { title: `[${brand}] \uba54\uc2dc\uc9c0`, body: `${product} \uc9c0\uae08 \ud655\uc778\ud558\uc138\uc694` };
+    return {
         name: p.name,
         ...PERSONA_INFO[p.name],
-        ...(personaMessages[p.name] || { title: `[${brand}] 특별 혜택`, body: `${product} 지금 확인하세요` })
-    }));
+        ...(generated || fallback)
+    };
+});
 
     // Add custom personas
     state.customPersonas.forEach(p => {
