@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Message Studio</title>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <section class="mode-selection-screen" id="mode-selection-screen">
+            <div class="mode-content">
+                <div class="mode-header">
+                    <h1>CRM Message Studio</h1>
+                    <p>AI 기반 뷰티 CRM 메시지 생성 도구</p>
+                </div>
+                <div class="mode-cards">
+                    <div class="mode-card" onclick="selectMode('simple')">
+                        <div class="mode-icon">🚀</div>
+                        <h3>간편 모드</h3>
+                        <p>3단계로 빠르게 생성</p>
+                        <span class="mode-tag">추천</span>
+                    </div>
+                    <div class="mode-card expert" onclick="selectMode('expert')">
+                        <div class="mode-icon">⚙️</div>
+                        <h3>전문가 모드</h3>
+                        <p>커스텀 입력 가능</p>
+                        <span class="mode-tag pro">PRO</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-app" id="main-app" style="display: none;">
+            <header class="app-header">
+                <div class="header-left">
+                    <button class="back-home-btn" onclick="goHome()"><svg width="20" height="20" viewBox="0 0 20 20"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg></button>
+                    <span class="logo-text">CRM Studio</span>
+                </div>
+                <div class="mode-badge" id="current-mode-badge">간편 모드</div>
+            </header>
+
+            <aside class="app-sidebar">
+                <div class="progress-container">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-num">1</div>
+                        <div class="step-text"><span class="step-label">브랜드</span><span class="step-value"
+                                id="sidebar-brand">선택 필요</span></div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-num">2</div>
+                        <div class="step-text"><span class="step-label">제품</span><span class="step-value"
+                                id="sidebar-product">-</span></div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-num">3</div>
+                        <div class="step-text"><span class="step-label">설정</span><span class="step-value"
+                                id="sidebar-settings">-</span></div>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="4">
+                        <div class="step-num">4</div>
+                        <div class="step-text"><span class="step-label">결과</span></div>
+                    </div>
+                </div>
+                <div class="expert-info-panel" id="expert-info-panel" style="display: none;">
+                    <h4>입력 정보</h4>
+                    <div class="info-item"><span class="label">캠페인</span><span class="value" id="info-campaign">-</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <section class="step-section active" id="step-1">
+                    <div class="step-header">
+                        <h1>브랜드를 선택해주세요</h1>
+                        <p>CRM 메시지를 발송할 브랜드</p>
+                    </div>
+                    <div id="simple-brand-view">
+                        <div class="brand-grid" id="brand-grid"></div>
+                    </div>
+                    <div id="expert-brand-view" style="display: none;">
+                        <div class="expert-form-card">
+                            <h3>브랜드 정보 입력</h3>
+                            <div class="form-group"><label>브랜드 이름</label><input type="text" id="custom-brand-name"
+                                    placeholder="브랜드명"></div>
+                            <div class="form-group"><label>브랜드 스토리</label><textarea id="custom-brand-story" rows="2"
+                                    placeholder="핵심 메시지"></textarea></div>
+                            <button class="action-btn secondary" onclick="useCustomBrand()">완료</button>
+                            <div class="divider"><span>또는 선택</span></div>
+                            <div class="brand-grid small" id="expert-brand-grid-list"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="step-section" id="step-2">
+                    <div class="step-header">
+                        <h1><span id="selected-brand-name">브랜드</span> 제품</h1>
+                        <p>추천할 제품 선택</p>
+                    </div>
+                    <div id="simple-product-view">
+                        <div class="category-tabs" id="category-tabs"></div>
+                        <div class="product-list" id="product-list"></div>
+                    </div>
+                    <div id="expert-product-view" style="display: none;">
+                        <div class="expert-form-card">
+                            <h3>제품 정보</h3>
+                            <div class="form-row">
+                                <div class="form-group"><label>제품명</label><input type="text" id="custom-product-name">
+                                </div>
+                                <div class="form-group"><label>가격</label><input type="number" id="custom-product-price">
+                                </div>
+                            </div>
+                            <button class="action-btn secondary" onclick="useCustomProduct()">완료</button>
+                            <div class="divider"><span>또는 선택</span></div>
+                            <div class="category-tabs" id="expert-category-tabs"></div>
+                            <div class="product-list" id="expert-product-list"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="step-section" id="step-3">
+                    <div class="step-header">
+                        <h1>메시지 설정</h1>
+                        <p>발송 목적과 스타일</p>
+                    </div>
+
+                    <!-- Expert Mode: Persona & Event Creator (Top) -->
+                    <div id="expert-persona-creator" class="settings-card"
+                        style="display: none; margin-bottom: 24px; border: 1px solid #9065B0;">
+                        <h3 style="color: #9065B0;">커스텀 설정 (전문가)</h3>
+
+                        <!-- Custom Persona -->
+                        <div class="form-group">
+                            <label>커스텀 페르소나 추가</label>
+                            <div class="form-row" style="gap:8px; margin-bottom: 8px;">
+                                <input type="text" id="new-persona-name" placeholder="페르소나명 (예: 캠핑 매니아)"
+                                    style="flex:1;">
+                                <input type="text" id="new-persona-keywords" placeholder="핵심 키워드 (예: 감성, 실용주의)"
+                                    style="flex:1;">
+                                <button class="action-btn secondary" onclick="addCustomPersona()"
+                                    style="flex-shrink: 0;">추가</button>
+                            </div>
+                            <div id="added-personas-list" class="added-items-list"></div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <!-- Custom Event -->
+                        <div class="form-group">
+                            <label>커스텀 캠페인/이벤트 추가</label>
+                            <div class="form-row" style="gap:8px; margin-bottom: 8px;">
+                                <input type="text" id="new-event-name" placeholder="이벤트명 (예: 게릴라 럭키박스)" style="flex:1;">
+                                <button class="action-btn secondary" onclick="addCustomEvent()"
+                                    style="flex-shrink: 0;">추가</button>
+                            </div>
+                            <textarea id="new-event-detail" placeholder="상세 이벤트 설명 (메시지 생성에 활용됩니다)" rows="2"
+                                style="margin-bottom: 8px;"></textarea>
+                            <div id="added-events-list" class="added-items-list"></div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <!-- Custom Goal & Style (Row) -->
+                        <div class="form-row" style="gap: 16px; align-items: flex-start;">
+                            <!-- Custom Goal -->
+                            <div class="form-group" style="flex:1;">
+                                <label>커스텀 발송 목적 추가</label>
+                                <div class="form-row" style="gap:8px; margin-bottom: 8px;">
+                                    <input type="text" id="new-stage-name" placeholder="목적명 (예: 충성도 강화)"
+                                        style="flex:1;">
+                                    <button class="action-btn secondary" onclick="addCustomStage()"
+                                        style="flex-shrink: 0;">추가</button>
+                                </div>
+                                <textarea id="new-stage-detail" placeholder="목적 상세 (AI 참고용)" rows="2"></textarea>
+                                <div id="added-stages-list" class="added-items-list"></div>
+                            </div>
+
+                            <!-- Custom Style -->
+                            <div class="form-group" style="flex:1;">
+                                <label>커스텀 스타일 추가</label>
+                                <div class="form-row" style="gap:8px; margin-bottom: 8px;">
+                                    <input type="text" id="new-style-name" placeholder="스타일명 (예: 유머러스)" style="flex:1;">
+                                    <button class="action-btn secondary" onclick="addCustomStyle()"
+                                        style="flex-shrink: 0;">추가</button>
+                                </div>
+                                <textarea id="new-style-detail" placeholder="어조/톤앤매너 상세" rows="2"></textarea>
+                                <div id="added-styles-list" class="added-items-list"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-container">
+                        <div class="settings-card">
+                            <h3>발송 목적</h3>
+                            <div class="chip-group" id="stage-chips">
+                                <button class="chip" data-value="0">첫 유입</button>
+                                <button class="chip" data-value="1">첫 구매</button>
+                                <button class="chip" data-value="2">재구매</button>
+                                <button class="chip" data-value="3">매출 증대</button>
+                                <button class="chip" data-value="4">추천</button>
+                                <button class="chip add-custom-btn" onclick="addCustomStage()"
+                                    style="background:#F2F4F6;color:#333;border:1px dashed #B0B8C1;">+ 직접 입력</button>
+                            </div>
+                        </div>
+                        <div class="settings-card">
+                            <h3>스타일</h3>
+                            <div class="chip-group" id="style-chips">
+                                <button class="chip" data-value="0">긴박함</button>
+                                <button class="chip" data-value="1">정보</button>
+                                <button class="chip" data-value="2">FOMO</button>
+                                <button class="chip" data-value="3">감성</button>
+                                <button class="chip" data-value="4">시즌</button>
+                                <button class="chip add-custom-btn" onclick="addCustomStyle()"
+                                    style="background:#F2F4F6;color:#333;border:1px dashed #B0B8C1;">+ 직접 입력</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>이벤트 선택</h3>
+                        <div class="chip-group" id="event-chips" style="margin-bottom: 12px;">
+                            <span style="color:#8B95A1;font-size:13px;">위에서 발송 목적을 먼저 선택하세요</span>
+                        </div>
+                        <div class="campaign-info-box" id="event-detail-box">
+                            <p style="color:#8B95A1;font-size:13px;">이벤트 선택 시 상세정보가 표시됩니다</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="step-section" id="step-4">
+                    <div class="step-header center">
+                        <h1>메시지 생성 완료</h1>
+                        <p>5개 페르소나별 맞춤 메시지</p>
+                    </div>
+                    <div class="result-scroll-container">
+                        <div class="phone-carousel" id="phone-carousel"></div>
+                    </div>
+                    <div class="result-actions"><button class="action-btn secondary"
+                            onclick="resetWizard()">다시</button><button class="action-btn primary"
+                            onclick="exportAll()">내보내기</button></div>
+                </section>
+            </main>
+
+            <nav class="bottom-nav"><button class="nav-btn" id="back-btn" disabled>이전</button><button class="nav-btn"
+                    id="next-btn" disabled>다음</button></nav>
+        </div>
+
+        <div class="loading-overlay" id="loading-overlay" style="display: none;">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <div class="loading-title">AI 메시지 생성 중</div>
+                <div class="loading-steps">
+                    <div class="loading-step" id="load-step-1">분석</div>
+                    <div class="loading-step" id="load-step-2">추출</div>
+                    <div class="loading-step" id="load-step-3">최적화</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

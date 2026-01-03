@@ -399,5 +399,90 @@
             "깨끗한",
             "과학적인"
         ]
+    },
+    "메이크온": {
+        "name_kr": "메이크온",
+        "name_en": "MAKEON",
+        "story": "빛(Light), 열(Heat), 이온(Ion), 진동(Motion)의 4가지 물리적 에너지를 활용한 LHIM Technology™를 중심으로 뷰티 디바이스 솔루션을 제공합니다. 성분이 아닌 에너지에 의한 새로운 뷰티 효과를 선사하며, 사용하는 모습까지 아름다운 디자인을 추구합니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/makeon.html",
+        "visual_colors": [
+            "White",
+            "Silver",
+            "Tech-Clean"
+        ],
+        "tone_keywords": [
+            "혁신적인",
+            "첨단기술",
+            "세련된",
+            "간편한"
+        ]
+    },
+    "보타닉센스": {
+        "name_kr": "보타닉센스",
+        "name_en": "Botanicsens",
+        "story": "40년간의 연구를 바탕으로 자연 식물의 향 성분이 피부를 건강하게 만들고 재생하는 데 도움이 된다는 사실을 발견하며 탄생한 더마 코스메틱 브랜드입니다. 피부 본연의 회복탄력성(Resilience)을 키우는 데 집중합니다.",
+        "url": "https://www.botanicsens.com",
+        "visual_colors": [
+            "Green",
+            "Natural-Beige",
+            "Botanical"
+        ],
+        "tone_keywords": [
+            "자연주의",
+            "회복력",
+            "건강한",
+            "순수한"
+        ]
+    },
+    "세잔느": {
+        "name_kr": "세잔느",
+        "name_en": "Cezanne",
+        "story": "1964년에 설립된 일본의 장수 화장품 브랜드입니다. 고품질의 저렴한 메이크업 및 스킨케어 제품을 제공하는 데 중점을 두며, 합리적인 가격에 트렌디한 컬러 메이크업을 선사합니다.",
+        "url": "https://www.amoremall.com/kr/ko/display/brand",
+        "visual_colors": [
+            "Pink",
+            "Pastel",
+            "J-Beauty"
+        ],
+        "tone_keywords": [
+            "가성비",
+            "트렌디한",
+            "실용적인",
+            "귀여운"
+        ]
+    },
+    "아모레퍼시픽": {
+        "name_kr": "아모레퍼시픽",
+        "name_en": "AMOREPACIFIC",
+        "story": "1930년대 창업주의 어머니가 개성에서 동백기름을 판매하며 시작된 아시안 뷰티의 역사입니다. 1966년 인삼을 화장품 원료로 세계 최초 활용하고, 1979년 차밭을 설립해 녹차 스킨케어를 개척했습니다. 'Asian Beauty Creator'로서 모두가 자신만의 고유한 아름다움을 발견할 수 있도록 돕습니다.",
+        "url": "https://www.apgroup.com/int/ko/brands/amorepacific.html",
+        "visual_colors": [
+            "Green",
+            "Gold",
+            "Premium-Asian"
+        ],
+        "tone_keywords": [
+            "헤리티지",
+            "프리미엄",
+            "혁신적인",
+            "글로벌"
+        ]
+    },
+    "에이피뷰티": {
+        "name_kr": "에이피뷰티",
+        "name_en": "AP Beauty",
+        "story": "아모레퍼시픽의 뷰티 큐레이션 플랫폼으로, 다양한 브랜드의 엄선된 뷰티 제품을 한 곳에서 만나볼 수 있습니다. 트렌디하고 혁신적인 뷰티 아이템을 발굴하여 소개합니다.",
+        "url": "https://www.amoremall.com",
+        "visual_colors": [
+            "Black",
+            "White",
+            "Minimal"
+        ],
+        "tone_keywords": [
+            "큐레이션",
+            "트렌디한",
+            "다양한",
+            "발견"
+        ]
     }
 }
