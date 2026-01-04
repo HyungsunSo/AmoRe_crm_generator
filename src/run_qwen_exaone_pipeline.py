@@ -82,6 +82,8 @@ STYLE_TYPES = [
     'Mixed_Strategies'
 ]
 
+EXAONE_ADAPTER_ID = "jinn33/crm-dpo-adapter"
+
 _QWEN_GENERATOR_CACHE = {}
 _EXAONE_GENERATOR_CACHE = {}
 _STYLE_POOL_CACHE = {}
@@ -113,12 +115,32 @@ def _get_qwen_generator(model_name):
 
 def _get_exaone_generator(model_name):
     if not CACHE_ENABLED:
-        return ExaoneToneCorrector(model_name=model_name, use_cache=False)
+        generator = ExaoneToneCorrector(model_name=model_name, use_cache=False)
+        return _ensure_exaone_adapter(generator)
     cached = _EXAONE_GENERATOR_CACHE.get(model_name)
     if cached:
-        return cached
+        return _ensure_exaone_adapter(cached)
     generator = ExaoneToneCorrector(model_name=model_name, use_cache=True)
+    generator = _ensure_exaone_adapter(generator)
     _EXAONE_GENERATOR_CACHE[model_name] = generator
+    return generator
+
+
+def _ensure_exaone_adapter(generator, adapter_id=EXAONE_ADAPTER_ID):
+    if not adapter_id:
+        return generator
+    if getattr(generator, "_adapter_id", None) == adapter_id:
+        return generator
+    try:
+        from peft import PeftModel
+    except ImportError as exc:
+        raise RuntimeError("peft is required to load Exaone adapters.") from exc
+    generator.model = PeftModel.from_pretrained(generator.model, adapter_id)
+    try:
+        generator.model.eval()
+    except Exception:
+        pass
+    generator._adapter_id = adapter_id
     return generator
 
 
@@ -378,6 +400,8 @@ def _run_pipeline(args, data=None, q_generator=None, exa_generator=None):
     exa_start = time.time()
     if exa_generator is None:
         exa_generator = _get_exaone_generator(args.exa_model)
+    else:
+        exa_generator = _ensure_exaone_adapter(exa_generator)
     exa_output = exa_generator.generate(exa_messages)
     exa_end = time.time()
     timeline.append({
