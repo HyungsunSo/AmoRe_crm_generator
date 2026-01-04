@@ -1,4 +1,4 @@
-# AmoRe CRM Generator
+# 🌺 AmoRe CRM Generator
 
 이 프로젝트는 **브랜드 톤을 유지한 CRM 메시지**를 자동으로 생성하는 파이프라인입니다.  
 범용 AI의 획일화, 데이터 유출 리스크, 과도한 개인화 피로감을 줄이기 위해 **Qwen → EXAONE 이원 구조**로 설계되었습니다.
@@ -184,8 +184,10 @@ uvicorn server:app --host 0.0.0.0 --port 8000
 - `finetuning/`에는 DPO 데이터 생성 및 평가용 코드가 있습니다.
 - `finetuning/base vs. adapter comparison report.md` 에는 Base 모델과 LoRA 모델의 비교 레포트가 있습니다.
 - 해당 레포트에서는 다양한 예시를 통해 GPT 평가/비GPT 지표를 함께 사용해 메시지 품질을 정량화합니다.
-- DPO 파인튜닝용 데이터셋은 [huggingface jinn33/crm-dpo-dataset · Hugging Face](https://huggingface.co/jinn33/crm-dpo-dataset) 에 있습니다.
-- 파인튜닝된 LoRA 어댑터는 [huggingface jinn33/crm-dpo-adapter · Hugging Face](https://huggingface.co/jinn33/crm-dpo-adapter) 에 있습니다.
+- DPO 파인튜닝용 데이터셋은 [![Dataset](https://img.shields.io/badge/🤗%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/Jinhyeok33/crm-dpo-dataset)
+ 에 있습니다.
+- 파인튜닝된 LoRA 어댑터는 [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-yellow)](https://huggingface.co/Jinhyeok33/crm-dpo-adapter)
+ 에 있습니다.
 
 ---
 
