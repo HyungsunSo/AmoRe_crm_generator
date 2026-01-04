@@ -3,8 +3,6 @@
 이 프로젝트는 **브랜드 톤을 유지한 CRM 메시지**를 자동으로 생성하는 파이프라인입니다.  
 범용 AI의 획일화, 데이터 유출 리스크, 과도한 개인화 피로감을 줄이기 위해 **Qwen → EXAONE 이원 구조**로 설계되었습니다.
 
-아래 내용은 `AI에이전트 기획서.md`를 참고해 **일반 사용자도 이해하기 쉬운 흐름**으로 정리했습니다.
-
 ---
 
 ## 1. 프로젝트 배경과 필요성
@@ -181,23 +179,26 @@ uvicorn server:app --host 0.0.0.0 --port 8000
 
 ---
 
-## 11. 데이터/평가 (개요)
+## 11. 파인튜닝 데이터/평가
 
 - `finetuning/`에는 DPO 데이터 생성 및 평가용 코드가 있습니다.
-- GPT 평가/비GPT 지표를 함께 사용해 메시지 품질을 정량화할 수 있습니다.
+- `finetuning/base vs. adapter comparison report.md` 에는 Base 모델과 LoRA 모델의 비교 레포트가 있습니다.
+- 해당 레포트에서는 다양한 예시를 통해 GPT 평가/비GPT 지표를 함께 사용해 메시지 품질을 정량화합니다.
+- DPO 파인튜닝용 데이터셋은 [huggingface jinn33/crm-dpo-dataset · Hugging Face](https://huggingface.co/jinn33/crm-dpo-dataset) 에 있습니다.
+- 파인튜닝된 LoRA 어댑터는 [huggingface jinn33/crm-dpo-adapter · Hugging Face](https://huggingface.co/jinn33/crm-dpo-adapter) 에 있습니다.
 
 ---
 
 ## 12. 참고 문서
 
-- 상세 설계 문서: `AmoRe_crm_generator/AI에이전트 기획서.md`
+- 상세 설계 문서: `AmoRe_crm_generator/CRM AI Agent Proposal.md`
+- 파인튜닝 비교 문서: `AmoRe_crm_generator/finetuning/base vs. adapter comparison report.md`
 - 파이프라인 코드: `AmoRe_crm_generator/src/run_qwen_exaone_pipeline.py`
 - 서버 코드: `AmoRe_crm_generator/server.py`
+- 서버 참고 가이드: `AmoRe_crm_generator/frontend/README.md`
 
 ---
 
 ## 13. 주의사항
 
-- 프론트는 현재 **이벤트 여부(is_event)만** 선택하도록 구성되어 있습니다.
-- `file://`로 직접 열면 API 호출이 막힐 수 있으므로 서버로 실행하세요.
-- 모델 추론은 GPU 사용을 권장합니다.
+- 모델 추론은 T4 GPU 이상 사용을 권장합니다.
