@@ -1,5 +1,24 @@
-requests
+# Core runtime
 torch
-transformers
-sentence-transformers
+transformers[sentencepiece]
 accelerate
+sentence-transformers
+numpy
+
+# Training / finetuning
+datasets
+evaluate
+trl
+peft
+bitsandbytes
+
+# Server
+fastapi
+uvicorn
+pyngrok
+pydantic
+python-dotenv
+
+# Utilities
+requests
+pillow
