@@ -15,9 +15,16 @@ os.environ["GGML_METAL_LOG_LEVEL"] = "0"
 warnings.filterwarnings("ignore", message=".*not supported.*")
 warnings.filterwarnings("ignore", message=".*skipping kernel.*")
 
-HYPERCLOVAX_PATH = os.path.expanduser(
+# HyperCLOVAX 경로 (3B 우선, 없으면 0.5B)
+HYPERCLOVAX_PATH_3B = os.path.expanduser(
+    "~/.cache/huggingface/hub/models--cherryDavid--HyperCLOVA-X-SEED-Vision-Instruct-3B-Llamafied-Q4_K_S-GGUF/snapshots/baadee14ff4bbce6cd5613ef3648deb4181e5ab0/hyperclova-x-seed-vision-instruct-3b-llamafied-q4_k_s-imat.gguf"
+)
+HYPERCLOVAX_PATH_0_5B = os.path.expanduser(
     "~/.cache/huggingface/hub/HyperCLOVAX-GGUF/hyperclovax-seed-text-instruct-0.5b-q4_k_m.gguf"
 )
+
+# 3B가 있으면 우선 사용
+HYPERCLOVAX_PATH = HYPERCLOVAX_PATH_3B if os.path.exists(HYPERCLOVAX_PATH_3B) else HYPERCLOVAX_PATH_0_5B
 QWEN_PATH = os.path.expanduser(
     "~/.cache/huggingface/hub/Qwen3-0.6B-GGUF/Qwen3-0.6B-Q4_K_M.gguf"
 )
@@ -77,7 +84,7 @@ class CreatorModel(ModelSingleton):
 
 
 class StylerModel(ModelSingleton):
-    """Qwen3 4B (브랜드 스타일링용 - 더 복잡한 지시 처리)"""
+    """Qwen3 4B (브랜드 스타일링용)"""
     _instance = None
     _path = QWEN_4B_PATH
     

@@ -120,3 +120,85 @@ def preprocess_reviews_with_frequency(reviews: list, top_k: int = 10) -> str:
     """
     freq_keywords = extract_keywords_by_frequency(reviews, top_k)
     return format_frequency_keywords(freq_keywords)
+
+
+# ============================================================
+# BERT 기반 감성분석 키워드 필터링 (선택적)
+# ============================================================
+_sentiment_model = None
+_sentiment_tokenizer = None
+
+def get_sentiment_model():
+    """Lazy loading for sentiment model (DistilBERT multilingual)"""
+    global _sentiment_model, _sentiment_tokenizer
+    if _sentiment_model is None:
+        try:
+            from transformers import pipeline
+            print("[Sentiment] 모델 로딩 중...")
+            _sentiment_model = pipeline(
+                "sentiment-analysis",
+                model="tabularisai/multilingual-sentiment-analysis",
+                device=-1  # CPU
+            )
+            print("[Sentiment] 모델 로딩 완료 ✓")
+        except Exception as e:
+            print(f"[Sentiment] 모델 로딩 실패: {e}")
+            _sentiment_model = None
+    return _sentiment_model
+
+
+def filter_positive_keywords_bert(keywords: list, min_score: float = 0.6) -> list:
+    """
+    BERT 감성분석으로 긍정 키워드만 필터링
+    
+    Args:
+        keywords: 키워드 리스트
+        min_score: 최소 긍정 점수 (0~1)
+        
+    Returns:
+        긍정 키워드 리스트
+    """
+    model = get_sentiment_model()
+    if model is None:
+        return keywords  # 모델 없으면 그대로 반환
+    
+    positive_keywords = []
+    for kw in keywords:
+        if len(kw.strip()) < 2:
+            continue
+        try:
+            result = model(kw)[0]
+            # positive/very positive면 포함
+            label = result['label'].lower()
+            score = result['score']
+            if ('positive' in label or 'pos' in label) and score >= min_score:
+                positive_keywords.append(kw)
+            elif 'neutral' in label and score >= 0.8:
+                positive_keywords.append(kw)
+        except:
+            positive_keywords.append(kw)  # 에러면 그냥 포함
+    
+    return positive_keywords if positive_keywords else keywords[:5]
+
+
+def preprocess_reviews_with_sentiment(reviews: list, top_k: int = 15, use_bert: bool = True) -> str:
+    """
+    리뷰에서 빈도 + 감성분석 기반으로 긍정 키워드 추출
+    
+    Args:
+        reviews: 리뷰 리스트
+        top_k: 빈도 기준 상위 k개
+        use_bert: BERT 감성분석 사용 여부
+        
+    Returns:
+        쉼표로 구분된 긍정 키워드 문자열
+    """
+    # 1. 빈도 기반 추출
+    freq_keywords = extract_keywords_by_frequency(reviews, top_k)
+    keywords = [kw for kw, _ in freq_keywords]
+    
+    # 2. BERT 감성분석 필터링 (선택적)
+    if use_bert:
+        keywords = filter_positive_keywords_bert(keywords)
+    
+    return ', '.join(keywords)
