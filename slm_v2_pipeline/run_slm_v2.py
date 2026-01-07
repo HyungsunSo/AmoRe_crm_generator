@@ -5,6 +5,7 @@ SLM-Optimized CRM Pipeline Runner v2
 steps_v2.py의 6단계 파이프라인을 실행합니다.
 - 로컬 GGUF 모델 또는 Ollama API와 함께 작동
 - 스타일 요소 주입 기반 브랜드 톤 적용
+- 토큰화 기반 키워드 빈도 추출
 """
 
 import argparse
@@ -14,9 +15,16 @@ import sys
 import time
 from datetime import datetime, timezone
 
-sys.path.insert(0, os.path.dirname(__file__))
+# 현재 폴더 기준 import
+pipeline_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, pipeline_dir)
 
-from sequential_pipeline.steps_v2 import (
+# 부모 폴더(src)도 추가 (rag_utils, generate_marketing 사용 위함)
+src_dir = os.path.join(os.path.dirname(pipeline_dir), 'src')
+if os.path.exists(src_dir):
+    sys.path.insert(0, src_dir)
+
+from steps_v2 import (
     ReviewSummarizer,
     BriefGenerator,
     PersonaWriter,
@@ -24,6 +32,7 @@ from sequential_pipeline.steps_v2 import (
     BrandStyler,
     FinalPolisher,
 )
+from keyword_tokenizer import preprocess_reviews_with_frequency
 
 
 def load_json(path):
@@ -31,8 +40,14 @@ def load_json(path):
         return json.load(f)
 
 
-from rag_utils import build_persona_query, extract_candidate_texts, extract_highlight_snippet, vectorize_texts, cosine
-from generate_marketing import find_persona, find_product, load_json
+# RAG 유틸 import (선택적)
+try:
+    from rag_utils import build_persona_query, extract_candidate_texts, extract_highlight_snippet, vectorize_texts, cosine
+    from generate_marketing import find_persona, find_product
+    HAS_RAG = True
+except ImportError:
+    HAS_RAG = False
+    print("[Warning] RAG 유틸을 찾을 수 없습니다. 토큰화 모드로 실행합니다.")
 
 
 STAGE_ORDER = ["Acquisition", "Activation", "Retention", "Revenue", "Referral"]
@@ -105,16 +120,29 @@ def main():
     timeline = []
     total_start = time.time()
 
-    # === Step 0: 하이라이트 추출 (RAG) ===
-    print("[Step 0/7] 하이라이트 추출 중...")
+    # === Step 0: 하이라이트 추출 (RAG) & 빈도수 키워드 추출 ===
+    print("[Step 0/7] 데이터 추출 중 (RAG & Tokenizer)...")
+    
+    # 1. RAG 하이라이트
     highlights_data = top_highlights_for_product(persona, product, top_k=args.top_k)
     highlight_texts = [h['snippet'] for h in highlights_data]
-    highlights_str = ', '.join(highlight_texts) if highlight_texts else f"{product_name} 관련 핵심 특징"
-    print(f"  ✓ 추출된 하이라이트: {highlights_str[:100]}...\n")
+    rag_str = ', '.join(highlight_texts) if highlight_texts else ""
+    
+    # 2. 빈도수 기반 키워드 (NEW)
+    freq_keywords_str = ""
+    if product.get('reviews'):
+        freq_keywords_str = preprocess_reviews_with_frequency(product['reviews'], top_k=15)
+    
+    # 두 소스 결합
+    combined_input = f"RAG 하이라이트: {rag_str}\n빈도수 높은 키워드: {freq_keywords_str}"
+    
+    print(f"  ✓ RAG 하이라이트: {rag_str[:60]}...")
+    print(f"  ✓ 빈도 Top-15: {freq_keywords_str[:60]}...\n")
 
     # === Step 1: ReviewSummarizer (긍정 키워드 추출) ===
     print("[Step 1/7] 리뷰에서 긍정 키워드 추출 중...")
-    positive_kw, dur0 = ReviewSummarizer().run(highlights_str)
+    # 결합된 입력을 전달
+    positive_kw, dur0 = ReviewSummarizer().run(combined_input)
     timeline.append({"step": "ReviewSummarizer", "duration": dur0})
     print(f"  ✓ 완료 ({dur0:.1f}s)")
     print(f"  ✨ 긍정 키워드: {positive_kw[:80]}...\n")
@@ -165,6 +193,8 @@ def main():
         "stage": aarrr_stage,
         "pipeline": "SLM-Optimized v2 (Keyword-Based, 6-Stage)",
         "steps": {
+            "rag_highlights": rag_str,
+            "frequent_keywords": freq_keywords_str,
             "positive_keywords": positive_kw,
             "keywords_1_brief": keywords1,
             "keywords_2_persona": keywords2,

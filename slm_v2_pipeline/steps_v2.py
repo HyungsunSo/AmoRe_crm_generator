@@ -11,12 +11,18 @@ Sequential CRM Pipeline v2 - SLM-Optimized (HICR)
 import re
 import json
 import os
-from .model import get_creator, get_validator, get_polisher, get_styler
+
+# 독립 실행 지원을 위한 import
+try:
+    from .model import get_creator, get_validator, get_polisher, get_styler
+except ImportError:
+    from model import get_creator, get_validator, get_polisher, get_styler
 
 
 def load_brand_style(brand_name: str) -> dict:
     """Load style_elements from instagram_ground_truth.json"""
-    base = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+    # slm_v2_pipeline/steps_v2.py -> slm_v2_pipeline -> root
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     gt_path = os.path.join(base, 'data', 'instagram_ground_truth.json')
     try:
         with open(gt_path, 'r', encoding='utf-8') as f:
