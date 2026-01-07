@@ -96,31 +96,24 @@ class BriefGenerator(BaseStep):
     """제품 정보에서 핵심 키워드 추출 (문장 X, 키워드 나열 O)"""
 
     def run(self, product_name: str, highlights: str) -> tuple:
-        prompt = f"""<TASK>
-아래 리뷰 키워드를 정리해서 제품 브리프 키워드를 만드세요.
-</TASK>
+        # 아주 단순한 프롬프트
+        prompt = f"""아래 리뷰에서 좋은 키워드 5개를 추출하세요.
 
-<제품명>
-{product_name}
-</제품명>
+리뷰: {highlights}
 
-<리뷰_키워드>
-{highlights}
-</리뷰_키워드>
+예시: 촉촉함, 탄력, 순한, 가성비, 흡수력
 
-<OUTPUT_FORMAT>
-<brief>
-{product_name}, 효능키워드1, 효능키워드2, 장점키워드1, 장점키워드2
-</brief>
-</OUTPUT_FORMAT>
+키워드:"""
 
-예시: "콜라겐 토너, 촉촉함, 탄력, 순한, 가성비"
-주의: 오직 쉼표로 구분된 키워드만 출력. 문장 금지."""
-
-        result, dur = self.creator.generate([{"role": "user", "content": prompt}], max_tokens=2000)
+        result, dur = self.creator.generate([{"role": "user", "content": prompt}], max_tokens=300)
         clean = self._clean_output(result)
-        brief = self._extract_xml_content(clean, 'brief')
-        return brief, dur
+        # "키워드:" 이후 내용만 추출
+        if '키워드' in clean:
+            clean = clean.split('키워드')[-1].strip()
+        if ':' in clean and len(clean.split(':')[0]) < 10:
+            clean = ':'.join(clean.split(':')[1:]).strip()
+        # 제품명 추가
+        return f"{product_name}, {clean}", dur
 
 
 # ============================================================
@@ -142,23 +135,16 @@ class PersonaWriter(BaseStep):
         emotion_data = self.PERSONA_EMOTION.get(persona_name, self.PERSONA_EMOTION["default"])
         emotion_kw = emotion_data["감정"]
 
-        # 예시 기반 프롬프트
-        prompt = f"""다음 키워드들을 합쳐서 출력하세요.
+        # 아주 단순한 프롬프트 - 그냥 합치기만
+        prompt = f"""{brief}, {emotion_kw}
 
-키워드1: {brief}
-키워드2: {emotion_kw}
+위 키워드들을 쉼표로 구분해서 그대로 출력하세요."""
 
-예시 출력: 촉촉함, 탄력, 순한, 프리미엄, 고급스러운
-
-출력:"""
-
-        result, dur = self.creator.generate([{"role": "user", "content": prompt}], max_tokens=2000)
+        result, dur = self.creator.generate([{"role": "user", "content": prompt}], max_tokens=300)
         clean = self._clean_output(result)
-        # "출력:" 이후 내용만 추출
-        if '출력' in clean:
-            clean = clean.split('출력')[-1].strip()
-        if ':' in clean and len(clean.split(':')[0]) < 10:
-            clean = ':'.join(clean.split(':')[1:]).strip()
+        # 혹시 다른 텍스트가 없으면 직접 합치기
+        if not clean or len(clean) < 5:
+            clean = f"{brief}, {emotion_kw}"
         return clean, dur
 
 
@@ -168,35 +154,21 @@ class PersonaWriter(BaseStep):
 class GoalSetter(BaseStep):
     """키워드에 AARRR 스테이지 맞춤 CTA 키워드 추가"""
 
+    # 간단한 CTA 키워드 리스트 (직접 합치기)
     CTA_KEYWORDS = {
-        "Acquisition": "첫만남, 신규혜택, 지금시작",
-        "Activation": "오늘시작, 체험, 도전",
-        "Retention": "다시만나요, 리뉴얼, 감사",
-        "Revenue": "특별혜택, 한정, 서두르세요",
-        "Referral": "친구추천, 함께, 공유",
+        "Acquisition": "첫만남, 지금시작",
+        "Activation": "오늘부터, 체험해보세요",
+        "Retention": "꾸준히, 다시쓰는",
+        "Revenue": "특별한, 한정혜택",
+        "Referral": "친구와함께, 공유해요",
     }
 
     def run(self, keywords: str, stage: str) -> tuple:
         cta = self.CTA_KEYWORDS.get(stage, "지금확인")
-
-        # 예시 기반 프롬프트
-        prompt = f"""다음 키워드들을 합쳐서 출력하세요.
-
-키워드1: {keywords}
-키워드2: {cta}
-
-예시 출력: 촉촉함, 탄력, 순한, 첫만남, 지금시작
-
-출력:"""
-
-        result, dur = self.creator.generate([{"role": "user", "content": prompt}], max_tokens=2000)
-        clean = self._clean_output(result)
-        # "출력:" 이후 내용만 추출
-        if '출력' in clean:
-            clean = clean.split('출력')[-1].strip()
-        if ':' in clean and len(clean.split(':')[0]) < 10:
-            clean = ':'.join(clean.split(':')[1:]).strip()
-        return clean, dur
+        
+        # 그냥 합치기 (모델 호출 없이 직접 처리)
+        combined = f"{keywords}, {cta}"
+        return combined, 0.0
 
 
 # ============================================================
@@ -295,11 +267,13 @@ class FinalPolisher(BaseStep):
 수정 규칙:
 - 어색한 번역투 표현을 자연스럽게 수정
 - 의미는 유지하면서 더 부드럽게
+- 반드시 '~해요', '~인데요', '~바래요' 등 부드러운 대화체 어미로 끝내세요.
+- '!'(느낌표) 남발 금지 (최대 1개)
 - 50자 내외로 유지
 
 결과만 출력하세요:"""
 
-        result, dur = self.polisher.generate([{"role": "user", "content": prompt}], max_tokens=2000)
+        result, dur = self.polisher.generate([{"role": "user", "content": prompt}], max_tokens=1000)
         clean = self._clean_output(result)
         # 결과에서 "결과:" 같은 prefix 제거
         if ':' in clean and len(clean.split(':')[0]) < 10:

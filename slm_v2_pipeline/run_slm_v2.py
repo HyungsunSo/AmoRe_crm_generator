@@ -32,7 +32,7 @@ from steps_v2 import (
     BrandStyler,
     FinalPolisher,
 )
-from keyword_tokenizer import preprocess_reviews_with_frequency
+from keyword_tokenizer import preprocess_reviews_with_frequency, preprocess_reviews_with_sentiment
 
 
 def load_json(path):
@@ -131,7 +131,7 @@ def main():
     # 2. 빈도수 기반 키워드 (NEW)
     freq_keywords_str = ""
     if product.get('reviews'):
-        freq_keywords_str = preprocess_reviews_with_frequency(product['reviews'], top_k=15)
+        freq_keywords_str = preprocess_reviews_with_sentiment(product['reviews'], top_k=15, use_bert=True)
     
     # 두 소스 결합
     combined_input = f"RAG 하이라이트: {rag_str}\n빈도수 높은 키워드: {freq_keywords_str}"
